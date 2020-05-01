@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "5th Journal Club of 2020. April 30th"
-Editor: "Yoon Kyung Lee (yoonlee78@snu.ac.kr)"
+author: "Edited by Yoon Kyung Lee (yoonlee78@snu.ac.kr)"
 ---
+
 
     Themes: Backpropagation, Cultural Differences, Twitter, Text Analysis, Loneliness, Faux Pas, Trust in Robot, Theory of Mind of AI <br>
     Presenters: YK (Yoon Kyung), WH(Whani), IJ(Injoo), HY(Hoyoung), JE(Jaeun), YW(Yoonwon)
