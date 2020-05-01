@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "5th Journal Club of 2020. April 30th"
+title: "April 30th Test"
 author: "Edited by Yoon Kyung Lee (yoonlee78@snu.ac.kr)"
 ---
 
