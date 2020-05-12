@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "About"
-author: "YKLee"
+author: "yoonlee78@snu.ac.kr"
 permalink: /about/
 ---
 
@@ -11,4 +11,3 @@ Department of Psychology, Seoul National University.
 
 snuhahnlab@gmail.com
 
-Managed by yoonlee78@snu.ac.kr
