@@ -1,0 +1,157 @@
+---
+layout: post
+title: "May 7th Journal Club"
+author: "Yoon Kyung Lee (yoonlee78@snu.ac.kr)"
+---
+
+    Themes: 
+
+Presenters: YK(Yoon Kyung), IJ(Injoo), WK(Whani Kim), YW(Yoonwon), JE(Jaeun), HY(Hoyoung) 
+
+-----------------
+<br>
+
+## Topic 1: Convolutional Neural Network - Lecture 5, Part 1: Filters and Padding [YK]
+
+이번 시간부터는 본격적으로 ConvNet에 대해 배운다. ConvNet은 여러 뉴럴넷이 겹쳐있는 것이라고 생각하면 된다. 크게 3가지 구성으로 나뉘는데 convolutional layer, pooling layer, 그리고 fully-connected layer로 이루어진 아키텍쳐다. 여기서 3번째 FCL은 보통의 뉴럴넷 형태를 띈다. ConvNet은 원본 이미지를 레이어에서 다음 레이어로 가면서 지속적으로 변환 과정을 거친다.
+강좌에서 다룬 예시 아키텍쳐는 다음과 같은 구성으로 이루어진다: Input (32*32*3) vector, Conv layer, Relu layer, Pool layer, FC layer. 이 레이어를 거치면서 원본 이미지를 픽셀 값으로 받은 후에 최종 단계에서 점수를 반환한다 (예: 사진이 자동차일 확률 99%)
+자세한 설명은 강좌 슬라이드와 노트 참조. 오늘은 시간적 제약으로 인해 다루지 못한 부분을 다음 시간에 이어서 다룰 예정.
+
+<br>
+slides: http://cs231n.stanford.edu/slides/2020/lecture_5.pdf
+note: https://cs231n.github.io/convolutional-networks/
+
+<br>
+
+## Topic 2: 상황정보(context information)의 형태에 따른 메신저 대화 메세지의 감정 인식(emotion perception) 정확성 차이 [IJ]
+
+감정 인식에 있어 상황정보의 중요성은 많은 연구들을 통해 강조되어 왔다(Barrett, Mesquita, & Gendron, 2011). 감정 인식에 상황정보가 영향을 미치는 정도는 상황정보의 형태에 따라 달라진다. 얼굴 표정의 감정이 너무 모호하지 않은 선에서, 즉 감정 추론을 위해 얼굴 표정과 상황정보를 모두 사용할 수 있는 상황에서, 텍스트를 통한 상황 묘사, 상황 이미지, 움직이는 상황 이미지(음성이 없는 비디오)의 순서로 상황정보의 영향력이 커지는 것으로 나타났다. 이미지가 더 생생하고 즉각적인 정보를 제공하며, 특히 움직이는 이미지의 경우 감정 추론을 위한 중요한 정보인 관계에 대한 정보를 알려주기 때문이다(Wallbott, 1988). 메신저 대화에서 얼굴 표정과 같은 비언어적 정보의 부재를 보완하기 위해 흔히 이모티콘을 사용한다(Derks, Bos, & Von Grumbkow, 2008). 
+따라서, 메신저 대화 상황을 바탕으로 다음과 같이 추론해볼 수 있다. 
+1. 상황정보에 대한 이미지와 그에 대한 반응을 나타내는 이모티콘을 함께 제시할 경우, 감정 추론에 있어 상황정보와 이모티콘의 영향력이 모두 클 것이다. 
+2. 상황정보에 대한 텍스트와 그에 대한 반응을 나타내는 이모티콘을 함께 제시할 경우, 감정 추론에 있어 이모티콘의 영향력이 우세할 것이다.
+3. 따라서 상황정보를 이미지로 제시했을 때 더 다양한 단서를 사용하므로 감정 인식의 정확성이 더 높을 것이다.
+이를 통해 상황정보가 어떤 형태(이미지 or 텍스트)로 주어지는 지에 따라 감정 인식을 위해 사람들이 사용하는 단서가 달라지는지, 더 나아가 그로 인해 감정 인식의 정확성에 차이가 발생하는지 확인해볼 수 있다. 
+
+<br>
+
+  Barrett, L. F., Mesquita, B., & Gendron, M. (2011). Context in emotion perception. Current Directions in Psychological Science, 20(5), 286-290.
+  Derks, D., Bos, A. E., & Von Grumbkow, J. (2008). Emoticons and online message interpretation. Social Science Computer Review, 26(3), 379-388.
+  Wallbott, H. G. (1988). In and out of context: Influences of facial expression and context information on emotion attributions. British Journal of Social Psychology, 27(4), 357-369.
+
+<br>
+
+## Topic 3: Effects of robot behavior and attitude towards technology on social human-robot interactions. [WK]
+
+선정 이유: 학위논문 관련하여 인간-로봇 상호작용 선행연구 조사 확장
+
+내용 요약: 로봇의 행동과 사람들의 지각된 기술의 유능함과 기술에 대한 열정 두 가지 모두 HRI에 영향을 준다.
+
+장단점: 장점: Ultimatum Game을 통해 사람들의 행동을 측정하였으며 로봇의 행동 뿐만 아니라 사람들의 특징을 고려하여 결과를 도출하였다. 
+
+단점: 로봇의 행동들이 제한적 이었다 (waving, head turning or standing up) 따라서, truly interactive 하진 않았을 것이라고 예상한다. 만약, context를 고려하여 더욱 interactive 하게 행동을 프로그램 했으면 더 나은 결과를 얻을 수 있을 것 같다. 
+
+의의: 사람들의 기술에 대한 열정과 유능함을 측정함으로서 기술을 원하지 않은 사람들을 대상으로 로봇이 어떡해 행동하면 로봇을 appeal 할 수 있을까?라는 생각을 두고 연구를 진행하였다. 
+
+<br>
+
+  Nitsch, V., & Glassen, T. (2015). Investigating the effects of robot behavior and attitude towards technology on social human-robot interactions. In Proceedings of the 24th IEEE International Symposium on Robot and Human Interactive Communication (pp. 535-540). Kobe, Japan: RWTH Aachen University
+
+<br>
+
+
+## Topic 4: Multimodal digital communication to reduce loneliness in older adults [YW]
+
+선정 이유: 
+노인들의 social communication 향상을 도울 기술로 주로 많이 연구된 videoconferencing이 아닌, 다양한 modality의 message communication을 제공하는 서비스에 대한 testing을 했기 때문.
+
+내용 요약: 
+3개월 동안 10명의 노인들이 1:1 도움을 받아 digital communication tool을 사용했을 때 사회적 고립, 자기 효능감의 변화를 보았다. Tool로는 Intouch라는, 연락처에 등록한 가족과 친구들에게 4종류의 메시지를 수신 및 발신을 할 수 있는 소프트웨어 앱을 사용하였다. 메시지 종류는 총 4가지이다: (1) wave message(짧고 미리 정해진 텍스트 문구) (2) video message ⑶ audio message ⑷ photo message. 
+사용 결과, audio message가 가장 사용하기 쉽다고 보고하였고 가장 많이 사용하였다. 또한 video와 photo message의 경우 보내는 것은 별로 사용하지 않았고 관심이 없었지만 그러한형태의 메시지를 받는 것은 가장 선호하고 즐거워하였다. 마지막으로는 Adoption 동기의 수준에 영향을 주는 요인들로는 Unsuccessful adoption의 경우 social difficulties (가족문제, Small social circle)와 건강문제, successful adoption의 경우 더 많은 message reply가있다. 이 서비스를 효과적으로 사용함으로써 자기효능감 또한 상승하였다.  10명 중 6명이 소통이 긍정적인 방향으로, 그리고 그 빈도가 증가했다고 응답하였고 3명이 관계에 있어 긍정적 방향으로 변화하였다고 응답하였다. 멀리 떨어져 있고 바쁜 가족들과 대화할때 서비스의 asynchronicity가 도움이 되었으며 사진 등을 통해 Connection이 촉진되었다.
+
+장단점: 3개의 단점을 분석하였다.
+첫 번째로는 InTouch를 Ipad에 설치하여 제공했다는 것이 있다. video /photo message 사용에 있어 Ipad의 불편함을 토로하였고, 기본적으로 call과 text를 사용하는 핸드폰을 더 선호한다고 밝히기도 하였다. 한국은 스마트폰 보급률이 높으니 스마트폰 앱으로 이 소프트웨어를 사용하면 태블릿의 애로사항을 해소하면서 노인들의 사용 동기(motivation) 을 보다 더 높일수 있을 것이다.
+두 번째로는 InTouch의 메세지가 Email inbox로 보내지고, 상대가 이메일로 답장을 하면 InTouch 앱으로 그 답장이 수신되는 형식이다. 
+노인 친구들과 연락하기에는 메시지 수신과 답장을 더 힘들게 할 수 있고, 사적인 연락보다는 대부분 업무 용으로 이메일을 사용하는 중장년/젊은 층의 사람들에게는 사용성이 어색할 수 있다. 이와 같은 사용성이 메시지를 받았을 때의 답신률을 늦추는 원인으로 작용했을 수 있으므로 같은 앱 내에서 수신과 발신이 이루어지는 방식이 더 적합할 수 있다.
+마지막으로, video message가 노인들에게 디자인의 의도와 달리 대부분 사진을 첨부하듯 별도의 동영상을 첨부하여 보내는 것으로 인식된 점이다. 화상통화 혹은 영상편지를 비연속적으로 주고받는 사용자 경험을 제공했을 때에는 다른 결과가 나타날 수 있다.
+
+의의: 
+이 연구는 노인 대상으로 technology -based communication 서비스 디자인 시 Communication의 형태와 사용성 그리고 사용 촉진을 위해 고려할 점을 시사한다. 
+첫 번째로, Stranger 보다 더 어린 가족들(자녀, 손자 등)이 노인들의 기술 사용과 adoption 결정에 더 영향력이 크다.이는 다른 논문에서도 반복적으로 언급되는 사항인 만큼 마케팅 전략을 세울 때 고려할 필요가 있다. 또한 노인들의 기술 사용과 적응에 있어 맞춤화된 개인적 지도가 필요하다는 점을 같이 고려하면 VoIunteer 대신 노인들과 함께 앱을 사용할 가족 멤버를 연구에 참여시키는 방식의 유용성을 시사한다.
+또한, 소프트웨어를 같이 사용하며 응답해 줄 사람들이 필요하기 때문에, 응답을 잘 받지 못하는 노인들의 경우 건강관리 전문가와 비슷한 social isolation 겪는 노인들끼리의 support group이 필요하다.
+
+비고: (자세한 내용은 OPP 참조)
+
+<br>
+
+  Judges, R. A., Laanemets, C., Stern, A., & Baecker, R. M. (2017). “InTouch” with seniors: Exploring adoption of a simplified interface for social communication and related socioemotional outcomes. Computers in Human Behavior, 75, 912-921.
+  
+  Banbury, A., Chamberlain, D., Nancarrow, S., Dart, J., Gray, L., & Parkinson, L. (2017). Can videoconferencing affect older people's engagement and perception of their social support in long‐term conditions management: A social network analysis from the Telehealth Literacy Project. Health & social care in the community, 25(3), 938-950.
+  
+  Barbosa Neves, B., Franz, R., Judges, R., Beermann, C., & Baecker, R. (2019). Can digital technology enhance social connectedness among older adults? A feasibility study. Journal of Applied Gerontology, 38(1), 49-72.
+  
+  Baecker, R., Sellen, K., Crosskey, S., Boscart, V., & Barbosa Neves, B. (2014, October). Technology to reduce social isolation and loneliness. In Proceedings of the 16th international ACM SIGACCESS conference on Computers & accessibility, pp. 27-34.
+  
+  Zamir, S., Hennessy, C. H., Taylor, A. H., & Jones, R. B. (2018). Video-calls to reduce loneliness and social isolation within care environments for older people: an implementation study using collaborative action research. BMC geriatrics, 18(1), 62. 
+
+<br>
+
+## Topic 5: Computational Models of Emotion [JE]
+
+선정 이유: Affective computing 기초에 대해 더 공부하고 싶어 선정함. 
+
+내용 요약: <br>
+ 1) 감정 관련 심리학 이론: Appraisal theory, dimensional theories, anatomic approaches, rational approaches, communicative approaches 
+ 2) A component model view of computational appraisal models (그림) <br>
+   - Person-environment relationship <br>
+   - Appraisal Derivation Model <br>
+   - Appraisal variables <br>
+   - Affect Derivation Model / Affect Intensity Model <br>
+   - Emotion / Affect <br>  
+      discrete emotion label / core affect / 둘 다 <br>
+data structure가 appraisal factor와 emotional state간의 연결고리를 보존하는가? <br>
+   - Affect Consequent Model <br>
+     behavioral vs cognitive <br>
+        behavioral change(외적 변화): facial expressions, physical actions <br>
+        cognitive change(내적 변화): decision making, belief, desire, intention 등의 변화 <br>
+     closed-loop vs open-loop <br>
+        closed loop: direct impact to regulate emotion <br>
+        open loop: multi-agent setting에서 다른 agent의 행동을 촉발시킴 <br>
+    
+장단점: <br> 
+  1)장점: 감정의 computational model의 기반이 되는 이론과 모델을 구성하는 기초 요소들이 나와 있어 향후 논문을 읽을 때 참고하면 좋을 것 같다. <br>     
+  2)단점: 여러 모델을 포괄하는 설명이어서 생각했던 것보다 컴퓨팅이 어떻게 되는지에 관해서는 구체적으로 나와있지 않았다. <br>
+
+의의: 감정에 관한 여러 computational model 비교할 수 있는 프레임 제공. <br>
+
+<br>
+
+  Marsella, S., Gratch, J., & Petta, P. (2010). Computational models of emotion. A Blueprint for Affective Computing-A sourcebook and manual, 11(1), 21-46.
+
+<br>
+
+## Topic 6: Heart rate variability is associated with emotion recognition[HY]
+
+선정 이유
+Classic 논문을 통해서 과거에는 어떤 형식으로 논문이 구성되어있으며, 어떤 결과가 주를 이루었는지 알고 싶었음
+
+내용요약
+HRV(Heart rate variability)가 사회적 인지 능력과 관련되는지 알아보려고 한다. 이를 위해, RMET(reading the mind in the eyes test) 를 실시하면서 5분마다 심박수를 측정하였다. 결론적으로는 성별, BMI, 흡연, 육체적 행동, 우울, 걱정, 스트레스에 대한 다중회귀분석을 실시하였으며, HRV가 더 높은 참가자가 RMET에 표현된 감정을 식별하는데 정확하다는 것을 나타내었다.
+
+장단점
+장점 : 기존에 진행된 연구들과 비교하여 결과값을 도출하였다.
+기존에는 질병이 있는 환자들에 대해 진행되었지만, 이 연구는 어른들에 대해 진행되었다.
+
+단점 : 심박수가 증가함에 따른 결과는 있지만, 감소함에 따라 발생하는 결과는 없다.  실제 심박수에 대한 데이터 값이 있으면 좀더 신뢰가 있었을 것 같다.
+
+의의
+연구는 HRV가 신체 활동 수준, 성별, BMI, 흡연, 우울증, 불안, 스트레스 등
+HRV에 영향을 미치는 것으로 알려진 많은 요소들을 통제한 후에도 인간의 감정 인식 능력에 대한 새로운 생물학적 표시를 제공할 수 있다는 증거를 제시한다.
+
+<br>
+
+  Daniel S. Quintana et al.(2012). Heart rate variability is associated with emotion recognition:
+  Direct evidence for relationship between the autonomic nervous system and social cognition. International Journal of Psychophysiology
+
+<br>
+
+The End.
