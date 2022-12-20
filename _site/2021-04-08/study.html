@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Apr 8th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Apr 8th Journal Club" />
+<meta name="author" content="Jae Eun Park (dawn2089@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Open-domain Chatbot, An intelligent Chatbot using deep learning with Bidirectional RNN and attention model, Emotion recognition, Speech features, Classifiers Presenters: YL (Yoon Kyung Lee), SB (Seoyeon Bae), HM (Hoyoung Maeng) Topic 1: Open Domain Chatbot을 위한 준비서 [YK] 선정 이유 오픈 도메인 챗봇에 대해 가장 활발히 연구되고 있는 페이스북에서 발표한 페이퍼 중 하나라서 선정함. 내용 요약 오픈 도메인 챗봇을 구축하는 일은 아직까지 매우 어려운 영역으로 알려져있다. 이 논문에서는 대규모 모델을 (90M) 같이 공개하며 모델의 크기에 따라 대화의 정확성과 적절함이 어떻게 달라지는지 비교했다. 좋은 대화에는 많은 ‘사회적 기술’이 필요하며, 이를 구현하고 측정하는데 필요로한 크게 3가지 요소를 소개한다: 1) 흥미로운 대화거리, 2)문맥에 맞는 공감 및 성격, 3) 일관된 페르소나를 유지하는 것이다. 본 논문에서 소개한 Generative BST 2.7B model로 테스트한 결과, 봇이 흔히 행하는 오류가 크게 3가지 였다 봇의 대답 안에 유저가 말한 것을 그대로 복사(nontrivial repetition), 유저가 앞 단계에서 말했던 것을 잊어버림(forgetfulness), 대조(contradiction), 거짓 정보(hallucinating knowledge). 대조의 예로는, 봇이 앞서 본인의 고향이 미국 중부라고 했는데, 그 다음 턴에서는 남부에서 태어났다고 하는 경우이다. 거짓 정보의 예로는, 폴란드 출생의 과학자를 미국에서 태어난 사람이라고 알려주는 것이다. 해당 오류는 현재 챗봇에서 가장 흔하게 나타나는 오류이며 대화의 턴이 길어짐과 wikipedia같은 지식을 검색 및 추출하는 데에서 생기는 오류일 수도 있다. 장단점 실제 ParlAI에서 테스트를 해보면서 HAI적인 관점에서 생각해볼 수 있는 요소들에 대한 많은 실험이 포함되어 있다. 예를 들어, 어느 정도 길이의 문장으로 봇이 답해야 Engageness가 높게 나타났는지, Empathy, Persona, WoW 모델을 병합한 Blender Skill이 사전 학습 되었을때와 그렇지 않았을때와 비교했을때의 차이 등이다. Roller (2020)의 다른 리뷰 논문 (Open-domain conversational agents: current progress, open problems, and future directions)에서도 다루었듯, ACUTE-Eval과는 다른 정교한 대화의 적절성과 일관성에 대한 평가 지표가 더 발전이 필요하다. 의의 대규모 모델과 학습용 데이터를 ParlAI를 통해 공개했기에 누구나 접근하여 테스트해볼 수 있다. 위에서 언급했듯, Engageness와 Humanlikeness라는 단 두개의 단순한 지표로는 해석의 일반화가 어려워 보인다. 조작적 정의가 성격과 공감에 맞춰 좀 더 정교하게 설계되어야할 필요가 보인다. 참고 문헌 Roller, S., Dinan, E., Goyal, N., Ju, D., Williamson, M., Liu, Y., … &amp; Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637. Roller, S., Boureau, Y. L., Weston, J., Bordes, A., Dinan, E., Fan, A., … &amp; Williamson, M. (2020). Open-domain conversational agents: Current progress, open problems, and future directions. arXiv preprint arXiv:2006.12442. Topic 2: An intelligent Chatbot using deep learning with Bidirectional RNN and attention model [SB] 선정 이유 SBA 프로젝트를 진행하며 챗봇 모델링에 관심이 생겨 리뷰하게 되었다. 내용 요약 BRNN(Bidirectional Recurrent Neural Network) with attention 모델은 이전에 나왔던 정보 뿐만 아니라 앞으로 나오게 될 정보도 함께 고려하기 때문에 문장의 문맥, 의미, 의도 등을 추론하는 데 RNN 모델보다 훨씬 이점이 있다. BRNN 모델은 순방향과 역방향, 즉 양방향으로 시그널을 주고 받으며 각 cell에서 하나의 예측값(output)을 도출한다. attention 모델은 각 BRNN 모델의 cell에서 도출된 예측값을 attention network의 이전 단계에서 도출된 값과 더해 해당 state의 최종적인 attention value를 구한다. 연구진은 Reddit을 통해 데이터셋을 구축했으며, 전처리과정을 거쳐 데이터베이스를 생성했다. 데이터베이스는 training data와 test data로 분리했으며 전자에는 총 3,027,254개의 쌍이, 후자에는 총 5100 개의 쌍이 포함되었다. 각 문장들은 띄어쓰기와 구두점을 기준으로 토큰으로 구분되었다. 트레이닝에서는 belu score, perplexity, learning rate을 중점적으로 알아보고자 했다. 총 23,000 steps을 train 시킨 결과, 103.5시간이 소요되었으며 perplexity는 56.10, learning rate은 0.0001, bleu score는 21.67이었다. 위 결과는 타 연구와도 비교해 보았을 때, 더 나은 수치를 보여주는 것으로 예상된다. 이와 더불어, 연구진은 MacBook의 사양이 딥러닝에 적합한지를 알아보고자 하였으나, 2017년형 MacBook air는 기본적인 딥러닝 모델 training 에만 충분할 뿐, 적합하지는 않은 것으로 드러났다. 의의 다양한 분야에서 챗봇이 활용되고 있고, 사용자 맞춤형 챗봇의 필요성이 증가하고 있는 만큼, 실제 사람 사이 오가는 대화처럼 챗봇이 사용자의 대화 내용과 문맥을 파악하기 위해서는 BRNN 및 attention mechanism 모델이 필요하다는 것을 역설한 논문이다. 이는 추후 사용자 맞춤형 챗봇을 구현하는 다수의 연구에 많은 도움이 될 것으로 예상된다. 연구진은 본 모델이 기존의 RNN 기반 챗봇의 성능을 향상시키는 데 도움이 될 것이며 어느 domain(bank, shopping, etc)에서나 상관 없이 훈련 가능한 환경을 조성할 것으로 예상했다. 참고 문헌 Dhyani, M., &amp; Kumar, R. (2021). An intelligent Chatbot using deep learning with Bidirectional RNN and attention model. Materials Today: Proceedings, 34, 817-824. https://dx.doi.org/10.1016%2Fj.matpr.2020.05.450 Topic 3: Emotion recognition, Speech features, Classifiers [HM] 선정 이유 음성 파일로부터 감정인식을 어떻게 하는지 과거의 연구결과를 학습하고 싶었으며, 특히 딥러닝을 통해 추출하는 방법론에 대하여 궁금하였다. 내용 요약 이 논문의 목적은 음성 처리 연구자들에게 이 분야의 기본 정보, 이론적 배경 및 현재 동향을 제공하기 위해 음성에서 감정 인식 시스템에 대한 10년간의 논문을 분석한 리뷰 논문이다. 이 논문에 따르면 음성은 음성 처리 방법으로 추출 할 수있는 보조 언어 정보와 함께 감정과 관련된 언어 정보를 전달한다. 언어 정보는 화자가 표현한 질적 패턴을 식별하는 반면, 보조 언어 정보는 일반적으로 언어 패턴 (즉, 단어 또는 구)이 발음되는 방식의 변화를 설명하는 정량적 특징을 나타낸다. 특히 (1) 사용 가능한 감정 데이터베이스 (2) 사운드 내에서의 다양한 특징 선택 방법 (3)음성 감정 인식에 사용 된 수많은 classifiers에 초점을 맞춰 리뷰가 진행 되었다. feature vector를 구분하기 위하여 크게 2가지로 분류하였는데, prosodic feature를 나타내는 LLDs(Low-Level-Descriptors) 과 statistical feature를 나타내는 functionals 로 구분하였다. 이때 prosodic feature는 pitch, energy, formants, MFCCs, LPCC 등이며, functionals는 mean, max, min, zero-crossing rate, variance 등이다.그리고 감정 인식을 위한 classifiers 는GMM, SVM, ANN, Decision tree, N-gram등이 사용되어 왔으며, 각각의 성능은 모두 다르다. 이와같이 speech 로부터 feature를 추출하고 분류하는 방법 사이에는 균일성이 부족하며, 또한 각 문화, 사람 마다 감정에 다르므로 어떠한 방법이 가장 최적의 방법인지 선언하는 것은 부적절할 것임을 나타냈었다 동시에 사람조차 혼란스러워하는 감정인식의 모호한 문제를 다루는 feature 추출과 분류 방법에 대한 더 많은 탐구와 연구가 필요하다는 것을 시사한다. 장단점 10년 간 출판된 논문들에 대하여 리뷰한 점에 대하여 신뢰성이 높았으며, 특히 각기 다른 분류방법과 연구내용을 크게 database, feature, classifier 3단계로 정리하여 연구들 간의 공통점과 차이점을 확인할 수 있었다. 음성에 대한 특징과 딥러닝을 모두 알지 못하면 이해하기에 다소 어려운 논문 일 수 있다는 생각이 들었다. 의의 딥러닝의 종류에 따라 음성을 분류하는데 있어 장단점을 비교 분석하였으며, 사용가능한 database에 대해 정리한 측면이 향후 연구에 있어 많은 도움이 될 것이라고 생각한다. 참고 문헌 Anagnostopoulos, C. N., Iliou, T., &amp; Giannoukos, I. (2015). Features and classifiers for emotion recognition from speech: a survey from 2000 to 2011. Artificial Intelligence Review, 43(2), 155–177." />
+<meta property="og:description" content="Themes: Open-domain Chatbot, An intelligent Chatbot using deep learning with Bidirectional RNN and attention model, Emotion recognition, Speech features, Classifiers Presenters: YL (Yoon Kyung Lee), SB (Seoyeon Bae), HM (Hoyoung Maeng) Topic 1: Open Domain Chatbot을 위한 준비서 [YK] 선정 이유 오픈 도메인 챗봇에 대해 가장 활발히 연구되고 있는 페이스북에서 발표한 페이퍼 중 하나라서 선정함. 내용 요약 오픈 도메인 챗봇을 구축하는 일은 아직까지 매우 어려운 영역으로 알려져있다. 이 논문에서는 대규모 모델을 (90M) 같이 공개하며 모델의 크기에 따라 대화의 정확성과 적절함이 어떻게 달라지는지 비교했다. 좋은 대화에는 많은 ‘사회적 기술’이 필요하며, 이를 구현하고 측정하는데 필요로한 크게 3가지 요소를 소개한다: 1) 흥미로운 대화거리, 2)문맥에 맞는 공감 및 성격, 3) 일관된 페르소나를 유지하는 것이다. 본 논문에서 소개한 Generative BST 2.7B model로 테스트한 결과, 봇이 흔히 행하는 오류가 크게 3가지 였다 봇의 대답 안에 유저가 말한 것을 그대로 복사(nontrivial repetition), 유저가 앞 단계에서 말했던 것을 잊어버림(forgetfulness), 대조(contradiction), 거짓 정보(hallucinating knowledge). 대조의 예로는, 봇이 앞서 본인의 고향이 미국 중부라고 했는데, 그 다음 턴에서는 남부에서 태어났다고 하는 경우이다. 거짓 정보의 예로는, 폴란드 출생의 과학자를 미국에서 태어난 사람이라고 알려주는 것이다. 해당 오류는 현재 챗봇에서 가장 흔하게 나타나는 오류이며 대화의 턴이 길어짐과 wikipedia같은 지식을 검색 및 추출하는 데에서 생기는 오류일 수도 있다. 장단점 실제 ParlAI에서 테스트를 해보면서 HAI적인 관점에서 생각해볼 수 있는 요소들에 대한 많은 실험이 포함되어 있다. 예를 들어, 어느 정도 길이의 문장으로 봇이 답해야 Engageness가 높게 나타났는지, Empathy, Persona, WoW 모델을 병합한 Blender Skill이 사전 학습 되었을때와 그렇지 않았을때와 비교했을때의 차이 등이다. Roller (2020)의 다른 리뷰 논문 (Open-domain conversational agents: current progress, open problems, and future directions)에서도 다루었듯, ACUTE-Eval과는 다른 정교한 대화의 적절성과 일관성에 대한 평가 지표가 더 발전이 필요하다. 의의 대규모 모델과 학습용 데이터를 ParlAI를 통해 공개했기에 누구나 접근하여 테스트해볼 수 있다. 위에서 언급했듯, Engageness와 Humanlikeness라는 단 두개의 단순한 지표로는 해석의 일반화가 어려워 보인다. 조작적 정의가 성격과 공감에 맞춰 좀 더 정교하게 설계되어야할 필요가 보인다. 참고 문헌 Roller, S., Dinan, E., Goyal, N., Ju, D., Williamson, M., Liu, Y., … &amp; Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637. Roller, S., Boureau, Y. L., Weston, J., Bordes, A., Dinan, E., Fan, A., … &amp; Williamson, M. (2020). Open-domain conversational agents: Current progress, open problems, and future directions. arXiv preprint arXiv:2006.12442. Topic 2: An intelligent Chatbot using deep learning with Bidirectional RNN and attention model [SB] 선정 이유 SBA 프로젝트를 진행하며 챗봇 모델링에 관심이 생겨 리뷰하게 되었다. 내용 요약 BRNN(Bidirectional Recurrent Neural Network) with attention 모델은 이전에 나왔던 정보 뿐만 아니라 앞으로 나오게 될 정보도 함께 고려하기 때문에 문장의 문맥, 의미, 의도 등을 추론하는 데 RNN 모델보다 훨씬 이점이 있다. BRNN 모델은 순방향과 역방향, 즉 양방향으로 시그널을 주고 받으며 각 cell에서 하나의 예측값(output)을 도출한다. attention 모델은 각 BRNN 모델의 cell에서 도출된 예측값을 attention network의 이전 단계에서 도출된 값과 더해 해당 state의 최종적인 attention value를 구한다. 연구진은 Reddit을 통해 데이터셋을 구축했으며, 전처리과정을 거쳐 데이터베이스를 생성했다. 데이터베이스는 training data와 test data로 분리했으며 전자에는 총 3,027,254개의 쌍이, 후자에는 총 5100 개의 쌍이 포함되었다. 각 문장들은 띄어쓰기와 구두점을 기준으로 토큰으로 구분되었다. 트레이닝에서는 belu score, perplexity, learning rate을 중점적으로 알아보고자 했다. 총 23,000 steps을 train 시킨 결과, 103.5시간이 소요되었으며 perplexity는 56.10, learning rate은 0.0001, bleu score는 21.67이었다. 위 결과는 타 연구와도 비교해 보았을 때, 더 나은 수치를 보여주는 것으로 예상된다. 이와 더불어, 연구진은 MacBook의 사양이 딥러닝에 적합한지를 알아보고자 하였으나, 2017년형 MacBook air는 기본적인 딥러닝 모델 training 에만 충분할 뿐, 적합하지는 않은 것으로 드러났다. 의의 다양한 분야에서 챗봇이 활용되고 있고, 사용자 맞춤형 챗봇의 필요성이 증가하고 있는 만큼, 실제 사람 사이 오가는 대화처럼 챗봇이 사용자의 대화 내용과 문맥을 파악하기 위해서는 BRNN 및 attention mechanism 모델이 필요하다는 것을 역설한 논문이다. 이는 추후 사용자 맞춤형 챗봇을 구현하는 다수의 연구에 많은 도움이 될 것으로 예상된다. 연구진은 본 모델이 기존의 RNN 기반 챗봇의 성능을 향상시키는 데 도움이 될 것이며 어느 domain(bank, shopping, etc)에서나 상관 없이 훈련 가능한 환경을 조성할 것으로 예상했다. 참고 문헌 Dhyani, M., &amp; Kumar, R. (2021). An intelligent Chatbot using deep learning with Bidirectional RNN and attention model. Materials Today: Proceedings, 34, 817-824. https://dx.doi.org/10.1016%2Fj.matpr.2020.05.450 Topic 3: Emotion recognition, Speech features, Classifiers [HM] 선정 이유 음성 파일로부터 감정인식을 어떻게 하는지 과거의 연구결과를 학습하고 싶었으며, 특히 딥러닝을 통해 추출하는 방법론에 대하여 궁금하였다. 내용 요약 이 논문의 목적은 음성 처리 연구자들에게 이 분야의 기본 정보, 이론적 배경 및 현재 동향을 제공하기 위해 음성에서 감정 인식 시스템에 대한 10년간의 논문을 분석한 리뷰 논문이다. 이 논문에 따르면 음성은 음성 처리 방법으로 추출 할 수있는 보조 언어 정보와 함께 감정과 관련된 언어 정보를 전달한다. 언어 정보는 화자가 표현한 질적 패턴을 식별하는 반면, 보조 언어 정보는 일반적으로 언어 패턴 (즉, 단어 또는 구)이 발음되는 방식의 변화를 설명하는 정량적 특징을 나타낸다. 특히 (1) 사용 가능한 감정 데이터베이스 (2) 사운드 내에서의 다양한 특징 선택 방법 (3)음성 감정 인식에 사용 된 수많은 classifiers에 초점을 맞춰 리뷰가 진행 되었다. feature vector를 구분하기 위하여 크게 2가지로 분류하였는데, prosodic feature를 나타내는 LLDs(Low-Level-Descriptors) 과 statistical feature를 나타내는 functionals 로 구분하였다. 이때 prosodic feature는 pitch, energy, formants, MFCCs, LPCC 등이며, functionals는 mean, max, min, zero-crossing rate, variance 등이다.그리고 감정 인식을 위한 classifiers 는GMM, SVM, ANN, Decision tree, N-gram등이 사용되어 왔으며, 각각의 성능은 모두 다르다. 이와같이 speech 로부터 feature를 추출하고 분류하는 방법 사이에는 균일성이 부족하며, 또한 각 문화, 사람 마다 감정에 다르므로 어떠한 방법이 가장 최적의 방법인지 선언하는 것은 부적절할 것임을 나타냈었다 동시에 사람조차 혼란스러워하는 감정인식의 모호한 문제를 다루는 feature 추출과 분류 방법에 대한 더 많은 탐구와 연구가 필요하다는 것을 시사한다. 장단점 10년 간 출판된 논문들에 대하여 리뷰한 점에 대하여 신뢰성이 높았으며, 특히 각기 다른 분류방법과 연구내용을 크게 database, feature, classifier 3단계로 정리하여 연구들 간의 공통점과 차이점을 확인할 수 있었다. 음성에 대한 특징과 딥러닝을 모두 알지 못하면 이해하기에 다소 어려운 논문 일 수 있다는 생각이 들었다. 의의 딥러닝의 종류에 따라 음성을 분류하는데 있어 장단점을 비교 분석하였으며, 사용가능한 database에 대해 정리한 측면이 향후 연구에 있어 많은 도움이 될 것이라고 생각한다. 참고 문헌 Anagnostopoulos, C. N., Iliou, T., &amp; Giannoukos, I. (2015). Features and classifiers for emotion recognition from speech: a survey from 2000 to 2011. Artificial Intelligence Review, 43(2), 155–177." />
+<link rel="canonical" href="http://localhost:4000/blog/2021-04-08/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2021-04-08/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-08T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Apr 8th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jae Eun Park (dawn2089@snu.ac.kr)"},"dateModified":"2021-04-08T00:00:00+09:00","datePublished":"2021-04-08T00:00:00+09:00","description":"Themes: Open-domain Chatbot, An intelligent Chatbot using deep learning with Bidirectional RNN and attention model, Emotion recognition, Speech features, Classifiers Presenters: YL (Yoon Kyung Lee), SB (Seoyeon Bae), HM (Hoyoung Maeng) Topic 1: Open Domain Chatbot을 위한 준비서 [YK] 선정 이유 오픈 도메인 챗봇에 대해 가장 활발히 연구되고 있는 페이스북에서 발표한 페이퍼 중 하나라서 선정함. 내용 요약 오픈 도메인 챗봇을 구축하는 일은 아직까지 매우 어려운 영역으로 알려져있다. 이 논문에서는 대규모 모델을 (90M) 같이 공개하며 모델의 크기에 따라 대화의 정확성과 적절함이 어떻게 달라지는지 비교했다. 좋은 대화에는 많은 ‘사회적 기술’이 필요하며, 이를 구현하고 측정하는데 필요로한 크게 3가지 요소를 소개한다: 1) 흥미로운 대화거리, 2)문맥에 맞는 공감 및 성격, 3) 일관된 페르소나를 유지하는 것이다. 본 논문에서 소개한 Generative BST 2.7B model로 테스트한 결과, 봇이 흔히 행하는 오류가 크게 3가지 였다 봇의 대답 안에 유저가 말한 것을 그대로 복사(nontrivial repetition), 유저가 앞 단계에서 말했던 것을 잊어버림(forgetfulness), 대조(contradiction), 거짓 정보(hallucinating knowledge). 대조의 예로는, 봇이 앞서 본인의 고향이 미국 중부라고 했는데, 그 다음 턴에서는 남부에서 태어났다고 하는 경우이다. 거짓 정보의 예로는, 폴란드 출생의 과학자를 미국에서 태어난 사람이라고 알려주는 것이다. 해당 오류는 현재 챗봇에서 가장 흔하게 나타나는 오류이며 대화의 턴이 길어짐과 wikipedia같은 지식을 검색 및 추출하는 데에서 생기는 오류일 수도 있다. 장단점 실제 ParlAI에서 테스트를 해보면서 HAI적인 관점에서 생각해볼 수 있는 요소들에 대한 많은 실험이 포함되어 있다. 예를 들어, 어느 정도 길이의 문장으로 봇이 답해야 Engageness가 높게 나타났는지, Empathy, Persona, WoW 모델을 병합한 Blender Skill이 사전 학습 되었을때와 그렇지 않았을때와 비교했을때의 차이 등이다. Roller (2020)의 다른 리뷰 논문 (Open-domain conversational agents: current progress, open problems, and future directions)에서도 다루었듯, ACUTE-Eval과는 다른 정교한 대화의 적절성과 일관성에 대한 평가 지표가 더 발전이 필요하다. 의의 대규모 모델과 학습용 데이터를 ParlAI를 통해 공개했기에 누구나 접근하여 테스트해볼 수 있다. 위에서 언급했듯, Engageness와 Humanlikeness라는 단 두개의 단순한 지표로는 해석의 일반화가 어려워 보인다. 조작적 정의가 성격과 공감에 맞춰 좀 더 정교하게 설계되어야할 필요가 보인다. 참고 문헌 Roller, S., Dinan, E., Goyal, N., Ju, D., Williamson, M., Liu, Y., … &amp; Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637. Roller, S., Boureau, Y. L., Weston, J., Bordes, A., Dinan, E., Fan, A., … &amp; Williamson, M. (2020). Open-domain conversational agents: Current progress, open problems, and future directions. arXiv preprint arXiv:2006.12442. Topic 2: An intelligent Chatbot using deep learning with Bidirectional RNN and attention model [SB] 선정 이유 SBA 프로젝트를 진행하며 챗봇 모델링에 관심이 생겨 리뷰하게 되었다. 내용 요약 BRNN(Bidirectional Recurrent Neural Network) with attention 모델은 이전에 나왔던 정보 뿐만 아니라 앞으로 나오게 될 정보도 함께 고려하기 때문에 문장의 문맥, 의미, 의도 등을 추론하는 데 RNN 모델보다 훨씬 이점이 있다. BRNN 모델은 순방향과 역방향, 즉 양방향으로 시그널을 주고 받으며 각 cell에서 하나의 예측값(output)을 도출한다. attention 모델은 각 BRNN 모델의 cell에서 도출된 예측값을 attention network의 이전 단계에서 도출된 값과 더해 해당 state의 최종적인 attention value를 구한다. 연구진은 Reddit을 통해 데이터셋을 구축했으며, 전처리과정을 거쳐 데이터베이스를 생성했다. 데이터베이스는 training data와 test data로 분리했으며 전자에는 총 3,027,254개의 쌍이, 후자에는 총 5100 개의 쌍이 포함되었다. 각 문장들은 띄어쓰기와 구두점을 기준으로 토큰으로 구분되었다. 트레이닝에서는 belu score, perplexity, learning rate을 중점적으로 알아보고자 했다. 총 23,000 steps을 train 시킨 결과, 103.5시간이 소요되었으며 perplexity는 56.10, learning rate은 0.0001, bleu score는 21.67이었다. 위 결과는 타 연구와도 비교해 보았을 때, 더 나은 수치를 보여주는 것으로 예상된다. 이와 더불어, 연구진은 MacBook의 사양이 딥러닝에 적합한지를 알아보고자 하였으나, 2017년형 MacBook air는 기본적인 딥러닝 모델 training 에만 충분할 뿐, 적합하지는 않은 것으로 드러났다. 의의 다양한 분야에서 챗봇이 활용되고 있고, 사용자 맞춤형 챗봇의 필요성이 증가하고 있는 만큼, 실제 사람 사이 오가는 대화처럼 챗봇이 사용자의 대화 내용과 문맥을 파악하기 위해서는 BRNN 및 attention mechanism 모델이 필요하다는 것을 역설한 논문이다. 이는 추후 사용자 맞춤형 챗봇을 구현하는 다수의 연구에 많은 도움이 될 것으로 예상된다. 연구진은 본 모델이 기존의 RNN 기반 챗봇의 성능을 향상시키는 데 도움이 될 것이며 어느 domain(bank, shopping, etc)에서나 상관 없이 훈련 가능한 환경을 조성할 것으로 예상했다. 참고 문헌 Dhyani, M., &amp; Kumar, R. (2021). An intelligent Chatbot using deep learning with Bidirectional RNN and attention model. Materials Today: Proceedings, 34, 817-824. https://dx.doi.org/10.1016%2Fj.matpr.2020.05.450 Topic 3: Emotion recognition, Speech features, Classifiers [HM] 선정 이유 음성 파일로부터 감정인식을 어떻게 하는지 과거의 연구결과를 학습하고 싶었으며, 특히 딥러닝을 통해 추출하는 방법론에 대하여 궁금하였다. 내용 요약 이 논문의 목적은 음성 처리 연구자들에게 이 분야의 기본 정보, 이론적 배경 및 현재 동향을 제공하기 위해 음성에서 감정 인식 시스템에 대한 10년간의 논문을 분석한 리뷰 논문이다. 이 논문에 따르면 음성은 음성 처리 방법으로 추출 할 수있는 보조 언어 정보와 함께 감정과 관련된 언어 정보를 전달한다. 언어 정보는 화자가 표현한 질적 패턴을 식별하는 반면, 보조 언어 정보는 일반적으로 언어 패턴 (즉, 단어 또는 구)이 발음되는 방식의 변화를 설명하는 정량적 특징을 나타낸다. 특히 (1) 사용 가능한 감정 데이터베이스 (2) 사운드 내에서의 다양한 특징 선택 방법 (3)음성 감정 인식에 사용 된 수많은 classifiers에 초점을 맞춰 리뷰가 진행 되었다. feature vector를 구분하기 위하여 크게 2가지로 분류하였는데, prosodic feature를 나타내는 LLDs(Low-Level-Descriptors) 과 statistical feature를 나타내는 functionals 로 구분하였다. 이때 prosodic feature는 pitch, energy, formants, MFCCs, LPCC 등이며, functionals는 mean, max, min, zero-crossing rate, variance 등이다.그리고 감정 인식을 위한 classifiers 는GMM, SVM, ANN, Decision tree, N-gram등이 사용되어 왔으며, 각각의 성능은 모두 다르다. 이와같이 speech 로부터 feature를 추출하고 분류하는 방법 사이에는 균일성이 부족하며, 또한 각 문화, 사람 마다 감정에 다르므로 어떠한 방법이 가장 최적의 방법인지 선언하는 것은 부적절할 것임을 나타냈었다 동시에 사람조차 혼란스러워하는 감정인식의 모호한 문제를 다루는 feature 추출과 분류 방법에 대한 더 많은 탐구와 연구가 필요하다는 것을 시사한다. 장단점 10년 간 출판된 논문들에 대하여 리뷰한 점에 대하여 신뢰성이 높았으며, 특히 각기 다른 분류방법과 연구내용을 크게 database, feature, classifier 3단계로 정리하여 연구들 간의 공통점과 차이점을 확인할 수 있었다. 음성에 대한 특징과 딥러닝을 모두 알지 못하면 이해하기에 다소 어려운 논문 일 수 있다는 생각이 들었다. 의의 딥러닝의 종류에 따라 음성을 분류하는데 있어 장단점을 비교 분석하였으며, 사용가능한 database에 대해 정리한 측면이 향후 연구에 있어 많은 도움이 될 것이라고 생각한다. 참고 문헌 Anagnostopoulos, C. N., Iliou, T., &amp; Giannoukos, I. (2015). Features and classifiers for emotion recognition from speech: a survey from 2000 to 2011. Artificial Intelligence Review, 43(2), 155–177.","headline":"Apr 8th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021-04-08/study"},"url":"http://localhost:4000/blog/2021-04-08/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Jae Eun Park (dawn2089@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2021-04-08 00:00:00 +0900">April 08, 2021</time>
+    
+  </div>
+
+  <h1 class="post-title">Apr 8th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Open-domain Chatbot, An intelligent Chatbot using deep learning with Bidirectional RNN and attention model, Emotion recognition, Speech features, Classifiers
+</code></pre></div></div>
+
+<p>Presenters: YL (Yoon Kyung Lee), SB (Seoyeon Bae), HM (Hoyoung Maeng) <br /></p>
+
+<hr />
+
+<h1 id="topic-1-open-domain-chatbot을-위한-준비서-yk">Topic 1: Open Domain Chatbot을 위한 준비서 [YK]</h1>
+
+<h3 id="선정-이유"><strong>선정 이유</strong></h3>
+
+<p>오픈 도메인 챗봇에 대해 가장 활발히 연구되고 있는 페이스북에서 발표한 페이퍼 중 하나라서 선정함.</p>
+
+<h3 id="내용-요약"><strong>내용 요약</strong></h3>
+
+<p>오픈 도메인 챗봇을 구축하는 일은 아직까지 매우 어려운 영역으로 알려져있다. 
+이 논문에서는 대규모 모델을 (90M) 같이 공개하며 모델의 크기에 따라 대화의 정확성과 적절함이 어떻게 달라지는지 비교했다. 
+좋은 대화에는 많은 ‘사회적 기술’이 필요하며, 이를 구현하고 측정하는데 필요로한 크게 3가지 요소를 소개한다: 1) 흥미로운 대화거리, 2)문맥에 맞는 공감 및 성격, 3) 일관된 페르소나를 유지하는 것이다. 
+본 논문에서 소개한 Generative BST 2.7B model로 테스트한 결과, 봇이 흔히 행하는 오류가 크게 3가지 였다 봇의 대답 안에 유저가 말한 것을 그대로 복사(nontrivial repetition), 유저가 앞 단계에서 말했던 것을 잊어버림(forgetfulness), 대조(contradiction), 거짓 정보(hallucinating knowledge).<br />
+대조의 예로는, 봇이 앞서 본인의 고향이 미국 중부라고 했는데, 그 다음 턴에서는 남부에서 태어났다고 하는 경우이다. 거짓 정보의 예로는, 폴란드 출생의 과학자를 미국에서 태어난 사람이라고 알려주는 것이다.
+해당 오류는 현재 챗봇에서 가장 흔하게 나타나는 오류이며 대화의 턴이 길어짐과 wikipedia같은 지식을 검색 및 추출하는 데에서 생기는 오류일 수도 있다.</p>
+
+<h3 id="장단점"><strong>장단점</strong></h3>
+
+<p>실제 ParlAI에서 테스트를 해보면서 HAI적인 관점에서 생각해볼 수 있는 요소들에 대한 많은 실험이 포함되어 있다. 
+예를 들어, 어느 정도 길이의 문장으로 봇이 답해야 Engageness가 높게 나타났는지, Empathy, Persona, WoW 모델을 병합한 Blender Skill이 사전 학습 되었을때와 그렇지 않았을때와 비교했을때의 차이 등이다. 
+Roller (2020)의 다른 리뷰 논문 (Open-domain conversational agents: current progress, open problems, and future directions)에서도 다루었듯, ACUTE-Eval과는 다른
+정교한 대화의 적절성과 일관성에 대한 평가 지표가 더 발전이 필요하다.</p>
+
+<h3 id="의의"><strong>의의</strong></h3>
+
+<p>대규모 모델과 학습용 데이터를 ParlAI를 통해 공개했기에 누구나 접근하여 테스트해볼 수 있다.
+위에서 언급했듯, Engageness와 Humanlikeness라는 단 두개의 단순한 지표로는 해석의 일반화가 어려워 보인다. 조작적 정의가 성격과 공감에 맞춰 좀 더 정교하게 설계되어야할 필요가 보인다.</p>
+
+<h3 id="참고-문헌"><strong>참고 문헌</strong></h3>
+
+<ul>
+  <li>
+    <p>Roller, S., Dinan, E., Goyal, N., Ju, D., Williamson, M., Liu, Y., … &amp; Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637.</p>
+  </li>
+  <li>
+    <p>Roller, S., Boureau, Y. L., Weston, J., Bordes, A., Dinan, E., Fan, A., … &amp; Williamson, M. (2020). Open-domain conversational agents: Current progress, open problems, and future directions. arXiv preprint arXiv:2006.12442.</p>
+  </li>
+</ul>
+
+<h1 id="topic-2-an-intelligent-chatbot-using-deep-learning-with-bidirectional-rnn-and-attention-model-sb">Topic 2: An intelligent Chatbot using deep learning with Bidirectional RNN and attention model [SB]</h1>
+
+<h3 id="선정-이유-1"><strong>선정 이유</strong></h3>
+
+<p>SBA 프로젝트를 진행하며 챗봇 모델링에 관심이 생겨 리뷰하게 되었다.<br /></p>
+
+<h3 id="내용-요약-1"><strong>내용 요약</strong></h3>
+
+<p>BRNN(Bidirectional Recurrent Neural Network) with attention 모델은 이전에 나왔던 정보 뿐만 아니라 앞으로 나오게 될 정보도 함께 고려하기 때문에 문장의 문맥, 의미, 의도 등을 추론하는 데 RNN 모델보다 훨씬 이점이 있다. BRNN 모델은 순방향과 역방향, 즉 양방향으로 시그널을 주고 받으며 각 cell에서 하나의 예측값(output)을 도출한다. attention 모델은 각 BRNN 모델의 cell에서 도출된 예측값을 attention network의 이전 단계에서 도출된 값과 더해 해당 state의 최종적인 attention value를 구한다. 연구진은 Reddit을 통해 데이터셋을 구축했으며, 전처리과정을 거쳐 데이터베이스를 생성했다. 데이터베이스는 training data와 test data로 분리했으며 전자에는 총 3,027,254개의 쌍이, 후자에는 총 5100 개의 쌍이 포함되었다. 각 문장들은 띄어쓰기와 구두점을 기준으로 토큰으로 구분되었다. 트레이닝에서는 belu score, perplexity, learning rate을 중점적으로 알아보고자 했다. 총 23,000 steps을 train 시킨 결과, 103.5시간이 소요되었으며 perplexity는 56.10, learning rate은 0.0001, bleu score는 21.67이었다. 위 결과는 타 연구와도 비교해 보았을 때, 더 나은 수치를 보여주는 것으로 예상된다. 이와 더불어, 연구진은 MacBook의 사양이 딥러닝에 적합한지를 알아보고자 하였으나, 2017년형 MacBook air는 기본적인 딥러닝 모델 training 에만 충분할 뿐, 적합하지는 않은 것으로 드러났다.<br /></p>
+
+<h3 id="의의-1"><strong>의의</strong></h3>
+
+<p>다양한 분야에서 챗봇이 활용되고 있고, 사용자 맞춤형 챗봇의 필요성이 증가하고 있는 만큼, 실제 사람 사이 오가는 대화처럼 챗봇이 사용자의 대화 내용과 문맥을 파악하기 위해서는 BRNN 및 attention mechanism 모델이 필요하다는 것을 역설한 논문이다. 이는 추후 사용자 맞춤형 챗봇을 구현하는 다수의 연구에 많은 도움이 될 것으로 예상된다. 연구진은 본 모델이 기존의 RNN 기반 챗봇의 성능을 향상시키는 데 도움이 될 것이며 어느 domain(bank, shopping, etc)에서나 상관 없이 훈련 가능한 환경을 조성할 것으로 예상했다.<br /></p>
+
+<h3 id="참고-문헌-1"><strong>참고 문헌</strong></h3>
+
+<ul>
+  <li>Dhyani, M., &amp; Kumar, R. (2021). An intelligent Chatbot using deep learning with Bidirectional RNN and attention model. Materials Today: Proceedings, 34, 817-824. https://dx.doi.org/10.1016%2Fj.matpr.2020.05.450 <br /></li>
+</ul>
+
+<h1 id="topic-3-emotion-recognition-speech-features-classifiers-hm-">Topic 3: Emotion recognition, Speech features, Classifiers [HM] <br /></h1>
+
+<h3 id="선정-이유-2"><strong>선정 이유</strong></h3>
+
+<p>음성 파일로부터 감정인식을 어떻게 하는지 과거의 연구결과를 학습하고 싶었으며, 특히 딥러닝을 통해 추출하는 방법론에 대하여 궁금하였다.<br /></p>
+
+<h3 id="내용-요약-2"><strong>내용 요약</strong></h3>
+
+<p>이 논문의 목적은 음성 처리 연구자들에게 이 분야의 기본 정보, 이론적 배경 및 현재 동향을 제공하기 위해 음성에서 감정 인식 시스템에 대한 10년간의 논문을 분석한 리뷰 논문이다. 이 논문에 따르면 음성은 음성 처리 방법으로 추출 할 수있는 보조 언어 정보와 함께 감정과 관련된 언어 정보를 전달한다. 언어 정보는 화자가 표현한 질적 패턴을 식별하는 반면, 보조 언어 정보는 일반적으로 언어 패턴 (즉, 단어 또는 구)이 발음되는 방식의 변화를 설명하는 정량적 특징을 나타낸다. 특히 (1) 사용 가능한 감정 데이터베이스 (2) 사운드 내에서의 다양한 특징 선택 방법  (3)음성 감정 인식에 사용 된 수많은 classifiers에 초점을 맞춰 리뷰가 진행 되었다. feature vector를 구분하기 위하여 크게 2가지로 분류하였는데, prosodic feature를 나타내는 LLDs(Low-Level-Descriptors) 과 statistical feature를 나타내는 functionals 로 구분하였다. 이때 prosodic feature는 pitch, energy, formants, MFCCs, LPCC 등이며, functionals는 mean, max, min, zero-crossing rate, variance 등이다.그리고 감정 인식을 위한 classifiers 는GMM, SVM, ANN, Decision tree, N-gram등이 사용되어 왔으며, 각각의 성능은 모두 다르다. 이와같이 speech 로부터 feature를 추출하고 분류하는 방법 사이에는 균일성이 부족하며, 또한 각 문화, 사람 마다 감정에 다르므로 어떠한 방법이 가장 최적의 방법인지 선언하는 것은 부적절할 것임을 나타냈었다 동시에 사람조차 혼란스러워하는 감정인식의 모호한 문제를 다루는 feature 추출과 분류 방법에 대한 더 많은 탐구와 연구가 필요하다는 것을 시사한다.<br /></p>
+
+<h3 id="장단점-1"><strong>장단점</strong></h3>
+
+<p>10년 간 출판된 논문들에 대하여 리뷰한 점에 대하여 신뢰성이 높았으며, 특히 각기 다른 분류방법과 연구내용을 크게 database, feature, classifier 3단계로 정리하여 연구들 간의 공통점과 차이점을 확인할 수 있었다. <br />
+음성에 대한 특징과 딥러닝을 모두 알지 못하면 이해하기에 다소 어려운 논문 일 수 있다는 생각이 들었다. <br /></p>
+
+<h3 id="의의-2"><strong>의의</strong></h3>
+
+<p>딥러닝의 종류에 따라 음성을 분류하는데 있어 장단점을 비교 분석하였으며, 사용가능한 database에 대해 정리한 측면이 향후 연구에 있어 많은 도움이 될 것이라고 생각한다.<br /></p>
+
+<h3 id="참고-문헌-2"><strong>참고 문헌</strong></h3>
+
+<ul>
+  <li>Anagnostopoulos, C. N., Iliou, T., &amp; Giannoukos, I. (2015). Features and classifiers for emotion recognition from speech: a survey from 2000 to 2011. Artificial Intelligence Review, 43(2), 155–177. <br /></li>
+</ul>
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2021-04-15/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2021-04-01/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

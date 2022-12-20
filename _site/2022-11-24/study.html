@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Nov 24th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Nov 24th Journal Club" />
+<meta name="author" content="Gyuyi Kang (gyuyikang@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: AI, genome biology, aesthetic evaluation, reliable science, open science, high-reliability organizations, data management" />
+<meta property="og:description" content="Themes: AI, genome biology, aesthetic evaluation, reliable science, open science, high-reliability organizations, data management" />
+<link rel="canonical" href="http://localhost:4000/blog/2022-11-24/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2022-11-24/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-24T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Nov 24th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Gyuyi Kang (gyuyikang@snu.ac.kr)"},"dateModified":"2022-11-24T00:00:00+09:00","datePublished":"2022-11-24T00:00:00+09:00","description":"Themes: AI, genome biology, aesthetic evaluation, reliable science, open science, high-reliability organizations, data management","headline":"Nov 24th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2022-11-24/study"},"url":"http://localhost:4000/blog/2022-11-24/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Gyuyi Kang (gyuyikang@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2022-11-24 00:00:00 +0900">November 24, 2022</time>
+    
+  </div>
+
+  <h1 class="post-title">Nov 24th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: AI, genome biology, aesthetic evaluation, reliable science, open science, high-reliability organizations, data management
+</code></pre></div></div>
+
+<p>Presenters: YP (Yong-Ha Park), EL (Eunji Lee), GK (Gyuyi Kang) <br /></p>
+
+<hr />
+
+<h1 id="topic-1-does-humanai-collaboration-lead-to-more-creative-art-aesthetic-evaluation-of-human-made-and-ai-generated-haiku-poetry">Topic 1: Does human–AI collaboration lead to more creative art? Aesthetic evaluation of human-made and AI-generated haiku poetry?</h1>
+
+<h3 id="선정-이유"><strong>선정 이유</strong></h3>
+
+<p>AI generation 기술이 이제 그림을 넘어서 글에도 적용이 되고 있음. 1. AI-generated art work의
+아름다움에 대한 평가 와 2. AI-generated art work을 human-generated art work에서 구분하는 능력에
+대한 측정 및 Algorithm Aversion현상에 대해 다루고 있어 깊은 흥미를 이끔.</p>
+
+<h3 id="한계점선택"><strong>한계점(선택)</strong></h3>
+
+<ol>
+  <li>Algorithm aversion에 대한 확인만 있을뿐 그 이상으로 해결책 등을 제시하지는 못 함</li>
+</ol>
+
+<h1 id="topic-2-dnabert-pre-trained-bidirectional-encoder-representations-from-transformers-model-for-dna-language-in-genome">Topic 2: DNABERT: pre-trained Bidirectional Encoder Representations from Transformers model for DNA-language in genome</h1>
+
+<h3 id="선정-이유-1"><strong>선정 이유</strong></h3>
+
+<p>DNA의 전체 Sequence 데이터를 NLP 알고리즘인 BERT로 분석한 논문이다. DNA 전체 서열 데이터는 크기가 매우 크기 때문에 한 번에 end-to-end로 분석하기 쉽지 않은데 많은 GPU 리소스를 사용하여 pretraining한 연구라 선정해보았다. 또한 DNA 서열의 특징을 언어적인 특성과도 연결시켜 딥러닝 NLP 알고리즘을 적용한 논리를 처음 접한 논문이었다.</p>
+
+<h3 id="내용-요약"><strong>내용 요약</strong></h3>
+
+<p>1000 base pair를 하나의 sample로, window size는 6개의 base pair로 학습을 시키는 것이 가장 성능이 좋았다. 전체 데이터를 학습하는 데에 (pretraining) 8개의 GPU로 25일이 걸렸다. Transcription factor binding site 예측 task 등에서 기존 CNN 모델로 DNA 서열을 분석했던 ‘DeepSEA’ 모델보다 좋은 성능을 보였다.</p>
+
+<h3 id="한계점선택-1"><strong>한계점(선택)</strong></h3>
+
+<p>(이 논문에서는 분석하지 않았지만) 선행연구와 마찬가지로 DNA 서열 데이터만 갖고 질병 예측을 하는 task에서는 성능이 좋지 않았다 (GeneBERT model; Mo et al., 2021).</p>
+
+<h3 id="의의"><strong>의의</strong></h3>
+
+<p>DNA 서열의 특징을 언어적인 특성과 연결시키는 논리는 있어왔는데, BERT 모델로 DNA 서열의 raw data를 end-to-end로 처음으로 분석했다는 데 의의가 있다.</p>
+
+<h3 id="비고"><strong>비고</strong></h3>
+
+<p>pre-training of DNABERT model is resource-intensive (about 25 days on 8 NVIDIA 2080Ti GPUs) → 소스코드와 pretrained model 공개해놓음
+github: https://github.com/jerryji1993/DNABERT</p>
+
+<h3 id="참고-문헌"><strong>참고 문헌</strong></h3>
+
+<p>GeneBERT 논문: https://arxiv.org/pdf/2110.05231.pdf [url]</p>
+
+<h1 id="topic-3-minimizing-mistakes-in-psychological-science">Topic 3: Minimizing Mistakes in Psychological Science</h1>
+
+<h3 id="선정-이유-2"><strong>선정 이유</strong></h3>
+<p>심리학 연구실에서 자주 일어나는 실수를 알아봄으로써 실수를 줄이는 방법을 알아보기 위해 이 논문을 선정하였다.</p>
+
+<h3 id="내용-요약-1"><strong>내용 요약</strong></h3>
+
+<p>실험실 관행을 개선하기 위해서는 먼저 실수, 실패 및 사고가 엄청난 결과를 초래할 수 있는 고위험 분야의 관행을 고려하였다. 
+이 실험에서는 이러한 관행들을 2014년부터 5가지 원칙을 채택하고 따라왔다.
+채택한 다섯 가지 원칙은 실제 상황에 따라 조직에 맞는 관행들을 실행하였다.</p>
+
+<h3 id="의의-1"><strong>의의</strong></h3>
+
+<p>연구를 하다 보면 연구자가 원하는 방향으로 연구가 진행이 되고는 한다. 높은 신뢰성을 갖고 있는 연구를 구현하는게 중요하다면 
+이런 원칙들을 알고 적용하는 것은 연구자에게 중요한 가치가 있다.</p>
+
+<h3 id="비고-1"><strong>비고</strong></h3>
+
+<p>참고 자료 소개 (해당시), 추가 코멘트(해당시)</p>
+
+<p>Rouder, J. N., Haaf, J. M., &amp; Snyder, H. K. (2019). Minimizing mistakes in psychological science. Advances in Methods and Practices in Psychological Science, 2(1), 3-11.</p>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2022-12-01/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2022-11-17/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

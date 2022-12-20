@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Aug 31th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Aug 31th Journal Club" />
+<meta name="author" content="Soomin Cho (soominc3@illinois.edu)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Reinforcement learning, Curiosity, Reconciling deep learning with symbolic AI, Situated Interactive Multi-Modal Conversational AI, Structure of Emotion, Abusive Language Detection" />
+<meta property="og:description" content="Themes: Reinforcement learning, Curiosity, Reconciling deep learning with symbolic AI, Situated Interactive Multi-Modal Conversational AI, Structure of Emotion, Abusive Language Detection" />
+<link rel="canonical" href="http://localhost:4000/blog/2020-08-31/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2020-08-31/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-31T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Aug 31th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Soomin Cho (soominc3@illinois.edu)"},"dateModified":"2020-08-31T00:00:00+09:00","datePublished":"2020-08-31T00:00:00+09:00","description":"Themes: Reinforcement learning, Curiosity, Reconciling deep learning with symbolic AI, Situated Interactive Multi-Modal Conversational AI, Structure of Emotion, Abusive Language Detection","headline":"Aug 31th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020-08-31/study"},"url":"http://localhost:4000/blog/2020-08-31/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Soomin Cho (soominc3@illinois.edu)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2020-08-31 00:00:00 +0900">August 31, 2020</time>
+    
+  </div>
+
+  <h1 class="post-title">Aug 31th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Reinforcement learning, Curiosity, Reconciling deep learning with symbolic AI, Situated Interactive Multi-Modal Conversational AI, Structure of Emotion, Abusive Language Detection 
+</code></pre></div></div>
+
+<p>Presenters: YK (Yoon Kyung Lee), YW (Yoonwon Jung), JE (Jaeun Park), IJ (Inju Lee), HY (Hoyoung Maeng), WK (Whani Kim), SC (Soomin Cho) <br />
+Guest : HeeYoung Park (Psychometrics Lab)</p>
+
+<hr />
+
+<h2 id="topic-1-reinforcement-learning-computational-cognitive-models-sc">Topic 1: Reinforcement learning, computational cognitive models [SC]</h2>
+
+<p>선정 이유: Cognitive science, cognitive psychology 분야가 어떻게 compuational model들과 연결성이 있고 인공지능과 강화학습까지 연계되어있는지 궁금해서 선정하였다. <br /></p>
+
+<p>내용 요약 <br />
+빠르게 학습하는 것은 인간 지능의 핵심인데, 이 부분은 아직까지 인공지능 에이전트에게 부족하다. 인공지능과 인지과학은 서로 상호작용하면서 각 분야의 연구가 서로에게 inspirational points를 제공하는데, 특히 AI 의 학습 연구는 인간 지능을 이해하는 데에 도움을 주고 인지과학과 뇌과학 연구는 더 인간적인 (human-like) 인공지능 알고리즘을 개발할 수 있는 지표가 된다. <br />
+How AI supports cognitive research: 강화학습이 동물의 생존에 필수적인만큼, 강화학습 알고리즘이 뇌에 내제되어있을 거라는 가설도 있다. 간단한 강화학습 알고리즘의 경우, ‘law of effect (학습에서 성공한[만족한] 행동은 강화되고 그 반대는 약화된다)’ 라는 학습 특성과 연관지을 수 있다. 심플한 강화학습 알고리즘으로는 ‘model-free RL’ 과 ‘Q-learning’이 있다. 강화학습 알고리즘은 행동만 파악하는 것이 아니라 내제된 neural process 까지 설명할 수 있는 quantitavtive theory도 제공한다는 점에서 인지 뇌과학 분야에 도움을 준다. Model-based 강화학습의 경우에는 인간의 학습 과정 중 ‘planning’ 측면을 설명한다. Hierarchical RL, PID controllers 와 같은 다른 강화학습 모델들 또한 더 복잡한 인간의 학습 과정을 설명한다고 한다. 그러므로, 강화학습 알고리즘은 인간 지능과 학습 과정을 이해하는 데에 매우 중요한 역할을 한다. <br />
+How cognitive science can support AI reseach: 강화학습은 특히 동물을 조건화함으로써 영감을 받기 때문에 인지과학과 뇌과학이 강화학습과 관련된 AI 연구에는 약한 영향만을 끼친다고 생각할 수 있다. 그러나 인간의 인지 연구는 AI 연구에 여러가지 방식으로 영향을 미칠 수 있다. 먼저, 분석하는 툴을 제공함으로써 에이전트들의 행동을 향상시킬 수 있다. 인공지능 에이전트들이 수행하지 못하는 행동을 인간이 어떻게 하는지 보여줌으로써 더 나은 알고리즘을 개발하는 데 영감을 줄 수 있다. 빠르게 학습할 수 있는 인간은 이전의 지식을 새로운 환경/ 문제에 전수시키는 능력에 의존한다. 인공지능 연구가 많이 발달되었지만 이 부분에서는 여전히 인간의 퍼포먼스를 벤치마킹하는 데에 목표를 둔다. 인지 과학자는 여러 명의 human players를 통해 타겟 퍼포먼스의 범위를 정함으로써 더 신뢰할 수 있는 벤치마킹 모델을 제공한다. 에이전트의 성과를 대략적인 결과를 결론적으로 보여주는 것을 너머 행동의 구체적인 패던을 분석함으로써 인공지능 에이전트의 행동을 분해하는 것이 가능하다. 이를 통해 에이전틀이 구체적으로 실패하는 행위를 인간 행위와 매치시킬 수 있어서 성능 향상에 도움이 된다. 인간 진화 측면에서 학습과 의사 결정을 위해 뇌에 내제된 알고리즘은 효율적인 학습을 위해 fine tuned 되어있다. 인간 수준보다 낮은 인공지능의 1) 빠른 학습과 2) 일반화 실력을 향상시키려는 전략은 이 부분과 관련된 인간 인지 능력을 분석하고 인공지능에게 적용시키는 것이다. 인간 학습은 한 가지의 학습 시스템으로는 결코 이해될 수 없으므로 여러 가지의 학습, 기억, 의사 결정 방식들이 병렬적으로, 혹은 서로 상호작용하며 학습과 선택에 기여한다. <br />
+How neuroscience can inform AI research: 인간의 행동을 이해하는 것만이 아니라 어떻게 뇌가 일련의 행동들을 내제화시키는지 이해함으로써 AI 연구에 영향을 미칠 수 있다. 구체적인 행동이 어떻게 이루어지는지 뇌 활동을 관찰하며 ‘하드웨어’를 연구하고, 인지 과정이 어떻게 정보를 처리하는지 연구함으로써 ‘소프트웨어’를 연구할 수 있다. <br /></p>
+
+<p>의의: 각 분야들이 어떻게 상호작용하고 영향을 주고받을 수 있는지 분석한 것뿐만이 아니라 인간의 학습과 인공지능 학습 연구들은 별개의 목표가 있다는 것을 인지하고 두 분야를 동일선상에 두었을 때 생길 수 있는 한계점까지 언급했다는 점에서 한 분야에 치우치지 않은 논문인 것 같다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collins, A. G. E. (2019). Reinforcement learning: Bringing together computation and cognition. Current Opinion in Behavioral Sciences, 29, 63-68.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-2-curiosity-wk">Topic 2: Curiosity [WK]</h2>
+
+<p>선정이유: 호기심의 요인들이 무엇인지 어떤 요인이 호기심을 유발하는데 더 큰 역할을 하는지 알아보기 위해 선정하였다. <br /></p>
+
+<p>내용요약 <br /> 
+호기심은 환경 탐험에 이유가 되며 학습을 유도한다. 하지만, 호기심은 모르는 것에 대해서만 유발 되는 것이 아니며 다양한 상황에서도 나타난다. 선행연구에 의하면 호기심은 질문을 통해 새로운 지식을 얻을 수 있는 기대가 있을 때 유발된다고 한다. 이것을 expected information gain[EIG] (예상 정보 이득) 이라고 하며 본 논문은 forward-looking considerations라고 한다. Surprise(놀람)과 Uncertainty (불확실성) 또한 호기심을 유발하는데 이는 backward-looking considerations라고 정의된다.  호기심의 정의가 “학습을 목적으로 정보를 원하는 현상학적 경험 (Phenomenological experience of desiring information for the purpose of learning)” 이라고 하면 “예상 정보 이득” 혹은 “expected learning (예상 학습)”가 호기심의 optimal feature라고 할 수 있으며 놀람과 불확실성은 heuristic feature라고 할 수 있다. <br />
+본 연구는 어떤 요인들이 호기심 유발에 더 영향을 미치는 지 Bayesian Reinforcement learning model을 통해 알아보고자 했다. 연구 디자인은 Dorfman et al. (2019)의 연구를 본 받아 진행되었다. 연구1에서는 골드 혹은 돌을 획득할 수 있는 두 광산 중 하나를 채굴하는 팀을 관찰하며 이 결과를 지켜보는 과제를 수행하였다. 한 광산은 70% 확률로 골드를 채굴하며 다른 광산의 골드 채굴률은 30%이였다. 하지만, bandit이라는 변수가 존재하며 bandit은 30% 확률로 나타나 골드를 뺐으며 돌을 남겨 연구참여자의 골드 획득률을 0%로 만든다. 연구참여자는 결과를 본 후 “이 결과에 대해 얼마나 궁금합니까? (bandit의 개입 여부에 대해서 얼마나 궁금합니까?)”라는 문구에 답해야 했다. 연구2에서는 연구참여자가 직접 두 광산 중 하나를 선택하여 채굴하는 과제를 수행하였으며 위의 문구에 답해야했다. 결과를 요약하자면 호기심은 backward-looking considerations (surprise &amp; uncertainty)와 forward-looking considerations (global and local 예상 정보 이득)은 각각 호기심 유발에 관련되어 있다는 것을 볼 수 있었으며 예상 정보 이득에 더 유발되는 것을 밝혔다. <br /></p>
+
+<p>장단점: 호기심의 요인들을 나누어 이 요인들이 호기심에 유의미한 부분을 차지하고 있는지 차별하며 어떤 요인들이 더 큰 부분을 차지하는지를 bayesian reinforcement learning model에 의하여 보는것이 신선하였다. <br /></p>
+
+<p>의의: Surprise, uncertainty, EIG는 각각 호기심의 중요한 요인이 되지만 정보를 학습하기 위한 요인이 호기심에 더 중요한 역할을 한다는 것을 얻을 수 있다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Liquin et al. (2020). Quantifying Curiosity: A Formal Approach to Dissociating Causes of Curiosity. arXiv preprint.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-3-reconciling-deep-learning-with-symbolic-ai-ij">Topic 3: Reconciling deep learning with symbolic AI [IJ]</h2>
+
+<p>선정 이유: Deep learning과 symbolic AI를 조화시킨다는 것이 무엇인지 궁금하여 선정하였다. <br /></p>
+
+<p>내용 요약 <br />
+Deep learning은 거대한 데이터셋을 통해 많은 feed-forward layer로 이루어진 신경망을 학습시키는 머신러닝 접근법이며, symbolic AI는 일련의 logic-like reasoning을 통해 지식을 다루는 시스템이다. deep learning은 data inefficiency, poor generalization, lack of interpretability 3가지 측면에서 제한점을 지니는데, 이를 symbolic AI가 보완해줄 수 있다. 본 논문은 deep learning의 framework에 symbolic AI의 특정 측면을 결합하는 방식에 대해서 다룬다. 더 구체적으로는, deep network가 object와 relation으로 구성된 compositional representation을 습득하고 사용하는 방식을 어떻게 학습하는지에 대해 다룬다. <br />
+Deep learning의 중간층(intermediate layer)을 학습데이터의 representation으로 볼 수 있지만, 이러한 learned representation은 compositionality가 내재되어 있지 않다. 이를 위해 representation에 직접적으로 compositional structure를 구성하는 방법부터 학습과정에서 compositionality가 어느정도 저절로 구성되도록 하는 방법까지 compositionality 접근법에 대한 하나의 스펙트럼이 존재한다. <br />
+또한 deep network는 관계 정보를 추출해낼 수 있어야 하며, 이를 위한 방법으로 relation network와 self-attention mechanism이 있다. relation work는 모든 object의 쌍을 연결시켜 MLP(Multi-Layer Perceptron)에 보내 각 object간의 관계에 대한 정보를 알아낸다. self-attention mechanism은 task-relevant를 나타내는 attention weight을 구하고 이에 기반하여 각 object의 contribution 정도를 조절하여 object간의 관계에 대한 정보를 구하는 방법이다. <br />
+앞으로 deep learning과 symbolic AI를 완전히 조화시키기 위해서 quantification, inference, binding variable(object, relation, quantifier)에 관한 문제들을 다루어야 할 것으로 보인다. <br /></p>
+
+<p>장단점: Deep learning의 한계점을 symbolic AI의 요소로 해결하는 방법에 대하여 체계적으로 정리한 논문이다. 실제로 이러한 접근법을 사용하였을 때 여러 task에서 기존 모델보다 높은 성능을 보이는 것으로 나타났다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Garnelo, M., &amp; Shanahan, M. (2019). Reconciling deep learning with symbolic artificial intelligence: representing objects and relations. Current Opinion in Behavioral Sciences, 29, 17-23.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-4-situated-interactive-multi-modal-conversational-ai--yk">Topic 4: Situated Interactive Multi-Modal Conversational AI  [YK]</h2>
+
+<p>선정 이유: Multimodality 방식의 과제를 어떻게 평가할 수 있을지에 대한 프로그램을 소개했기 때문에 선정하였다. <br /></p>
+
+<p>내용 요약: Facebook AI팀에서 선보인 멀티모달 (VQA, Visual Dialog, etc)방식의 과제에 필요한 데이터셋과 평가시스템을 공개했다. 이는 DSTC(Dialog State Tracking Challenge)의 일부인 SIMMIC Challenge 2020의 바탕이 되는 페이퍼이기도 하다. 동작 방식은 다음과 같다. Crowdworkers를 pair로 매칭한 다음 서로가 남긴 데이터를 처리해주는 서버(ParlAI), 상황으로 주어지는 자극(이미지 또는 영화 등)을 처리하는 서버(Scene Server)로 나뉜다. Scene Server는 순차적으로 장면을 이어서 환경을 제공하는 Unity로 만든 scene sync가 있다. User가 대화를 나누면서 대상을 볼때마다 스크린캡쳐를 해주기도 한다. 데이터 수집 방법은 Proactive Situated와 Interactive Dialog 방법이 있다. 둘 다 방법은 간단하며 VR환경에서 VQA 또는 Visual Dialog를 하는 방식과 같다. <br /></p>
+
+<p>장단점: 실제 VQA, VIsual Dialog를 평가할 수 있는 시스템을 개발하고 제시함. 하지만 이에 대한 데모를 찾아볼 수 없다는 것이 아쉽다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Crook, P. A., Poddar, S., De, A., Shafi, S., Whitney, D., Geramifard, A., &amp; Subba, R. (2019). SIMMC: Situated Interactive Multi-Modal Conversational Data Collection And Evaluation Platform. arXiv preprint arXiv:1911.02690.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-5-clarifying-the-conceptualization-dimensionality-and-structure-of-emotion-hy">Topic 5: Clarifying the Conceptualization, Dimensionality, and Structure of Emotion [HY]</h2>
+
+<p>선정 이유: 감정의 structure를 다차원적으로 접근하려는 시도가 인상깊었기 때문에 선정하였다. <br /></p>
+
+<p>내용 요약: 2185개의 비디오를 분석하여 감정 응답의 개념화를 조사하였다.각각의 비디오를 분석한 결과 27가지의 차원 수가 필요했다.
+또한 data-analytic 접근인 정준상관분석(CCA)를 통해 분석을 실시하였다. 반면 Domain-general 컨셉은 보고된 감정적인 경험을 모두 설명할 수는 없었다. Barrett은 CCA 접근 보다는 얼마나 많은 차원들이 수반되어야하는지  factor-analytic 접근을 추천하였다. 그러나 저자는  AWE와 같은  개인적인 카테고리를 identify 하기에는 적당하지 못하다고 판단하였다. 따라서, similarity 와 difference라는 minor 하지만 중요한 카데고리를 제공하였다. 널리 사용되는 affective scales는 위 similarity와 difference를 캐치하지 못한다. <br /></p>
+
+<p>장단점: 결과를 시각적으로 표현한 것은 좋았으나, 시각화과정에 대한 설명이 축약되어 있어 이해하는 측면에서 다소 아쉬운 부분으로 남는다. <br /></p>
+
+<p>의의: 감정을 수학적이고 다차원적으로 분류해보는 시도는, 향후 머신러닝 측면에서 도움이 되는 분류방법이라고 생각한다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cowen, A. S., &amp; Keltner, D. (2018). Clarifying the Conceptualization, Dimensionality, and Structure of Emotion: Response to Barrett and Colleagues. Trends in Cognitive Sciences, 22(4), 274–276.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-6-abusive-language-detection-emotion-detection-yw">Topic 6: Abusive Language Detection, Emotion Detection [YW]</h2>
+
+<p>선정 이유:  감정분석의 과정이 포함된 자연어처리에 대해 읽어보고자 선정하였다. <br /></p>
+
+<p>내용 요약: Abuse는 어떤 개인 혹은 집단을 모욕하는 모든 형태의 표현을 지칭하며, 인종차별적이거나 성차별적인 발언, 인신공격 등을 모두 포괄한다. 최근 자연어처리 커뮤니티에서는 CNN, character-based model, graph-based learning 등 다양한 기법을 사용하여 abuse 탐지를 시도하였다. 이는 성과를 내는 데에는 성공했지만 abusive language의 언어학적 특성을 모델링하는 데에만 집중했다는 한계가 있다. 사용자의 감정적이고 심리적인 상태는 결과물인 언어에 반영이 되기 때문에 결국 abusive 행동과 밀접한 관련이 있다는 점에서 이를 고려한 모델이 필요하다. MTL(Multitask learning) 패러다임을 활용하여 감정분석을 통합한 abusive l0anguage detection을 진행하였고, 그러한 joint learning을 통해 학습된 정서적 속성들(affective features)은 잠재적 abuse를 예측할 가능성이 높은 abusive language의 감정적 내용을 효과적으로 담을 것이라고 예측하였다. 실험에는 트위터라는 같은 데이터 도메인을 배경으로 abuse 탐지 데이터셋은 OffensEval 2019(OffensEval)과 Waseem and Hovy 2016(Waseem&amp;Hovy), 감정 탐지 데이터셋은 Emotion(SemEval18)이 사용되었다. 결과는 두 개의 abuse 탐지 데이터셋 모두에 대해서 MTL모델이 STL모델보다 유의한 성능 향상을 보여 가설이 지지되었다.  <br /></p>
+
+<p>의의: joint model of emotion and abusive language detection를 처음으로 제시하여 그 성능의 우위를 입증하였다는 데에 의의가 있다..</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Rajamanickam, S., Mishra, P., Yannakoudakis, H., &amp; Shutova, E. (2020). Joint Modelling of Emotion and Abusive Language Detection. arXiv preprint arXiv:2005.14028.
+</code></pre></div></div>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2020-09-21/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2020-08-24/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

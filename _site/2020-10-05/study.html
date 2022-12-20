@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Oct 5th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Oct 5th Journal Club" />
+<meta name="author" content="Soomin Cho (soominc3@illinois.edu)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Laughter combination with robots, N-gram Language Modeling" />
+<meta property="og:description" content="Themes: Laughter combination with robots, N-gram Language Modeling" />
+<link rel="canonical" href="http://localhost:4000/blog/2020-10-05/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2020-10-05/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-05T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Oct 5th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Soomin Cho (soominc3@illinois.edu)"},"dateModified":"2020-10-05T00:00:00+09:00","datePublished":"2020-10-05T00:00:00+09:00","description":"Themes: Laughter combination with robots, N-gram Language Modeling","headline":"Oct 5th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020-10-05/study"},"url":"http://localhost:4000/blog/2020-10-05/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Soomin Cho (soominc3@illinois.edu)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2020-10-05 00:00:00 +0900">October 05, 2020</time>
+    
+  </div>
+
+  <h1 class="post-title">Oct 5th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Laughter combination with robots, N-gram Language Modeling  
+</code></pre></div></div>
+
+<p>Presenters: HM (Hoyoung Maeng), IJ (Inju Lee)) <br /></p>
+
+<hr />
+
+<h2 id="topic-1-n-gram-language-modeling-ij">Topic 1: N-gram Language Modeling [IJ]</h2>
+
+<p>내용 요약: 자연어처리(NLP)에서 언어 모델(Language Model)은 언어를 모델링하기 위해 단어 시퀀스 또는 문장에 확률을 구하는 모델로, 가장 자연스럽고 적절한 단어의 시퀀스를 찾아내는 모델이다. 언어모델링은 기계 번역(Machine Translation), 음성 인식(Speech Recognition), 오타 교정(Spell Correction) 등의 과제에서 적절한 문장을 찾기 위해 사용된다.<br />
+단어 시퀀스에 확률을 할당하는 것은 이전 단어가 주어졌을 때 다음 단어가 나타날 확률을 구하는 것으로 생각할 수 있다. n-1개의 단어가 나열된 상태에서 다음 n번째 단어가 등장할 확률은 P(wn | w1, w2, w3, … , wn-1)의 조건부 확률로 표현할 수 있으며, 따라서 전체 단어 시퀀스의 확률은 다음과 같다. <br />
+통계적 언어 모델(Statistical Language Model) 각 조건부 확률을 구함에 있어 특정 단어 시퀀스가 등장한 카운트를 이용한다. N-gram 언어 모델도 통계적 언어 모델의 일부로, 특정 단어의 등장 확률을 구하기 위해 이전에 등장한 모든 단어가 아닌 일부 단어만 고려한다는 것을 특징으로 한다. 이전에 등장한 모든 단어를 고려한 확률과 이전 일부 단어만 고려한 확률이 근사하다는 것은 Markov Assumption을 통해 증명되었다.</p>
+
+<p>참고자료<br />
+<a href="https://towardsdatascience.com/learning-nlp-language-models-with-real-data-cdff04c51c25">Learning NLP Language Models with Real Data</a><br />
+<a href="https://wikidocs.net/21695">딥 러닝을 이용한 자연어 처리 입문</a></p>
+
+<h2 id="topic-2-laughter-combination-with-robots-hm">Topic 2: Laughter combination with robots [HM]</h2>
+
+<p>선정이유: 웃음과 로봇을 다룬 논문을 읽고 싶었고 과거 어떻게 연구가 진행되었는지 학습하고 싶어서 선정하였다. <br /></p>
+
+<p>내용요약 <br /> 
+실험 1: 온라인 survey<br />
+비디오 클립을 통해 로봇의 웃음소리가 자연스러운지 선택하는 survey를 실시함. 결과 분석으로는, 웃음소리 6단계, 로봇 2가지, 문화적 배경 3가지)의 인자를 두고 anova 분석을 실시하였다. 로봇의 외형은 웃음소리가 자연스러운지에 대해 큰 영향을 주진 않았다. 참가자들은 웃음 2 (Mid-height pitch high pitch; artificial, child-like laughter,  female)가 가장 자연스러움을 인식하였다(fig. 4). 문화적배경(asian, American, european) 으로 웃음소리가 자연스러운지에 대해 영향을 주진 않았다. <br />
+실험 2: 일본 고등학생 survey<br />
+위와 동일한 방법으로 실시하였으며, 비디오 클립이 아닌 프레젠테이션을 통해 동시에 진행함. 웃음 6(High pitch; four pulses; rather short; female )가 가장 자연스럽다는 결론 및  로봇 2가 로봇1보다 더 자연스럽다는 결과값을 얻었다. 휴머노이드 로봇에는 여자보다 남자목소리가 더 어울릴것 같다는 공통적인 의견이 있었다.<br />
+실험 3: 독일 고등학생 survey<br />
+남자 웃음소리가 로봇에 더 어울리는지, 웃고잇는 로봇의 자연스러움이 문화간 차이가 있는지에 중점을 두고 실시하였다. 결과적으로 남자 웃음소리가 더 자연스러웠다는 결과가 있었다. 웃음소리 숫자는 별로 자연스러움에 영향이 없었다. Asian이 European보다 자연스러움에 더 강한 의견을 표했다. 결론적으로 로봇의 사교성과 인간의 웃음의 사회적 기능에 대한 지식을 향상시키는 데 도움이 되는 연구였다. <br /></p>
+
+<p>장단점: 다소 과거에 쓰여지다보니 딥러닝 기법이 적용되지 못한점은 추가적으로 진행되었으면 하는 아쉬움이 남았다. <br /></p>
+
+<p>의의: 로봇의 머리와 팔이 움직일때 나오는 웃음소리가 어떨때  자연스러운지를 확인할 수 있었다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Becker-Asano, C., Kanda, T., Ishi, C., &amp; Ishiguro, H. (2010). Studying laughter in combination with two humanoid robots. AI &amp; SOCIETY, 26(3), 291–300.
+</code></pre></div></div>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2020-10-12/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2020-09-28/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>
