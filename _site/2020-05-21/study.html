@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>May 21st Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="May 21st Journal Club" />
+<meta name="author" content="Yoon Kyung Lee (yoonlee78@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: NLP, Virtual Communication, Social Presence, Microagression, Dataset, KakaoTalk, Respiration, HRV, Emotion" />
+<meta property="og:description" content="Themes: NLP, Virtual Communication, Social Presence, Microagression, Dataset, KakaoTalk, Respiration, HRV, Emotion" />
+<link rel="canonical" href="http://localhost:4000/blog/2020-05-21/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2020-05-21/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-21T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="May 21st Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yoon Kyung Lee (yoonlee78@snu.ac.kr)"},"dateModified":"2020-05-21T00:00:00+09:00","datePublished":"2020-05-21T00:00:00+09:00","description":"Themes: NLP, Virtual Communication, Social Presence, Microagression, Dataset, KakaoTalk, Respiration, HRV, Emotion","headline":"May 21st Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020-05-21/study"},"url":"http://localhost:4000/blog/2020-05-21/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Yoon Kyung Lee (yoonlee78@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2020-05-21 00:00:00 +0900">May 21, 2020</time>
+    
+  </div>
+
+  <h1 class="post-title">May 21st Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: NLP, Virtual Communication, Social Presence, Microagression, Dataset, KakaoTalk, Respiration, HRV, Emotion
+</code></pre></div></div>
+
+<p>Presenters: YK(Yoon Kyung), YW(Yoonwon), JE(Jaeun), IJ(Injoo), WK(Whani Kim), HY(Hoyoung)</p>
+
+<hr />
+<p><br /></p>
+
+<h2 id="topic-1-goemotion-dataset--emotion-in-prosody-yk">Topic 1: GoEmotion Dataset &amp; Emotion in Prosody [YK]</h2>
+
+<p>선정 이유: 기존의 연구에서는 주로 설문이나 뇌파, 심박수 기반으로 정서 모형을 구축하거나 확인함. 이번에는 Cowen의 연구팀(UCB)의 1) 텍스트 기반 정서 모형 구축 데이터셋인 GoEmotion에 대해 살펴보았다, 추가로 2)Prosody기반 정서 범주 모형을 만든 참고함.</p>
+
+<p>요약: GoEmotion의 경우 Reddit에 있는 댓글(58000개)을 크롤링해서 다차원 상에서 유의미한 변산을 보이는 축(범주) 27개를 찾음. 
+Figure 1: 감정들의 빈도별로 살펴봄 전체적으로 긍정적인 감정이 부정적인 감정보다 더 많이 나타남. 긍정 감정에는 감탄과 인정 등이 많음 그 다음으로 짜증이 감사표현보다 많았음. 모호한 감정표현도 많은 것으로 나타남. 부정 표현은 공포와 슬픔에 대한 표현인데 이건 빈도가 낮음. 하지만 슬픔 카테고리에 해당되는 실제 단어를 보면 생각보다 극단적임 (예: 죽음 등). 
+Figure2: 단어 데이터에서 위계 클러스터링을 실시함, 주로 excitment &amp; joy가 하나로 묶이고, curiosity, confusion이 하나로, fear와 nervousness가 하나로, embarrasment와 dissapointment가 하나로 묶이는 등의 비슷한 감정이 어떻게 묶이는지 확인할 수 있음.</p>
+
+<p>의의: PPCA를 사용해서 기존의 PCA의 한계점을 극복하고자 함. 이 내용은 저자 중 한 사람인 Cowen의 2019 논문에도 나와있음. 27 PPCs가 모두 높은 유의미한 p-value를 보임. 이전 Cowen 2019의 연구에서는 12개만 유의미하게 나왔는데, 이건 데이터의 양상 차이때문일 수도 있다고 생각함. 평가자 간의 correlation을 살펴봄 (그리고 kappa 지수를 계산함) 흥미로운 점은 텍스트로 긍정의 표현을 나타내는 것이 부정의 표현보다 더 inter-rater reliability가 높게 나타남.</p>
+
+<p>장단점: 에크만, 플럿칙(러셀) 모형보다 더 universal한 감정을 찾으려고 함. BERT를 사용해서 모형 성능을 더 높임.레딧이라는 커뮤니티 게시판에 올라온 글의 성격에 따라 데이터가 많이 편향될 수 있음. 욕설, 비속어 등이 난무하고 전체적인 대화 테마가 편향될 수 있음 전체 인구를 대표한다고 보기 어려움.</p>
+
+<p><br /></p>
+
+<p>Demszky, D., Movshovitz-Attias, D., Ko, J., Cowen, A., Nemade, G., &amp; Ravi, S. (2020). GoEmotions: A Dataset of Fine-Grained Emotions. <em>arXiv preprint arXiv:2005.00547.</em></p>
+
+<p>GoEmotion Dataset: <a href="https://nlp.stanford.edu/~ddemszky/goemotions/tsne.html">link</a></p>
+
+<p>Cowen, A. S., Laukka, P., Elfenbein, H. A., Liu, R., &amp; Keltner, D. (2019). The primacy of categories in the recognition of 12 emotions in speech prosody across two cultures. <em>Nature Human Behaviour, 3</em>(4), 369-382.</p>
+
+<p><br /></p>
+
+<h2 id="topic-2-virtual-communication-modality-and-social-presence-involvement-in-conversation-ywj">Topic 2: Virtual Communication Modality and Social Presence, Involvement in Conversation [YWJ]</h2>
+
+<p>선정 이유: 
+디지털, 즉 가상 환경에서 사람 대 사람의 커뮤니케이션 modality에 따라 달라지는 social presence와 더불어 커뮤니케이션 데이터를 바탕으로 추가적인 분석 방법을 읽어보기 위해</p>
+
+<p>요약: 
+(설계와 방법론 위주의 리뷰)컴퓨터 기반 collaborative virtual environment (CVE), 즉 가상의 디지털 공간에서 디지털 캐릭터를 바탕으로 대학생과 직원이 주어진 과제를 수행한다. 과제는 CVE 세계 안에서 발생한 딜레마 상황을 타협과 토의를 통해 해결하는 종류이다. 과제 해결을 위해 대학생과 직원이 소통하는 방식은 modality에 따라 3종류가 있다: video conference, audio talk, text talk. 측정된 종속변수들은 social presence, presence, time, number of spoken words, number of word spoken per second가 있다. social presence는 ‘mediated environment에서 자신이 다른 사람과 같이 있다고(present) 느끼는 정도’로 정의하였고, 두 종류의 척도를 합친 13문항을 7점 척도로 측정하였다. 비디오와 오디오의 경우 발화 내용들을 텍스트로 바꾸어 총 단어 수를 측정하였고, 이를 총 발화 시간으로 나누어 초당 단어 발화 수를 측정하였다.</p>
+
+<p>장단점: 
+이 논문에서 측정한 대화의 가상적 환경보다는 학문적인 과제 혹은 실제 세계의 문제를 해결하는 경우가 일반적일 것이므로 일상생활에의 적용가능성이 떨어진다. 뿐만 아니라  tast-oriented interaction인 점에서 일상적 대화와는 다르다. 그러나 그런 점에서 일상적 상호작용과 그것의 외로움 경감 효과를 알아보고자 하는 proposal은 이 논문과 다른 새로운 함의를 가질 수 있을 것이다. 또한 이 논문처럼 젊은 대학생끼리의 컴퓨터 기반 상호작용이 아닌, 대학생과 노인의 스마트폰 기반 상호작용에 대해 실험이 이루어질 때에는 다른 효과를 기대할 수 있을 것이다.</p>
+
+<p>의의: 
+Robot Agent와 사람의 상호작용에 있어서 social presence를 정의한 논문이 아닌, 가상의 공간에서 이루어지는 사람 대 사람의 social presence를 정의한 논문이다. 사람과 디지털 기술을 통한 상호작용을 하더라도 “실제 상호작용”처럼 느껴지는 정도가 modality에 따라 달라지는지 알아본 점에서 의의가 있다.</p>
+
+<p>비고: 
+오픈소스 오디오 데이터를 많이 찾았으나, 그것을 활용하여 체계적으로 분석한 논문을 아직 찾지 못하여 일단 주제와 연관 있는 논문 중 audio 특성을 분석한 논문을 리뷰하였다. 오디오로부터 바로 텍스트를 뽑아내고 단어의 수 외에도 단어의 성격을 분석할 수 있는 툴이나 그런 툴을 사용한 논문을 더 찾아볼 계획이다.</p>
+
+<p><br /></p>
+
+<p>Sallnäs, E. L. (2005). Effects of communication mode on social presence, virtual presence, and performance in collaborative virtual environments. <em>Presence: Teleoperators &amp; Virtual Environments, 14</em>(4), 434-449.</p>
+
+<p><br /></p>
+
+<h2 id="topic-3-microaggression--dataset-pje">Topic 3: Microaggression &amp; Dataset [PJE]</h2>
+
+<p>선정 이유: Microaggression을 자동 탐지하는 것이 어려울 듯한데 분류/탐지를 어떻게 했는지 궁금해서</p>
+
+<p>내용 요약: Microaggression dataset 구축: SELFMA와 Reddit MA(gender-based) <a href="https://bit.ly/21Vv3BG">link</a>. Microaggression 타입 분류: attributive / institutionalized / teaming / othering 카테고리. Reddit에서 annotator들이 매기는 perceived offensiveness에 있어 dominant group과 marginalized group 점수에 차이가 있을 것이라는 가설을 바탕으로 annotation 진행</p>
+
+<p>장점: Microaggression dataset 구축, 체계적 분석 및 분류 시도.</p>
+
+<p>단점: 본 논문의 dataset으로 학습하면 얼마나 탐지를 잘 하는지 알 수 있으면 더 좋을 것 같다.</p>
+
+<p>의의: 기존에 인터뷰나 설문 등을 통해 작은 스케일로만 진행되던 microaggression 데이터 수집</p>
+
+<p><br /></p>
+
+<p>Breitfeller, L., Ahn, E., Jurgens, D., &amp; Tsvetkov, Y. (2019, November). Finding Microaggressions in the Wild: A Case for Locating Elusive Phenomena in Social Media Posts. <em>In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)</em> (pp. 1664-1674).</p>
+
+<p><br /></p>
+
+<h2 id="topic-4-kakaotalk-sticker-misinterpretation-ij">Topic 4: KakaoTalk Sticker Misinterpretation [IJ]</h2>
+
+<p>선정 이유: 카카오톡 스티커를 대상으로 연구했다는 점이 흥미로워서 선택</p>
+
+<p>내용 요약: 카카오톡 스티커는 더 expressive하고, 텍스트와 공간적으로 분리되어 사용된다는 점에서 이모티콘, 이모지(emoji)와는 차이가 있다. 스티커 감정 자체에 대한 misinterpretation은 스티커의 모호한 얼굴 및 몸의 표현과 제스처의 dynamism의 서로 다른 해석으로 인해 발생한다. 또한 실제 대화에서 스티커를 주고 받을 때 발생하는 상황적 misinterpretation의 경우 스티커의 visual representation/reference과 corresponding textual messages의 해석이 다르기 때문에 발생하는 것으로 보인다.</p>
+
+<p>장점: 이모티콘이나 이모지를 주로 연구했던 기존 연구와 다르게 카카오톡 스티커를 대상으로 연구했다.</p>
+
+<p>단점: 스티커의 상황적 misinterpretation의 경우, 28명의 실제 카카오톡 대화 내용을 통해 분석했고, 참여자들의 연령대 또한 모두 젊은 성인들(평균 22.71세, 나이 범위: 18-33)이다. 더 다양한 나이와 더 많은 표본을 대상으로 연구해보아야 할 필요가 있어 보인다.</p>
+
+<p>의의: 기존 연구와 다르게 카카오톡 스티커를 대상으로 연구하였으며, 특히 실제 일상 대화 내용을 분석하여 스티커의 misinterpretation을 알아보았다는 점에 의의가 있다.</p>
+
+<p>스티커의 감정에 대해 Russell의 감정 모형을 기반으로 평가하게 한 방법을 참고해볼 수 있을 것 같다.</p>
+
+<p><br />
+     Cha, Y., Kim, J., Park, S., Yi, M. Y., &amp; Lee, U. (2018). Complex and Ambiguous: Understanding Sticker Misinterpretations in Instant Messaging. <em>Proceedings of the ACM on Human-Computer Interaction, 2</em>. https://doi.org/10.1145/3274299
+<br /></p>
+
+<h2 id="topic-5-respiration-and-emotion-wk">Topic 5: Respiration and Emotion [WK]</h2>
+
+<p>선정 이유: 중소기업 과제 관련 호흡수로 감정 인식</p>
+
+<p>내용 요약: <br />
+연구 1: 특정 감정을 표현하며 호흡 패턴을 설명하라고 함 
+연구 2: 연구 1 결과 기반으로 특정한 호흡 패턴을 실시하여 어떤 감정을 느끼는 지 봄. 
+연구 1 결과는 Joy, sadness, fear, sadness 각각 호흡 패턴이 존재하였음. 연구 2에서는 연구 1 결과 기반으로 각 호흡 패턴을 실시하였을 때 각각의 감정을 실제로 느꼈음 (Fear는 결과가 확실하진 않았음)</p>
+
+<p>장단점:<br />
+장점: 감정을 따른 호흡 패턴을 선행 연구 &amp; 본 연구 결과 기반으로 잘 설명함. 
+단점: Subjective 한 보고식으로 이루어져 객관적이짐 않음</p>
+
+<p>의의: 각 감정에 따라 사람들은 호흡 패턴이 달라지며 호흡 패턴으로도 인해 감정에 영향을 줄 수 있음</p>
+
+<p><br /></p>
+
+<p>Philippot, P., Chapelle, G., Blairy, S. (2002). Respiratory feedback in the generation of emotion. <em>Cognition and Emotion, 16</em>(5), 605-627.</p>
+
+<p><br /></p>
+
+<h2 id="topic-6-respiratory-varability--sigh-in-emotion--wk">Topic 6: Respiratory Varability &amp; Sigh in Emotion  [WK]</h2>
+
+<p>선정 이유: 중소기업 과제 관련 호흡수로 감정 인식 <br /></p>
+
+<p>내용 요약: <br />
+연구 1: Emotionally arousing (positive &amp; negative, high arousing &amp; low arousing) 사진을 보며 자극에 따라 호흡의 변동성과 한숨의 수를 살펴봄. 
+부정적 및 high-arousing 사진 자극에 한숨 수 증가와 호흡의 변화를 유발한다. <br />
+연구 2:유쾌하고 불쾌한 높고 낮은 imagery를 통해 감정적 반응의 한숨 및 호흡기 변동을 살펴보았다.<br />
+Negative &amp; High arousing한 imagery 할 시 한숨 속도 및 호흡 변동이 증가되었다. High-arousing (두려움과 욕망) imagery에 호흡의 변동성이 가장 높았다.
+중립 및 이완 이미지에 비해 두려움, 우울증 및 욕망 imagery에서 한숨 비율이 높았다. <br />
+호흡기 변화는 중립 및 이완 이미지에 비해 두려움, 우울증 및 욕구 imagery에서 더 높았다. <br /></p>
+
+<p>장단점: <br />
+장점: 호흡 변화 측정을 장비를 통해 엄밀히 보았으며 한숨의 수를 통해 더 풍부한 결과를 얻은 것 같다. <br />
+단점: 실험 절차에 사진 viewing 및 imagery를 실시하고 나서 baseline을 복구를 위해 60초 간 참여자에게 휴식을 취하게 했는데 휴식때 노래를 틀어주어 노래로 인한 오염이 있었을 것 같다. <br />
+의의: 호흡 변화와 한숨 수를 통해 감정 변화를 볼 수 있다. <br /></p>
+
+<p><br /></p>
+
+<p>Vlemincx, E., Van Diest, I., &amp; Den Bergh, O.V. (2015). Emotions, Sighing, and Respiratory variability. <em>Psychophysiology, 52</em>, 657-666.</p>
+
+<p><br /></p>
+
+<h2 id="topic-7-hrv--emotion--hy">Topic 7: HRV &amp; Emotion  [HY]</h2>
+
+<p>선정 이유: 특정감정이 심박수에 끼치는 영향을 알아보려면, 관련 용어 및 어떻게 통상적으로 연구가 진행되는지 이해가 필요했는데, 아래 선정 2개를 통해 전체적인 흐름을 먼저 익힐 수 있었음.</p>
+
+<p>요약: Stress를 받는 상황에서 심박수가 더 컸다. Rest 상태에서 심박수가 낮았다. Ekman et al(1983) 논문에선,Happiness는 심박수를 증가시켰고, Britton et al(2006)논문에선 감소시켰다. 이번 실험에서는 sadness와 비교했을때에는 happiness가 심박수를 감소시키는 경향이 있다는 것이다.</p>
+
+<p>장단점 <br />
+장점 : 각 감정에 따른 심박수 변화를 알 수 있었다.
+기존 다른 연구들에서 나온 결과와 비교할 수 있어, 신뢰도가 높아졌다.
+단점 : HR과 HRV의 차이에 따른 설명이 추가되면 이해도가 높을 수 있을 것 같다.
+문헌 마다 결과 값에 대한 차이가 발생한 이유에 대해 분석이 필요할 것 같다.</p>
+
+<p>의의<br />
+각 감정들이 심박수에 끼치는 영향에 대해 전반적인 연구방법 및 결과 등을 학습할 수 있었다.</p>
+
+<p>비고 (내 연구와의 연관성, 발전 가능성, 등등) <br />
+각 감정들이 심박수에 끼치는 영향에 대해 전반적인 연구방법 및 결과 등을 학습할 수 있었다.</p>
+
+<p>참고문헌 <br /></p>
+
+<p>Wu, Y., Gu, R., Yang, Q., &amp; Luo, Y. (2019). How Do Amusement, Anger and Fear Influence Heart Rate and Heart Rate Variability?. <em>Frontiers in neuroscience, 13</em>, 1131.</p>
+
+<p>Valderas, M. T., Bolea, J., Laguna, P., Vallverdú, M., &amp; Bailón, R. (2015, August). Human emotion recognition using heart rate variability analysis with spectral bands based on respiration. <em>In 2015 37th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC) (pp. 6134-6137). IEEE</em>.</p>
+
+<p>The End.</p>
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2020-05-28/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2020-05-14/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

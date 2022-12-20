@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>May 7th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="May 7th Journal Club" />
+<meta name="author" content="Yoon Kyung Lee (yoonlee78@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Backpropagation II, Diffusion Model, EMOTIC, Social Isolation and Technology, Empathy Quotient, VMA, remote patient monitoring" />
+<meta property="og:description" content="Themes: Backpropagation II, Diffusion Model, EMOTIC, Social Isolation and Technology, Empathy Quotient, VMA, remote patient monitoring" />
+<link rel="canonical" href="http://localhost:4000/blog/2020-05-07/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2020-05-07/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-07T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="May 7th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yoon Kyung Lee (yoonlee78@snu.ac.kr)"},"dateModified":"2020-05-07T00:00:00+09:00","datePublished":"2020-05-07T00:00:00+09:00","description":"Themes: Backpropagation II, Diffusion Model, EMOTIC, Social Isolation and Technology, Empathy Quotient, VMA, remote patient monitoring","headline":"May 7th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020-05-07/study"},"url":"http://localhost:4000/blog/2020-05-07/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Yoon Kyung Lee (yoonlee78@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2020-05-07 00:00:00 +0900">May 07, 2020</time>
+    
+  </div>
+
+  <h1 class="post-title">May 7th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Backpropagation II, Diffusion Model, EMOTIC, Social Isolation and Technology, Empathy Quotient, VMA, remote patient monitoring
+</code></pre></div></div>
+
+<p>Presenters: YK (Yoon Kyung), YW(Yoonwon), JE(Jaeun), IJ(Injoo), WH(Whani), HY(Hoyoung)</p>
+
+<hr />
+<p><br /></p>
+
+<h2 id="topic-1a-convolutional-neural-networks-backpropagation-part-2-yk">Topic 1a: Convolutional Neural Networks: Backpropagation Part 2 [YK]</h2>
+
+<p>지난 시간(4/30 저널클럽)에 이어 Gradient descent를 계산하는 numerical gradient와 analytical gradient에 대해 알아보았다. Backpropagation을 computational graph를 통해 이해하는 시간을 가지고 <a href="https://pytorch.org/">PyTorch</a> 프레임워크로 실습한 결과에 대해 살펴보았다.</p>
+
+<p><a href="http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture4.pdf">Lecture 4 slides</a> <br /></p>
+
+<p><br /></p>
+
+<h2 id="topic-1b-diffusion-decision-model-yk">Topic 1b: Diffusion Decision Model [YK]</h2>
+
+<p>Ratcliff &amp; McKoon (2008)의 Diffusion Decision Model(DDM)에 대해 간단히 알아보았다. DDM은 물리학의 확산 모형에서 출발해 사람의 의사 결정 과정을 설명하기 위해 만들어진 모형이다. 2AFC task에 가장 최적화된 모형이다. 반응 시간(Reaction Time)을 정교하게 분석할 때 사용하며, 
+시작점(bias), 결정 시작 전 delay time, 총 RT, drift rate, 각 choice에 대한 distribution을 구할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Ratcliff, R., &amp; McKoon, G. (2008). The diffusion decision model: theory and data for two-choice decision tasks. Neural computation, 20(4), 873-922.
+
+  Voss, A., Voss, J., &amp; Lerche, V. (2015). Assessing cognitive processes with diffusion model analyses: a tutorial based on fast-dm-30. Frontiers in psychology, 6, 336. [link](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00336/full)
+  
+  [fast-dm page](  https://www.psychologie.uni-heidelberg.de/ae/meth/fast-dm/#example)
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-2-emotic-dataset-je">Topic 2: EMOTIC dataset [JE]</h2>
+
+<p>선정 이유: 감정 인식을 위해 얼굴 표정이나 몸 동작 정보뿐 아니라 배경 정보(scene context information)를 활용함. 감정 표기로 26가지의 감정 카테고리와 Valence, Arousal, Dominance 값을 사용함.</p>
+
+<p>요약: EMOTIC dataset 수집을 위해 Amazon Mechanical Turk 사용, 이미지를 보여주고 annotator들로 하여금 26가지의 감정 카테고리와 Valence, Arousal, Dominance 값을 고르도록 함(그림1). 20개 이미지마다 2개의 control image를 넣고 라벨을 붙이도록 한 후, 잘못된 라벨을 고르는 annotator는 더 이상 작업을 진행치 못하도록 해 noisy annotation을 줄임. Scene Context Analysis에서는  scene category 분류를 위해 AlexNet Places CNN와 Sentibanks Adjective-Noun Pair(ANP)을 사용함. CNN Model for Emotion Recognition in Scence Context: 세 가지 모듈로 구분됨 - body feature extraction, image (context) feature extraction, fusion network (그림3). Image feature extraction에 AlexNet Places CNN(Ground Truth)과 ANP detector 사용 결과 scene context를 사용했을 때 감정 인식을 더 잘 했으며, 특히 ANP detector가 Places CNN보다 더 좋은 수행을 보였음.</p>
+
+<p>장단점: 자세한 감정 분류 카테고리를 이용했다는 점, Scene context analysis를 위해 여러 모델 중 수행이 좋은 것을 사용할 수 있다는 점이 장점임. 
+감정 카테고리 분류 방법이 아쉬움 (26가지 카테고리가 모두 완전히 구분된다고 할 수 있는지 의문).</p>
+
+<p>의의: 감정 인식에 있어 facial expression이나 body pose가 아니라 context 정보 역시 이용한 점이 의미 있음.</p>
+
+<p>비고: Annotation noise를 줄이는 것도 후속 연구로 의미 있을 것 같고, Body feature module과 context feature module을 나누는 것이 나누지 않는 것보다 수행이 나은지 궁금함.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Dataset &amp; Code: https://github.com/rkosti/emotic
+
+  Project Page: http://sunai.uoc.edu/emotic/ 
+
+  Kosti, R., Alvarez, J. M., Recasens, A., &amp; Lapedriza, A. (2020). Context based emotion recognition using emotic dataset. arXiv preprint arXiv:2003.13401
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-3-social-isolation-of-older-adults-and-technology-yw">Topic 3: Social Isolation of Older Adults and Technology [YW]</h2>
+
+<p>선정 이유: 외로움(사회적 고독)을 완화하고 소속감을 높인 사례에 대한 연구를 review하던 중, 노인 집단을 대상으로 한 것이라 선정하였다.</p>
+
+<p>요약: 이 논문은 기술이 노인들의 사회적 고립의 감소와 사회적 참여의 증가에 주는 영향에 대해 리뷰하였는데, 2000년대 이후의 경험적 연구(empirical study) 32123개를 4단계 기준을 걸쳐 걸러내어 총 36개의 연구를 최종 분석 대상으로 삼았다. 
+분석 결과, 이러한 주제의 연구는 ICT-based intervention의 두 가지 카테고리(터치스크린과 SNS)를 중심으로 진행되었다. 노인들에게 있어 터치스크린과 SNS는 다른 연령대의 집단과 마찬가지로 삶에서 차지하는 비중이 늘어가고 있지만, 한편으로는 연구의 포커스를 넓혀갈 필요가 있음을 시사한다. 노인 대상 연구에 있어서는 최신 기술의 적용에 있어서 gap이 존재한다는 것도 시사한다.</p>
+
+<p>또한 분석 대상 연구들에서는 기술 사용에 의해 노인 집단에서 나타난 social outcome에 대한 명확한 개념 정립과 규명이 이루어지기보다는 모호하기 기술되었다는 한계점이 발견되었다. 적절한 intervention의 방향을 판단할 수 있는 명확한 framework을 바탕으로 연구에서 노인들의 사회적 고립 감소와 사회적 참여가 어떻게 변화하였는지 판단할 필요가 있다.
+마지막으로, 이 분야의 연구에서 사용되는 방법론은 매우 범위가 넓고 다양했고, 노인들의 터치스크린 기기 사용에 대한 연구는 대부분 예비적인 유저 테스트나 shorter field trial에 그쳐 larger scale study들에 그쳤다. 따라서 터치스크린 기기에 대해서는 노인들을 대상으로 real-world setting에서의 대규모 연구가 더 필요한 실정이다.</p>
+
+<p>장단점: Lee &amp; Coughlin(2015)은 노인들이 기술을 adopt하는 데에 영향을 미치는 요인들을 살펴본 논문에서 노인들이 기존에 사용해오던 디바이스, 인터페이스, 사용자 경험과 유사한 범위에 있는 기술들이 친숙성을 제고하여 adoption을 더 촉진한다고 주장하였다. 따라서 이 논문에서 터치스크린과 SNS가 아닌 novel smaller scale prototype study들의 필요성을 주장한 것에 대해서는, 기업의 이익의 입장에서는 필요한 주장일 수 있겠으나 기술을 차용하는 노인들의 입장에서는 적절하지 않은 주장일 수 있다. 노인들을 대상으로 최신 기술의 사용을 연구하여 gap 자체를 줄이는 것이 중요하다기보다는, 노인들이 이미 주도적으로 사용하고 있거나 사용할 가능성이 있는 기술들을 바탕으로 최신 기술은 노인들의 사용 경험을 돕는 범위에서 적용되는 방향이 적절할 수 있다.</p>
+
+<p>의의: 이 주제 관련 리뷰 논문들에서 흔히 누락되던 hci분야의 연구까지 포함하여 분석했다는 점에서 특이점을 갖는다. 이러한 분석을 통해 노인 대상 외로움 감소와 사회참여 증가의 전반적인 연구동향 파악에 도움을 주었다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Baker, S., Warburton, J., Waycott, J., Batchelor, F., Hoang, T., Dow, B., ... &amp; Vetere, F. (2018). Combating social isolation and increasing social participation of older adults through the use of technology: A systematic review of existing evidence. Australasian journal on ageing, 37(3), 184-193.
+
+  [참고] Lee, C., &amp; Coughlin, J. F. (2015). PERSPECTIVE: Older adults' adoption of technology: an integrated approach to identifying determinants and barriers. Journal of Product Innovation Management, 32(5), 747-759. 
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-4-the-empathy-quotient-and-the-qcae-ij">Topic 4: The Empathy Quotient and the QCAE [IJ]</h2>
+
+<p>선정 이유: EQ(Empathy Quotient)는 연구에 가장 많이 쓰이는 공감척도 중 하나이며, QCAE는 EQ와는 다르게 인지적 공감과 정서적 공감을 하위요소로 나누어 측정하였음.</p>
+
+<p>요약: 공감을 인지적 요소와 정서적 요소로 나누어 정의함. 인지적 공감은 타인의 감정에 대한 이해의 측면이며, 정서적 공감은 타인의 감정에 대해 내가 적절한 감정을 느끼는 것을 나타냄. EQ의 경우 Sympathy를 타인의 고통에 대한 감정적 반응이 타인의 고통을 완화시켜줄 행동을 취하고 싶은 마음(desire)을 이끄는 상태를 나타내며 empathy의 요소에 포함하였지만, QCAE는 empathy의 결과로 나타나는 것으로 보며 empathy의 요소에서 배제시킴.
+공감의 정의에 따라 각각 설문척도를 개발하였으며, 특히 QCAE의 경우 기존 4가지 공감척도의 문항을 선별 및 취합하여 구성함. (1) Empathy Quotient (EQ; Baron-Cohen et al., 2003), (2) Hogan Empathy Scale (HES; Hogan, 1969), (3) the Empathy subscale of the Impulsiveness-Venturesomeness-Empathy Inventory (IVE;Eysenck &amp; Eysenck, 1978), (4) Interpersonal Reactivity Index (IRI; Davis, 1983).
+EQ의 경우 공감능력 결함을 특징으로 하는 Asperger Syndrome, High Functioning Autism 집단과 정상 집단의 점수 비교, 성별 간 점수 비교를 통해 타당성을 검증하였으며, QCAE의 경우 성별 간 점수 비교, construct validity, convergent validity를 통해 타당성을 검증함</p>
+
+<p>장단점: 공감을 먼저 정의한 후 그에 기반하여 만든 척도라는 점에서 최대한 공감과 관련된 요소만 측정하려고 하였음. 자가보고식 설문이기 때문에 그 사람이 실제 공감 수준이 높은 것인지 아니면 단순히 높고자 하는 의지(willingness)를 나타내는지 구분할 수 없음</p>
+
+<p>비고: 현재 대부분의 공감 척도는 평소 자신의 공감 능력에 대해 스스로 평가하는 자가보고 설문의 형식으로 구성되어 있는 것 같음. 특정 상황에서의 타인에 대한 공감을 직접 이끌어내어 그것을 측정하는 방법은 ToM task, perspective-taking task 같은 것만 존재하는 것으로 보임<br />
+Faux pas test의 경우 인지적 공감에 대한 문항만 포함되어 있는 것으로 볼 수 있기 때문에, 정서적 공감의 내용(ex. 등장인물의 상황에 대해 어떤 감정을 느끼시나요?)을 포함해볼 수 있을 것 같음</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Baron-Cohen, S., &amp; Wheelwright, S. (2004). The empathy quotient: an investigation of adults with Asperger syndrome or high functioning autism, and normal sex differences. Journal of autism and developmental disorders, 34(2), 163-175.
+  
+Reniers, R. L., Corcoran, R., Drake, R., Shryane, N. M., &amp; Völlm, B. A. (2011). The QCAE: A questionnaire of cognitive and affective empathy. Journal of personality assessment, 93(1), 84-95.
+
+EQ 설문문항: https://psychology-tools.com/test/empathy-quotient
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-5a-virtual-medical-assistants-wh">Topic 5a: Virtual Medical Assistants [WH]</h2>
+
+<p>선정 이유: 원격 의료 시스템 구현 관련 논문이다.</p>
+
+<p>요약: 사용자 특징에 따라 VMA의 acceptance &amp; trust가 달라진다. 본 논문에서는 older and less educated 참여자가 VMA를 더 잘 받아드리고 신뢰하였다.</p>
+
+<p>장단점: 최근 논문으로  다른 논문에 비해 비교적 최신 기술을 이용해 virtual agent를 구현한 것으로 보인다.</p>
+
+<p>비고: “고령자 &amp; 나이 많은 사람들은 최신 기술에 대해 거부감을 느낀다” 라는 belief가 나타나지 않았으며 대부분의 사람들은 이러한 VMA를 긍정적으로 평가하였다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Philip, P., Dupuy, L., Auriacombe, M., Serre, F., De Sevin, E., Sauteraud, A., &amp; Micouloud-Franchi, J-A. (2020). Trust and acceptance of a virtual psychiatric interview between embodied conversational agents and outpatients. NPJ Digit Med, 3(1), doi: 10.1038/s41746-019-0213-y.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-5b-robots-with-humanlike-face-display-wh">Topic 5b: Robots with humanlike face display [WH]</h2>
+
+<p>선정 이유: 원격 의료 시스템 구현 관련 논문이다.</p>
+
+<p>요약: 로봇 얼굴, 사람 다운 얼굴, 얼굴이 없는 시스템에 대해 실험을 진행하였다. 참여자들은 사람 다운 얼굴을 가진 로봇을 제일 선호하였으며 사회성이 높고 또한 “perceived mind”를 높게 평가하였다. 다음으로 로봇 얼굴을 선호하였으며 마지막으로 얼굴 없는 로봇이 제일 낮게 평가되었다.</p>
+
+<p>장단점: 첫 논문보다 비교적 오래된 논문이며 개인적으로 각 얼굴을 구현하는데 bias가 있었지 않나 싶다 (사람 다운 얼굴에 비교적 신경 많이 씀; 로봇 얼굴은 너무 성의 없어 보임.)</p>
+
+<p>비교: 원격 의료 시스템을 구현하는데 있어 로봇이라도 사회성이 있고 상호작용이 더 원활해지려면 얼굴 및 다른 인간 다운 요소를 구현하여 만드는 것이 좋을 것 같다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Broadbent, E., Kumar, V., Li, X., Sollers 3rd, J., Stafford, R.Q., MacDonald, B.A., Wegner, D.M. (2013). Robots with Display Screens: A Robot with a More Humanlike Face Display Is Perceived To Have More Mind and a Better Personality. PLoS ONE 8(8): e72589. doi:10.1371/journal.pone.0072589.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-6-remote-patient-monitoring-hy">Topic 6: Remote patient monitoring [HY]</h2>
+
+<p>선정 이유: 한번도 메타논문에 대해 본적이 없었는데 흥미롭게 다가왔었음. 향후 다른 논문들을 분석할때 참고하면 좋을 것이라고 생각됨.</p>
+
+<p>요약: 원격 환자 모니터링에 대한 연구는 아직 초기 단계라고 할 수 있다. 원격 환자 모니터링 그룹이 대조군 대비 통계적으로 유의미한 개선 효과를 보여주지 못했다.</p>
+
+<p>장점 : 과거에 진행된 연구를 재 확인함으로서 연구와 실제 결과를 비교할 수 있다. 향후 원격 환자 모니터링에 대한 방향성을 제시해준다.</p>
+
+<p>단점 : 너무많은 정보가 나열식으로 되어 있어 하나하나 체킹해야한다(독자의 문제일 수 있음) Broad한 범위가 다른 조건들에서 공통점을 찾을 수는 있겠지만 동시에 다른 종류를 사용하면서 나온 결과를 합치기에는 무리가 있다. 플라시보 효과 및 Hawthorne effect 등이 있을 수 있다</p>
+
+<p>의의: 다양한 질병에 대해서 원격 환자 모니터링을 진행한 과거의 27개 연구를 분석한 메타 분석 논문이다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  B Noah et al.(2018). Impact of remote patient monitoring on clinical outcomes: an updated meta-analysis of randomized controlled trials. npj Digital Medicine
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>The End.</p>
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2020-05-14/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2020-04-30/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

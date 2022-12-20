@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Feb 8th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Feb 8th Journal Club" />
+<meta name="author" content="Jae Eun Park (dawn2089@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Machine Thinking, Fast and Slow, Continual Learning in Deep Neural Networks Presenters: IL(Inju Lee), YWJ (Yoon Won Jeong) Topic 1: Machine Thinking, Fast and Slow [IL] 선정 이유 Slow &amp; Fast Thinking 개념을 기계와의 상호작용의 관점에서 다룬다는 것이 흥미로워 선정하였다. 내용 요약 Fast Thinking은 빠른 속도로 무의식수준에서 처리되어 발생하는 직관적인 사고를 의미하며, Slow Thinking은 느린 속도로 의식수준에서 처리되는 분석적인 사고를 의미한다. 본 논문은 Fast &amp; Slow Thinking 관점에서 Intelligent Machine과 사람-기계의 상호작용을 분석하였다. Engineering: 그동안 알고리즘 프로그래밍 방법과 과제의 속성을 기반으로 기계의 Slow &amp; Fast Thinking을 구분해왔다. 최근 기계학습(특히 딥러닝)이 Fast Thinking에 상응하는 것으로 여겨지나, Slow Thinking에 상응하는 것이 무엇인지에 대한 합의는 아직 이루어지지 않았다. User Experience: 사람들은 객관적 과제의 경우 Slow Thinking이, 주관적 과제의 경우 Fast Thinking이 적절하다고 생각하며, 이에 따라 기계가 객관적 과제를 수행하는 경우 신뢰하지만 주관적 과제를 수행하는 경우는 신뢰하지 않는 경향이 있다. 하지만 이는 사람들이 기계가 Fast Thinking을 한다는 것이 익숙하지 않아 초래된 것일 수 있다. 최근 Fast Thinking을 하는 기계를 사람들이 많이 접하고 있는 만큼 기계에게 적합한 과제에 대한 사람들의 인식이 점차 변화하게 될 것이다. 또한 사람들은 다음 두 단서를 바탕으로 Slow &amp; Fast Thinking을 판단한다: 1) 시간과 노력의 양, 2) 스스로 실수 또는 편향을 진단하고 이에 대해 명시적 정정을 하는 것. Law and Ethics: 기계는 실제로 Slow &amp; Fast Thinking을 할 수 없다. 따라서 사람들로 하여금 기계가 Slow &amp; Fast Thinking한다고 인식하게 만드는 것은 사람들을 속이는 것이라는 윤리적 문제가 존재한다. 사전에 이에 대해 고지하였는지 여부에 따라 사람들이 이를 어떻게 받아들이는 지가 달라지겠지만, 만약 이러한 기계의 행동이 도움이 될 경우 사람들은 어느정도 이를 용인할 가능성이 있다. 장점 기계의 Slow &amp; Fast Thinking과 관련된 사안들에 대해 연구를 할 때, 어떤 요소들을 고려해야 하는지 체계적으로 정리하며 논지를 펼치고 있다. Bonnefon, J. F., &amp; Rahwan, I. (2020). Machine Thinking, Fast and Slow. Trends in Cognitive Sciences. Topic 2: Continual Learning in Deep Neural Networks [YWJ] 선정이유 연속 학습(continual learning) 개념에 대해 알아보기 위해 선정하였다. 내용요약 연속 학습(Continual learning)은 인간처럼 변화하는 환경 속 순차적인 과제 학습 및 문제해결을 보여줄 수 있는 인공 신경망 모델을 구축하기 위해 제안된 개념이다. 연속 학습은 정해지지 않고(non-stationary) 변화하는(changing) 환경 속 문제해결을 위해 해결해야 할 과제를 연속적인 하위 과제로 쪼개어 이루어진다. 그러한 problem setting을 효과적으로 해결할 solution은 하나로 특정하기 어렵고, 효과적인 연속 학습을 위해 만족해야 하는 여러 조건들 중 어떤 것을 만족하느냐에 따라 해당 목적들 간의 trade-off가 발생한다. 인간과 동물의 뇌생물학적 특성에 부합하는 전략을 사용하여 효과적인 연속학습을 할 수 있으며, 그러한 paradigm은 크게 4개가 있다: 1) gradient-based continual learning 2) modularity 3) memory systems 4)meta-learning. 이러한 방법들은 간섭 최소화, 가소성 유지, 전방 전이와 후방 전이 등을 가능하게 하여 gradient-based ‘tug of war’문제를 해결할 수 있다. 장단점 연속 학습의 개념과 여러 paradigm각각의 장단점을 알 수 있었으나, 구체적인 적용 예시와 모델이 없어 전반적인 개념 이해 이상으로 나아가기 어려운 점이 안타까웠다. 의의 연속 학습을 통해 다수의 과제들의 문제해결법을 catastrophic forgetting 없이 효과적으로 학습할 수 있고, 그러한 학습을 구현하기 위해 사용할 수 있는 방법들을 개괄하여 이해하고, 그것이 사람의 뇌로부터 어떻게 파생되어 탄생한 것인지 그 연관성을 알고, 더 연구가 필요한 부분들에 대해 정리하였다. Hadsell, R., Rao, D., Rusu, A. A., &amp; Pascanu, R. (2020). Embracing Change: Continual Learning in Deep Neural Networks. Trends in Cognitive Sciences." />
+<meta property="og:description" content="Themes: Machine Thinking, Fast and Slow, Continual Learning in Deep Neural Networks Presenters: IL(Inju Lee), YWJ (Yoon Won Jeong) Topic 1: Machine Thinking, Fast and Slow [IL] 선정 이유 Slow &amp; Fast Thinking 개념을 기계와의 상호작용의 관점에서 다룬다는 것이 흥미로워 선정하였다. 내용 요약 Fast Thinking은 빠른 속도로 무의식수준에서 처리되어 발생하는 직관적인 사고를 의미하며, Slow Thinking은 느린 속도로 의식수준에서 처리되는 분석적인 사고를 의미한다. 본 논문은 Fast &amp; Slow Thinking 관점에서 Intelligent Machine과 사람-기계의 상호작용을 분석하였다. Engineering: 그동안 알고리즘 프로그래밍 방법과 과제의 속성을 기반으로 기계의 Slow &amp; Fast Thinking을 구분해왔다. 최근 기계학습(특히 딥러닝)이 Fast Thinking에 상응하는 것으로 여겨지나, Slow Thinking에 상응하는 것이 무엇인지에 대한 합의는 아직 이루어지지 않았다. User Experience: 사람들은 객관적 과제의 경우 Slow Thinking이, 주관적 과제의 경우 Fast Thinking이 적절하다고 생각하며, 이에 따라 기계가 객관적 과제를 수행하는 경우 신뢰하지만 주관적 과제를 수행하는 경우는 신뢰하지 않는 경향이 있다. 하지만 이는 사람들이 기계가 Fast Thinking을 한다는 것이 익숙하지 않아 초래된 것일 수 있다. 최근 Fast Thinking을 하는 기계를 사람들이 많이 접하고 있는 만큼 기계에게 적합한 과제에 대한 사람들의 인식이 점차 변화하게 될 것이다. 또한 사람들은 다음 두 단서를 바탕으로 Slow &amp; Fast Thinking을 판단한다: 1) 시간과 노력의 양, 2) 스스로 실수 또는 편향을 진단하고 이에 대해 명시적 정정을 하는 것. Law and Ethics: 기계는 실제로 Slow &amp; Fast Thinking을 할 수 없다. 따라서 사람들로 하여금 기계가 Slow &amp; Fast Thinking한다고 인식하게 만드는 것은 사람들을 속이는 것이라는 윤리적 문제가 존재한다. 사전에 이에 대해 고지하였는지 여부에 따라 사람들이 이를 어떻게 받아들이는 지가 달라지겠지만, 만약 이러한 기계의 행동이 도움이 될 경우 사람들은 어느정도 이를 용인할 가능성이 있다. 장점 기계의 Slow &amp; Fast Thinking과 관련된 사안들에 대해 연구를 할 때, 어떤 요소들을 고려해야 하는지 체계적으로 정리하며 논지를 펼치고 있다. Bonnefon, J. F., &amp; Rahwan, I. (2020). Machine Thinking, Fast and Slow. Trends in Cognitive Sciences. Topic 2: Continual Learning in Deep Neural Networks [YWJ] 선정이유 연속 학습(continual learning) 개념에 대해 알아보기 위해 선정하였다. 내용요약 연속 학습(Continual learning)은 인간처럼 변화하는 환경 속 순차적인 과제 학습 및 문제해결을 보여줄 수 있는 인공 신경망 모델을 구축하기 위해 제안된 개념이다. 연속 학습은 정해지지 않고(non-stationary) 변화하는(changing) 환경 속 문제해결을 위해 해결해야 할 과제를 연속적인 하위 과제로 쪼개어 이루어진다. 그러한 problem setting을 효과적으로 해결할 solution은 하나로 특정하기 어렵고, 효과적인 연속 학습을 위해 만족해야 하는 여러 조건들 중 어떤 것을 만족하느냐에 따라 해당 목적들 간의 trade-off가 발생한다. 인간과 동물의 뇌생물학적 특성에 부합하는 전략을 사용하여 효과적인 연속학습을 할 수 있으며, 그러한 paradigm은 크게 4개가 있다: 1) gradient-based continual learning 2) modularity 3) memory systems 4)meta-learning. 이러한 방법들은 간섭 최소화, 가소성 유지, 전방 전이와 후방 전이 등을 가능하게 하여 gradient-based ‘tug of war’문제를 해결할 수 있다. 장단점 연속 학습의 개념과 여러 paradigm각각의 장단점을 알 수 있었으나, 구체적인 적용 예시와 모델이 없어 전반적인 개념 이해 이상으로 나아가기 어려운 점이 안타까웠다. 의의 연속 학습을 통해 다수의 과제들의 문제해결법을 catastrophic forgetting 없이 효과적으로 학습할 수 있고, 그러한 학습을 구현하기 위해 사용할 수 있는 방법들을 개괄하여 이해하고, 그것이 사람의 뇌로부터 어떻게 파생되어 탄생한 것인지 그 연관성을 알고, 더 연구가 필요한 부분들에 대해 정리하였다. Hadsell, R., Rao, D., Rusu, A. A., &amp; Pascanu, R. (2020). Embracing Change: Continual Learning in Deep Neural Networks. Trends in Cognitive Sciences." />
+<link rel="canonical" href="http://localhost:4000/blog/2021-02-08/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2021-02-08/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-08T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Feb 8th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jae Eun Park (dawn2089@snu.ac.kr)"},"dateModified":"2021-02-08T00:00:00+09:00","datePublished":"2021-02-08T00:00:00+09:00","description":"Themes: Machine Thinking, Fast and Slow, Continual Learning in Deep Neural Networks Presenters: IL(Inju Lee), YWJ (Yoon Won Jeong) Topic 1: Machine Thinking, Fast and Slow [IL] 선정 이유 Slow &amp; Fast Thinking 개념을 기계와의 상호작용의 관점에서 다룬다는 것이 흥미로워 선정하였다. 내용 요약 Fast Thinking은 빠른 속도로 무의식수준에서 처리되어 발생하는 직관적인 사고를 의미하며, Slow Thinking은 느린 속도로 의식수준에서 처리되는 분석적인 사고를 의미한다. 본 논문은 Fast &amp; Slow Thinking 관점에서 Intelligent Machine과 사람-기계의 상호작용을 분석하였다. Engineering: 그동안 알고리즘 프로그래밍 방법과 과제의 속성을 기반으로 기계의 Slow &amp; Fast Thinking을 구분해왔다. 최근 기계학습(특히 딥러닝)이 Fast Thinking에 상응하는 것으로 여겨지나, Slow Thinking에 상응하는 것이 무엇인지에 대한 합의는 아직 이루어지지 않았다. User Experience: 사람들은 객관적 과제의 경우 Slow Thinking이, 주관적 과제의 경우 Fast Thinking이 적절하다고 생각하며, 이에 따라 기계가 객관적 과제를 수행하는 경우 신뢰하지만 주관적 과제를 수행하는 경우는 신뢰하지 않는 경향이 있다. 하지만 이는 사람들이 기계가 Fast Thinking을 한다는 것이 익숙하지 않아 초래된 것일 수 있다. 최근 Fast Thinking을 하는 기계를 사람들이 많이 접하고 있는 만큼 기계에게 적합한 과제에 대한 사람들의 인식이 점차 변화하게 될 것이다. 또한 사람들은 다음 두 단서를 바탕으로 Slow &amp; Fast Thinking을 판단한다: 1) 시간과 노력의 양, 2) 스스로 실수 또는 편향을 진단하고 이에 대해 명시적 정정을 하는 것. Law and Ethics: 기계는 실제로 Slow &amp; Fast Thinking을 할 수 없다. 따라서 사람들로 하여금 기계가 Slow &amp; Fast Thinking한다고 인식하게 만드는 것은 사람들을 속이는 것이라는 윤리적 문제가 존재한다. 사전에 이에 대해 고지하였는지 여부에 따라 사람들이 이를 어떻게 받아들이는 지가 달라지겠지만, 만약 이러한 기계의 행동이 도움이 될 경우 사람들은 어느정도 이를 용인할 가능성이 있다. 장점 기계의 Slow &amp; Fast Thinking과 관련된 사안들에 대해 연구를 할 때, 어떤 요소들을 고려해야 하는지 체계적으로 정리하며 논지를 펼치고 있다. Bonnefon, J. F., &amp; Rahwan, I. (2020). Machine Thinking, Fast and Slow. Trends in Cognitive Sciences. Topic 2: Continual Learning in Deep Neural Networks [YWJ] 선정이유 연속 학습(continual learning) 개념에 대해 알아보기 위해 선정하였다. 내용요약 연속 학습(Continual learning)은 인간처럼 변화하는 환경 속 순차적인 과제 학습 및 문제해결을 보여줄 수 있는 인공 신경망 모델을 구축하기 위해 제안된 개념이다. 연속 학습은 정해지지 않고(non-stationary) 변화하는(changing) 환경 속 문제해결을 위해 해결해야 할 과제를 연속적인 하위 과제로 쪼개어 이루어진다. 그러한 problem setting을 효과적으로 해결할 solution은 하나로 특정하기 어렵고, 효과적인 연속 학습을 위해 만족해야 하는 여러 조건들 중 어떤 것을 만족하느냐에 따라 해당 목적들 간의 trade-off가 발생한다. 인간과 동물의 뇌생물학적 특성에 부합하는 전략을 사용하여 효과적인 연속학습을 할 수 있으며, 그러한 paradigm은 크게 4개가 있다: 1) gradient-based continual learning 2) modularity 3) memory systems 4)meta-learning. 이러한 방법들은 간섭 최소화, 가소성 유지, 전방 전이와 후방 전이 등을 가능하게 하여 gradient-based ‘tug of war’문제를 해결할 수 있다. 장단점 연속 학습의 개념과 여러 paradigm각각의 장단점을 알 수 있었으나, 구체적인 적용 예시와 모델이 없어 전반적인 개념 이해 이상으로 나아가기 어려운 점이 안타까웠다. 의의 연속 학습을 통해 다수의 과제들의 문제해결법을 catastrophic forgetting 없이 효과적으로 학습할 수 있고, 그러한 학습을 구현하기 위해 사용할 수 있는 방법들을 개괄하여 이해하고, 그것이 사람의 뇌로부터 어떻게 파생되어 탄생한 것인지 그 연관성을 알고, 더 연구가 필요한 부분들에 대해 정리하였다. Hadsell, R., Rao, D., Rusu, A. A., &amp; Pascanu, R. (2020). Embracing Change: Continual Learning in Deep Neural Networks. Trends in Cognitive Sciences.","headline":"Feb 8th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021-02-08/study"},"url":"http://localhost:4000/blog/2021-02-08/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Jae Eun Park (dawn2089@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2021-02-08 00:00:00 +0900">February 08, 2021</time>
+    
+  </div>
+
+  <h1 class="post-title">Feb 8th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Machine Thinking, Fast and Slow, Continual Learning in Deep Neural Networks
+</code></pre></div></div>
+
+<p>Presenters: IL(Inju Lee), YWJ (Yoon Won Jeong)<br /></p>
+
+<hr />
+
+<h2 id="topic-1--machine-thinking-fast-and-slow-il">Topic 1:  Machine Thinking, Fast and Slow [IL]</h2>
+
+<p><strong>선정 이유</strong><br />
+Slow &amp; Fast Thinking 개념을 기계와의 상호작용의 관점에서 다룬다는 것이 흥미로워 선정하였다.<br /></p>
+
+<p><strong>내용 요약</strong><br />
+Fast Thinking은 빠른 속도로 무의식수준에서 처리되어 발생하는 직관적인 사고를 의미하며, Slow Thinking은 느린 속도로 의식수준에서 처리되는 분석적인 사고를 의미한다. 본 논문은 Fast &amp; Slow Thinking 관점에서 Intelligent Machine과 사람-기계의 상호작용을 분석하였다.<br /></p>
+
+<ol>
+  <li>
+    <p>Engineering: 그동안 알고리즘 프로그래밍 방법과 과제의 속성을 기반으로 기계의 Slow &amp; Fast Thinking을 구분해왔다. 최근 기계학습(특히 딥러닝)이 Fast Thinking에 상응하는 것으로 여겨지나, Slow Thinking에 상응하는 것이 무엇인지에 대한 합의는 아직 이루어지지 않았다.<br /></p>
+  </li>
+  <li>
+    <p>User Experience: 사람들은 객관적 과제의 경우 Slow Thinking이, 주관적 과제의 경우 Fast Thinking이 적절하다고 생각하며, 이에 따라 기계가 객관적 과제를 수행하는 경우 신뢰하지만 주관적 과제를 수행하는 경우는 신뢰하지 않는 경향이 있다. 하지만 이는 사람들이 기계가 Fast Thinking을 한다는 것이 익숙하지 않아 초래된 것일 수 있다. 최근 Fast Thinking을 하는 기계를 사람들이 많이 접하고 있는 만큼 기계에게 적합한 과제에 대한 사람들의 인식이 점차 변화하게 될 것이다. 또한 사람들은 다음 두 단서를 바탕으로 Slow &amp; Fast Thinking을 판단한다: 1) 시간과 노력의 양, 2) 스스로 실수 또는 편향을 진단하고 이에 대해 명시적 정정을 하는 것.<br /></p>
+  </li>
+  <li>
+    <p>Law and Ethics: 기계는 실제로 Slow &amp; Fast Thinking을 할 수 없다. 따라서 사람들로 하여금 기계가 Slow &amp; Fast Thinking한다고 인식하게 만드는 것은 사람들을 속이는 것이라는 윤리적 문제가 존재한다. 사전에 이에 대해 고지하였는지 여부에 따라 사람들이 이를 어떻게 받아들이는 지가 달라지겠지만, 만약 이러한 기계의 행동이 도움이 될 경우 사람들은 어느정도 이를 용인할 가능성이 있다.<br /></p>
+  </li>
+</ol>
+
+<p><strong>장점</strong><br />
+기계의 Slow &amp; Fast Thinking과 관련된 사안들에 대해 연구를 할 때, 어떤 요소들을 고려해야 하는지 체계적으로 정리하며 논지를 펼치고 있다.<br /></p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Bonnefon, J. F., &amp; Rahwan, I. (2020). Machine Thinking, Fast and Slow. Trends in Cognitive Sciences.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-2-continual-learning-in-deep-neural-networks-ywj">Topic 2: Continual Learning in Deep Neural Networks [YWJ]</h2>
+
+<p><strong>선정이유</strong><br />
+연속 학습(continual learning) 개념에 대해 알아보기 위해 선정하였다.<br /></p>
+
+<p><strong>내용요약</strong> <br /> 
+연속 학습(Continual learning)은 인간처럼 변화하는 환경 속 순차적인 과제 학습 및 문제해결을 보여줄 수 있는 인공 신경망 모델을 구축하기 위해 제안된 개념이다. 연속 학습은 정해지지 않고(non-stationary) 변화하는(changing) 환경 속 문제해결을 위해 해결해야 할 과제를 연속적인 하위 과제로 쪼개어 이루어진다. 그러한 problem setting을 효과적으로 해결할 solution은 하나로 특정하기 어렵고, 효과적인 연속 학습을 위해 만족해야 하는 여러 조건들 중 어떤 것을 만족하느냐에 따라 해당 목적들 간의 trade-off가 발생한다. 인간과 동물의 뇌생물학적 특성에 부합하는 전략을 사용하여 효과적인 연속학습을 할 수 있으며, 그러한 paradigm은 크게 4개가 있다: 1) gradient-based continual learning 2) modularity 3) memory systems 4)meta-learning. 이러한 방법들은 간섭 최소화, 가소성 유지, 전방 전이와 후방 전이 등을 가능하게 하여 gradient-based ‘tug of war’문제를 해결할 수 있다.<br /></p>
+
+<p><strong>장단점</strong><br />
+연속 학습의 개념과 여러 paradigm각각의 장단점을 알 수 있었으나, 구체적인 적용 예시와 모델이 없어 전반적인 개념 이해 이상으로 나아가기 어려운 점이 안타까웠다.<br /></p>
+
+<p><strong>의의</strong><br />
+연속 학습을 통해 다수의 과제들의 문제해결법을 catastrophic forgetting 없이 효과적으로 학습할 수 있고, 그러한 학습을 구현하기 위해 사용할 수 있는 방법들을 개괄하여 이해하고, 그것이 사람의 뇌로부터 어떻게 파생되어 탄생한 것인지 그 연관성을 알고, 더 연구가 필요한 부분들에 대해 정리하였다.<br /></p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Hadsell, R., Rao, D., Rusu, A. A., &amp; Pascanu, R. (2020). Embracing Change: Continual Learning in Deep Neural Networks. Trends in Cognitive Sciences.
+</code></pre></div></div>
+
+<p><br /></p>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2021-02-15/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2021-02-01/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Aug 12th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Aug 12th Journal Club" />
+<meta name="author" content="Jae Eun Park (dawn2089@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Affective Computing (Ch1, Ch2), Contradictions in Dialogue Modeling, Blender Bot 1.0, Open-Domain Chatbot Presenters: YJ (Yoonwon Jung), SB (Seoyeon Bae), JSP (Jisang Park) Topic 1: Affective Computing (Ch1, Ch2) [YJ] 선정 이유 정서 컴퓨팅(Affective Computing)을 공부해 보고자 Oxford Handbook of Affective Computing을 정기적으로 발제하려 한다. 내용 요약 정서 컴퓨팅은 1995년 Picard에 의해 처음 명명되었으며, “computing that relates to, arises from, and deliberately influences emotion”라고 정의되었다. 정서 컴퓨팅은 새롭게 떠오르는 젊은 분야이지만 활발한 학술 연구를 촉발하고 비즈니스 기회 제공하는 분야로 계속 급성장하고 있다. 정서 컴퓨팅의 주요 두 주제는 정서 탐지(Affect Detection)와 정서 생성(Affect Generation)이다. 정서 탐지는 얼굴 특징, 언어, 생리학, 자세, 상황적 특징 및 이들의 멀티모달 조합(multimodal combination)를 다루며, 정서 생성은 표정, 말, 자세, 몸짓을 통한 감정의 합성과 표현을 다룬다. 정서 컴퓨팅을 위한 방법론으로는 데이터 수집 기술, 멀티모달 데이터베이스, 감정 표현 형식, 크라우드소싱 기술, 기계 학습, 정서 유발 기술 등이 있다. 이러한 방법론을 통해 구현된 정서 컴퓨팅 결과물들은 인간을 1) 새로운 자기이해를 이끌 수 있고, 2) 다른 사람들과 정서 데이터를 공유함으로서 사람들 사이의 의사 소통을 개선하고 더 나은 이해로 이끌 수 있으며 행동에도 유익한 변화를 줄 수 있다. 또한 측정 및 수치화된 정서 데이터는 인간을 위한 기술이 개발될 때 사람들에게 명확한 목표 설정을 가능하게 하여 더 발전된 정서적 경험을 제공할 수 있는 기술의 가능성을 확장시키며, 정서뿐만 아니라 다른 다양한 인간의 인지활동 및 행동을 보조하고 증강시키는 것을 목표로 하는 기술들의 정확도를 향상시키는 데에 기여할 수 있다. 의의 Affective Computing의 배경 및 개요를 알 수 있었다. 참고 문헌 Calvo, R. A., D’Mello, S., Gratch, J. M., &amp; Kappas, A. (2015). The Oxford Handbook of Affective Computing. Oxford University Press. Topic 2: I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling [SB] 선정 이유 오픈 도메인 챗봇을 위한 대화 데이터 구축 프로젝트 시작 전 관련 분야를 공부하기 위해 논문을 리뷰하게 되었다. 내용 요약 기존에 존재하는 대화 데이터 코퍼스에서 일부를 발췌하여 작업자들에게 배부한 후 1-2개의 발화를 덧붙이되 앞선 내용과 모순되도록 생성하게 하였다. 그리고 작업자들에게 해당 모순과 연관 있는 부분을 모두 체크하도록 하여 Human-Human 데이터셋을 준비하였다. Human-Bot 데이터셋의 경우 오픈 도메인 챗봇과 인간 참여자가 대화를 나누었는데 챗봇이 모순되는 말을 하게끔 참여자가 유도하였다. 이외에도, 대화를 다양하게 변형한 데이터셋이 함께 준비되었다. 모델은 기존의 NLI sequence-to-label 모델 형식을 차용하였으나, 선행 연구와 달리 “모순”과 “모순 되지 않음” 두 가지의 레이블만 출력하는 방식으로 모델을 수정하였다. 또한, 대화 내에서 모순을 탐지하는 방법으로 기존 NLU 분야에서 주류 패러다임으로 여겨졌던 unstructured approach와 본 연구에서 새롭게 제시한 utterance-based approach를 모두 사용하여 비교해 보았다. 테스트 결과, 본 연구에서 새롭게 구축한 데이터셋이 기존의 데이터셋보다 모순 탐지 과제를 수행하는 모델에 더 나은 수퍼비전을 제공해준다는 사실을 발견하였으며, utterance-based approach가 unstructured approach에 비해 훨씬 더 견고하고 transferable하였다. 또한, 이들의 모델이 인간 작업자의 모순 탐지 판단에 대체로 상응하는 모습을 보였으며, 추후 대화 생성 모델의 모순되는 발화를 줄이는 데에도 기여할 수 있을 것으로 예상된다. 장단점 기존 NLU 분야에서 사용되었던 다양한 모델 및 대화 데이터와의 비교를 통해 본 연구에서 제시한 DECODE가 왜 더 우수한지를 잘 보여주었고, 연구를 위해 정제된 데이터셋 뿐만 아니라 현실과 유사한 정제되지 않은 데이터셋으로도 모델 성능을 평가함으로써 일반화 가능성을 높였다는 것이 큰 장점이다. 의의 대화의 흐름이 끊기거나 자신이 말했던 것과 모순되는 발화를 하는 챗봇이 다수 존재하는 가운데, 이러한 모순되는 대화를 탐지하고 줄여 더 똑똑하고 인간다운 오픈 도메인 챗봇을 개발하는 데 본 연구가 시작점이 되었다고 할 수 있다. 참고 문헌 Nie, Y., Williamson, M., Bansal, M., Kiela, D., &amp; Weston, J. (2020). I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling. arXiv preprint arXiv:2012.13391. Topic 3: Blender Bot 1.0 - The largest-ever open-domain chatbot [JSP] 선정 이유 2021년 7월 16일 오픈소스로 공개된 Facebook의 Blender Bot 2.0을 이해하기 위해서 Blender Bot 1.0의 특징, 개발 방법론과 학습 데이터를 살펴보면서 이해를 심화시키고자함. 내용 요약 Facebook AI에서 대화형 AI와 관련한 다년간의 연구를 바탕으로 개발하고 오픈소스로 공개한 Blender Bot은 역대 공개된 가장 큰 규모의 open-domain 챗봇인데, 인간 평가자들에게 여타 챗봇과 비교하여 더 매력적이면서 인간적이라는 평가를 받았다. 챗봇의 개발은 다음과 같은 요소들로 가능하게 되었다. 1) 대규모의 인공신경망과 학습 데이터, 그리고 이를 효율화하는 딥러닝 모델 병렬 처리 2) 각기 다른 데이터셋으로 학습한 성격, 지식, 공감의 능력을 융합하는 Blended Skill Task (BST) 3) 효과적인 자연어 생성을 위한 beam search 기법에서의 beam length 최소화 챗봇의 각 기능별 학습에는 각기 다른 데이터셋이 활용되었는데, 각 데이터셋의 특징은 다음과 같다. A) 페르소나의 사용 - PersonaChat : 하나의 페르소나를 5개의 문장으로 표현하고, 동어반복을 피하기 위해서 각 문장을 다시 재작성함. 이후 둘씩 짝지어진 크라우드소싱 작업자가 주어진 페르소나를 연기하면서 대화하며 데이터를 생성했다. B) 지식의 사용 - Wizard of Wikipedia : 전문가-학습자 역할로 짝지어진 작업자들이 여러 주제로 대화를 나누면서 데이터를 생성한 뒤, 각 문장을 위키피디아의 문장과 연결하도록 했다. C) 공감의 사용 - Empathetic Dialogues : 주어진 감정 단어에 대해서 화자가 해당 감정에 어울리는 상황을 가정하고 대화를 시작하면, 청자가 이를 듣고 공감적으로 반응하는 방식으로 대화 데이터를 생성했다. D) A/B/C의 조화 - Blended Skill Talk 챗봇의 평가는 다음과 같은 두 가지 방식으로 진행되었다. 1) 구글의 최신 챗봇 Meena와 비교하는 방식으로 진행된 정량적인 평가. Engagingness (매력적인) : “Who would you prefer to talk to for a long conversation?” Humanness (인간적인) : “Which speaker sounds more human?” 2) 인간-인간, 인간-챗봇 대화의 A/B 대조를 통해 매력도를 평가. Blender Bot과의 대화는 인간-인간 대화와 비교하여 49% 비율로 선호되었다. 장단점 기존에는 하나의 데이터셋으로 한가지 기능만을 잘 수행하는 챗봇을 개발할 수 있었다면, Blended Skill Task를 통해 여러개의 데이터셋으로 상황에 맞는 기능을 수행할 수 있게 되었다. 대화 속 모순 및 반복, 짧은 기억과 지식 왜곡이 지속적으로 관찰되며, 대화가 길어질수록 문제가 더 심화됨. 의의 페이스북이 ParlAI라는 라이브러리를 공개함으로써 많은 연구자들과 개발자들이 양질의 데이터로 학습된 우수한 인공신경망을 기반으로 연구 또는 상업화를 위해 개별적으로 커스터마이징을 할 수 있는 토양을 마련했다는 점에서 큰 의의가 있음. Blended Skill Task를 바탕으로 3가지 기능을 융합시킴으로써 다재자능한 챗봇 구현의 가능성을 보여줌. 향후 Blended Skill Task를 핵심적으로 수행하는 챗봇 운영체제가 나오고, 개별 기능에 특화된 챗봇 운영 프로그램(앱)이 운영체제 위에서 돌아가는 방식으로 기술/산업 구조가 개편될 가능성이 있음. A/B 대조 평가 결과 인간-인간 대화와 비교하여 49%의 비율로 선호되었다는 점에서 챗봇의 대화 수준이 인간과의 대화 수준을 넘보고 있음을 알 수 있다. 비고 Official Code : ParlAI Dataset Used : PERSONA-CHAT Dataset Used : ConvAI2 Dataset Used : Wizard of Wikipedia Dataset Used : Blended Skill Talk 참고 문헌 Roller, S., Dinan, E., Goyal, N., Ju, D., WIlliamson, M., Liu, Y., …, Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637v2. Zhang, S., Dinan, E., Urbanek, J., Szlam, A., Kiela, D., &amp; Weston, J. (2018). Personalizing Dialogue Agents: I have a dog, do you have pets too? arXiv preprint arXiv:1811.00207. Dinan, E., Roller, S., Shuster, K., Fan, A., Auli, M., &amp; Weston, J. (2018). Wizard of Wikipedia: Knowledge-Powered Conversational agents. arXiv preprint arXiv:1811.01241v2. Rashkin, H., Smith, E. M., Li, M., &amp; Boureau, Y. (2019). Towards Empathetic Open-domain Conversation Models: a New Benchmark and Dataset. arXiv preprint arXiv:1811.00207v5. Smith, E. M., Williamson, M., Shuster, K., Weston, J., &amp; Boureau, Y. (2020). Can You Put it All Together: Evaluating Conversational Agents’ Ability to Blend Skills. arXiv preprint arXiv:2004.08449v1. Facebook AI Blog : A state-of-the-art open source chatbot" />
+<meta property="og:description" content="Themes: Affective Computing (Ch1, Ch2), Contradictions in Dialogue Modeling, Blender Bot 1.0, Open-Domain Chatbot Presenters: YJ (Yoonwon Jung), SB (Seoyeon Bae), JSP (Jisang Park) Topic 1: Affective Computing (Ch1, Ch2) [YJ] 선정 이유 정서 컴퓨팅(Affective Computing)을 공부해 보고자 Oxford Handbook of Affective Computing을 정기적으로 발제하려 한다. 내용 요약 정서 컴퓨팅은 1995년 Picard에 의해 처음 명명되었으며, “computing that relates to, arises from, and deliberately influences emotion”라고 정의되었다. 정서 컴퓨팅은 새롭게 떠오르는 젊은 분야이지만 활발한 학술 연구를 촉발하고 비즈니스 기회 제공하는 분야로 계속 급성장하고 있다. 정서 컴퓨팅의 주요 두 주제는 정서 탐지(Affect Detection)와 정서 생성(Affect Generation)이다. 정서 탐지는 얼굴 특징, 언어, 생리학, 자세, 상황적 특징 및 이들의 멀티모달 조합(multimodal combination)를 다루며, 정서 생성은 표정, 말, 자세, 몸짓을 통한 감정의 합성과 표현을 다룬다. 정서 컴퓨팅을 위한 방법론으로는 데이터 수집 기술, 멀티모달 데이터베이스, 감정 표현 형식, 크라우드소싱 기술, 기계 학습, 정서 유발 기술 등이 있다. 이러한 방법론을 통해 구현된 정서 컴퓨팅 결과물들은 인간을 1) 새로운 자기이해를 이끌 수 있고, 2) 다른 사람들과 정서 데이터를 공유함으로서 사람들 사이의 의사 소통을 개선하고 더 나은 이해로 이끌 수 있으며 행동에도 유익한 변화를 줄 수 있다. 또한 측정 및 수치화된 정서 데이터는 인간을 위한 기술이 개발될 때 사람들에게 명확한 목표 설정을 가능하게 하여 더 발전된 정서적 경험을 제공할 수 있는 기술의 가능성을 확장시키며, 정서뿐만 아니라 다른 다양한 인간의 인지활동 및 행동을 보조하고 증강시키는 것을 목표로 하는 기술들의 정확도를 향상시키는 데에 기여할 수 있다. 의의 Affective Computing의 배경 및 개요를 알 수 있었다. 참고 문헌 Calvo, R. A., D’Mello, S., Gratch, J. M., &amp; Kappas, A. (2015). The Oxford Handbook of Affective Computing. Oxford University Press. Topic 2: I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling [SB] 선정 이유 오픈 도메인 챗봇을 위한 대화 데이터 구축 프로젝트 시작 전 관련 분야를 공부하기 위해 논문을 리뷰하게 되었다. 내용 요약 기존에 존재하는 대화 데이터 코퍼스에서 일부를 발췌하여 작업자들에게 배부한 후 1-2개의 발화를 덧붙이되 앞선 내용과 모순되도록 생성하게 하였다. 그리고 작업자들에게 해당 모순과 연관 있는 부분을 모두 체크하도록 하여 Human-Human 데이터셋을 준비하였다. Human-Bot 데이터셋의 경우 오픈 도메인 챗봇과 인간 참여자가 대화를 나누었는데 챗봇이 모순되는 말을 하게끔 참여자가 유도하였다. 이외에도, 대화를 다양하게 변형한 데이터셋이 함께 준비되었다. 모델은 기존의 NLI sequence-to-label 모델 형식을 차용하였으나, 선행 연구와 달리 “모순”과 “모순 되지 않음” 두 가지의 레이블만 출력하는 방식으로 모델을 수정하였다. 또한, 대화 내에서 모순을 탐지하는 방법으로 기존 NLU 분야에서 주류 패러다임으로 여겨졌던 unstructured approach와 본 연구에서 새롭게 제시한 utterance-based approach를 모두 사용하여 비교해 보았다. 테스트 결과, 본 연구에서 새롭게 구축한 데이터셋이 기존의 데이터셋보다 모순 탐지 과제를 수행하는 모델에 더 나은 수퍼비전을 제공해준다는 사실을 발견하였으며, utterance-based approach가 unstructured approach에 비해 훨씬 더 견고하고 transferable하였다. 또한, 이들의 모델이 인간 작업자의 모순 탐지 판단에 대체로 상응하는 모습을 보였으며, 추후 대화 생성 모델의 모순되는 발화를 줄이는 데에도 기여할 수 있을 것으로 예상된다. 장단점 기존 NLU 분야에서 사용되었던 다양한 모델 및 대화 데이터와의 비교를 통해 본 연구에서 제시한 DECODE가 왜 더 우수한지를 잘 보여주었고, 연구를 위해 정제된 데이터셋 뿐만 아니라 현실과 유사한 정제되지 않은 데이터셋으로도 모델 성능을 평가함으로써 일반화 가능성을 높였다는 것이 큰 장점이다. 의의 대화의 흐름이 끊기거나 자신이 말했던 것과 모순되는 발화를 하는 챗봇이 다수 존재하는 가운데, 이러한 모순되는 대화를 탐지하고 줄여 더 똑똑하고 인간다운 오픈 도메인 챗봇을 개발하는 데 본 연구가 시작점이 되었다고 할 수 있다. 참고 문헌 Nie, Y., Williamson, M., Bansal, M., Kiela, D., &amp; Weston, J. (2020). I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling. arXiv preprint arXiv:2012.13391. Topic 3: Blender Bot 1.0 - The largest-ever open-domain chatbot [JSP] 선정 이유 2021년 7월 16일 오픈소스로 공개된 Facebook의 Blender Bot 2.0을 이해하기 위해서 Blender Bot 1.0의 특징, 개발 방법론과 학습 데이터를 살펴보면서 이해를 심화시키고자함. 내용 요약 Facebook AI에서 대화형 AI와 관련한 다년간의 연구를 바탕으로 개발하고 오픈소스로 공개한 Blender Bot은 역대 공개된 가장 큰 규모의 open-domain 챗봇인데, 인간 평가자들에게 여타 챗봇과 비교하여 더 매력적이면서 인간적이라는 평가를 받았다. 챗봇의 개발은 다음과 같은 요소들로 가능하게 되었다. 1) 대규모의 인공신경망과 학습 데이터, 그리고 이를 효율화하는 딥러닝 모델 병렬 처리 2) 각기 다른 데이터셋으로 학습한 성격, 지식, 공감의 능력을 융합하는 Blended Skill Task (BST) 3) 효과적인 자연어 생성을 위한 beam search 기법에서의 beam length 최소화 챗봇의 각 기능별 학습에는 각기 다른 데이터셋이 활용되었는데, 각 데이터셋의 특징은 다음과 같다. A) 페르소나의 사용 - PersonaChat : 하나의 페르소나를 5개의 문장으로 표현하고, 동어반복을 피하기 위해서 각 문장을 다시 재작성함. 이후 둘씩 짝지어진 크라우드소싱 작업자가 주어진 페르소나를 연기하면서 대화하며 데이터를 생성했다. B) 지식의 사용 - Wizard of Wikipedia : 전문가-학습자 역할로 짝지어진 작업자들이 여러 주제로 대화를 나누면서 데이터를 생성한 뒤, 각 문장을 위키피디아의 문장과 연결하도록 했다. C) 공감의 사용 - Empathetic Dialogues : 주어진 감정 단어에 대해서 화자가 해당 감정에 어울리는 상황을 가정하고 대화를 시작하면, 청자가 이를 듣고 공감적으로 반응하는 방식으로 대화 데이터를 생성했다. D) A/B/C의 조화 - Blended Skill Talk 챗봇의 평가는 다음과 같은 두 가지 방식으로 진행되었다. 1) 구글의 최신 챗봇 Meena와 비교하는 방식으로 진행된 정량적인 평가. Engagingness (매력적인) : “Who would you prefer to talk to for a long conversation?” Humanness (인간적인) : “Which speaker sounds more human?” 2) 인간-인간, 인간-챗봇 대화의 A/B 대조를 통해 매력도를 평가. Blender Bot과의 대화는 인간-인간 대화와 비교하여 49% 비율로 선호되었다. 장단점 기존에는 하나의 데이터셋으로 한가지 기능만을 잘 수행하는 챗봇을 개발할 수 있었다면, Blended Skill Task를 통해 여러개의 데이터셋으로 상황에 맞는 기능을 수행할 수 있게 되었다. 대화 속 모순 및 반복, 짧은 기억과 지식 왜곡이 지속적으로 관찰되며, 대화가 길어질수록 문제가 더 심화됨. 의의 페이스북이 ParlAI라는 라이브러리를 공개함으로써 많은 연구자들과 개발자들이 양질의 데이터로 학습된 우수한 인공신경망을 기반으로 연구 또는 상업화를 위해 개별적으로 커스터마이징을 할 수 있는 토양을 마련했다는 점에서 큰 의의가 있음. Blended Skill Task를 바탕으로 3가지 기능을 융합시킴으로써 다재자능한 챗봇 구현의 가능성을 보여줌. 향후 Blended Skill Task를 핵심적으로 수행하는 챗봇 운영체제가 나오고, 개별 기능에 특화된 챗봇 운영 프로그램(앱)이 운영체제 위에서 돌아가는 방식으로 기술/산업 구조가 개편될 가능성이 있음. A/B 대조 평가 결과 인간-인간 대화와 비교하여 49%의 비율로 선호되었다는 점에서 챗봇의 대화 수준이 인간과의 대화 수준을 넘보고 있음을 알 수 있다. 비고 Official Code : ParlAI Dataset Used : PERSONA-CHAT Dataset Used : ConvAI2 Dataset Used : Wizard of Wikipedia Dataset Used : Blended Skill Talk 참고 문헌 Roller, S., Dinan, E., Goyal, N., Ju, D., WIlliamson, M., Liu, Y., …, Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637v2. Zhang, S., Dinan, E., Urbanek, J., Szlam, A., Kiela, D., &amp; Weston, J. (2018). Personalizing Dialogue Agents: I have a dog, do you have pets too? arXiv preprint arXiv:1811.00207. Dinan, E., Roller, S., Shuster, K., Fan, A., Auli, M., &amp; Weston, J. (2018). Wizard of Wikipedia: Knowledge-Powered Conversational agents. arXiv preprint arXiv:1811.01241v2. Rashkin, H., Smith, E. M., Li, M., &amp; Boureau, Y. (2019). Towards Empathetic Open-domain Conversation Models: a New Benchmark and Dataset. arXiv preprint arXiv:1811.00207v5. Smith, E. M., Williamson, M., Shuster, K., Weston, J., &amp; Boureau, Y. (2020). Can You Put it All Together: Evaluating Conversational Agents’ Ability to Blend Skills. arXiv preprint arXiv:2004.08449v1. Facebook AI Blog : A state-of-the-art open source chatbot" />
+<link rel="canonical" href="http://localhost:4000/blog/2021-08-12/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2021-08-12/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-12T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Aug 12th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jae Eun Park (dawn2089@snu.ac.kr)"},"dateModified":"2021-08-12T00:00:00+09:00","datePublished":"2021-08-12T00:00:00+09:00","description":"Themes: Affective Computing (Ch1, Ch2), Contradictions in Dialogue Modeling, Blender Bot 1.0, Open-Domain Chatbot Presenters: YJ (Yoonwon Jung), SB (Seoyeon Bae), JSP (Jisang Park) Topic 1: Affective Computing (Ch1, Ch2) [YJ] 선정 이유 정서 컴퓨팅(Affective Computing)을 공부해 보고자 Oxford Handbook of Affective Computing을 정기적으로 발제하려 한다. 내용 요약 정서 컴퓨팅은 1995년 Picard에 의해 처음 명명되었으며, “computing that relates to, arises from, and deliberately influences emotion”라고 정의되었다. 정서 컴퓨팅은 새롭게 떠오르는 젊은 분야이지만 활발한 학술 연구를 촉발하고 비즈니스 기회 제공하는 분야로 계속 급성장하고 있다. 정서 컴퓨팅의 주요 두 주제는 정서 탐지(Affect Detection)와 정서 생성(Affect Generation)이다. 정서 탐지는 얼굴 특징, 언어, 생리학, 자세, 상황적 특징 및 이들의 멀티모달 조합(multimodal combination)를 다루며, 정서 생성은 표정, 말, 자세, 몸짓을 통한 감정의 합성과 표현을 다룬다. 정서 컴퓨팅을 위한 방법론으로는 데이터 수집 기술, 멀티모달 데이터베이스, 감정 표현 형식, 크라우드소싱 기술, 기계 학습, 정서 유발 기술 등이 있다. 이러한 방법론을 통해 구현된 정서 컴퓨팅 결과물들은 인간을 1) 새로운 자기이해를 이끌 수 있고, 2) 다른 사람들과 정서 데이터를 공유함으로서 사람들 사이의 의사 소통을 개선하고 더 나은 이해로 이끌 수 있으며 행동에도 유익한 변화를 줄 수 있다. 또한 측정 및 수치화된 정서 데이터는 인간을 위한 기술이 개발될 때 사람들에게 명확한 목표 설정을 가능하게 하여 더 발전된 정서적 경험을 제공할 수 있는 기술의 가능성을 확장시키며, 정서뿐만 아니라 다른 다양한 인간의 인지활동 및 행동을 보조하고 증강시키는 것을 목표로 하는 기술들의 정확도를 향상시키는 데에 기여할 수 있다. 의의 Affective Computing의 배경 및 개요를 알 수 있었다. 참고 문헌 Calvo, R. A., D’Mello, S., Gratch, J. M., &amp; Kappas, A. (2015). The Oxford Handbook of Affective Computing. Oxford University Press. Topic 2: I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling [SB] 선정 이유 오픈 도메인 챗봇을 위한 대화 데이터 구축 프로젝트 시작 전 관련 분야를 공부하기 위해 논문을 리뷰하게 되었다. 내용 요약 기존에 존재하는 대화 데이터 코퍼스에서 일부를 발췌하여 작업자들에게 배부한 후 1-2개의 발화를 덧붙이되 앞선 내용과 모순되도록 생성하게 하였다. 그리고 작업자들에게 해당 모순과 연관 있는 부분을 모두 체크하도록 하여 Human-Human 데이터셋을 준비하였다. Human-Bot 데이터셋의 경우 오픈 도메인 챗봇과 인간 참여자가 대화를 나누었는데 챗봇이 모순되는 말을 하게끔 참여자가 유도하였다. 이외에도, 대화를 다양하게 변형한 데이터셋이 함께 준비되었다. 모델은 기존의 NLI sequence-to-label 모델 형식을 차용하였으나, 선행 연구와 달리 “모순”과 “모순 되지 않음” 두 가지의 레이블만 출력하는 방식으로 모델을 수정하였다. 또한, 대화 내에서 모순을 탐지하는 방법으로 기존 NLU 분야에서 주류 패러다임으로 여겨졌던 unstructured approach와 본 연구에서 새롭게 제시한 utterance-based approach를 모두 사용하여 비교해 보았다. 테스트 결과, 본 연구에서 새롭게 구축한 데이터셋이 기존의 데이터셋보다 모순 탐지 과제를 수행하는 모델에 더 나은 수퍼비전을 제공해준다는 사실을 발견하였으며, utterance-based approach가 unstructured approach에 비해 훨씬 더 견고하고 transferable하였다. 또한, 이들의 모델이 인간 작업자의 모순 탐지 판단에 대체로 상응하는 모습을 보였으며, 추후 대화 생성 모델의 모순되는 발화를 줄이는 데에도 기여할 수 있을 것으로 예상된다. 장단점 기존 NLU 분야에서 사용되었던 다양한 모델 및 대화 데이터와의 비교를 통해 본 연구에서 제시한 DECODE가 왜 더 우수한지를 잘 보여주었고, 연구를 위해 정제된 데이터셋 뿐만 아니라 현실과 유사한 정제되지 않은 데이터셋으로도 모델 성능을 평가함으로써 일반화 가능성을 높였다는 것이 큰 장점이다. 의의 대화의 흐름이 끊기거나 자신이 말했던 것과 모순되는 발화를 하는 챗봇이 다수 존재하는 가운데, 이러한 모순되는 대화를 탐지하고 줄여 더 똑똑하고 인간다운 오픈 도메인 챗봇을 개발하는 데 본 연구가 시작점이 되었다고 할 수 있다. 참고 문헌 Nie, Y., Williamson, M., Bansal, M., Kiela, D., &amp; Weston, J. (2020). I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling. arXiv preprint arXiv:2012.13391. Topic 3: Blender Bot 1.0 - The largest-ever open-domain chatbot [JSP] 선정 이유 2021년 7월 16일 오픈소스로 공개된 Facebook의 Blender Bot 2.0을 이해하기 위해서 Blender Bot 1.0의 특징, 개발 방법론과 학습 데이터를 살펴보면서 이해를 심화시키고자함. 내용 요약 Facebook AI에서 대화형 AI와 관련한 다년간의 연구를 바탕으로 개발하고 오픈소스로 공개한 Blender Bot은 역대 공개된 가장 큰 규모의 open-domain 챗봇인데, 인간 평가자들에게 여타 챗봇과 비교하여 더 매력적이면서 인간적이라는 평가를 받았다. 챗봇의 개발은 다음과 같은 요소들로 가능하게 되었다. 1) 대규모의 인공신경망과 학습 데이터, 그리고 이를 효율화하는 딥러닝 모델 병렬 처리 2) 각기 다른 데이터셋으로 학습한 성격, 지식, 공감의 능력을 융합하는 Blended Skill Task (BST) 3) 효과적인 자연어 생성을 위한 beam search 기법에서의 beam length 최소화 챗봇의 각 기능별 학습에는 각기 다른 데이터셋이 활용되었는데, 각 데이터셋의 특징은 다음과 같다. A) 페르소나의 사용 - PersonaChat : 하나의 페르소나를 5개의 문장으로 표현하고, 동어반복을 피하기 위해서 각 문장을 다시 재작성함. 이후 둘씩 짝지어진 크라우드소싱 작업자가 주어진 페르소나를 연기하면서 대화하며 데이터를 생성했다. B) 지식의 사용 - Wizard of Wikipedia : 전문가-학습자 역할로 짝지어진 작업자들이 여러 주제로 대화를 나누면서 데이터를 생성한 뒤, 각 문장을 위키피디아의 문장과 연결하도록 했다. C) 공감의 사용 - Empathetic Dialogues : 주어진 감정 단어에 대해서 화자가 해당 감정에 어울리는 상황을 가정하고 대화를 시작하면, 청자가 이를 듣고 공감적으로 반응하는 방식으로 대화 데이터를 생성했다. D) A/B/C의 조화 - Blended Skill Talk 챗봇의 평가는 다음과 같은 두 가지 방식으로 진행되었다. 1) 구글의 최신 챗봇 Meena와 비교하는 방식으로 진행된 정량적인 평가. Engagingness (매력적인) : “Who would you prefer to talk to for a long conversation?” Humanness (인간적인) : “Which speaker sounds more human?” 2) 인간-인간, 인간-챗봇 대화의 A/B 대조를 통해 매력도를 평가. Blender Bot과의 대화는 인간-인간 대화와 비교하여 49% 비율로 선호되었다. 장단점 기존에는 하나의 데이터셋으로 한가지 기능만을 잘 수행하는 챗봇을 개발할 수 있었다면, Blended Skill Task를 통해 여러개의 데이터셋으로 상황에 맞는 기능을 수행할 수 있게 되었다. 대화 속 모순 및 반복, 짧은 기억과 지식 왜곡이 지속적으로 관찰되며, 대화가 길어질수록 문제가 더 심화됨. 의의 페이스북이 ParlAI라는 라이브러리를 공개함으로써 많은 연구자들과 개발자들이 양질의 데이터로 학습된 우수한 인공신경망을 기반으로 연구 또는 상업화를 위해 개별적으로 커스터마이징을 할 수 있는 토양을 마련했다는 점에서 큰 의의가 있음. Blended Skill Task를 바탕으로 3가지 기능을 융합시킴으로써 다재자능한 챗봇 구현의 가능성을 보여줌. 향후 Blended Skill Task를 핵심적으로 수행하는 챗봇 운영체제가 나오고, 개별 기능에 특화된 챗봇 운영 프로그램(앱)이 운영체제 위에서 돌아가는 방식으로 기술/산업 구조가 개편될 가능성이 있음. A/B 대조 평가 결과 인간-인간 대화와 비교하여 49%의 비율로 선호되었다는 점에서 챗봇의 대화 수준이 인간과의 대화 수준을 넘보고 있음을 알 수 있다. 비고 Official Code : ParlAI Dataset Used : PERSONA-CHAT Dataset Used : ConvAI2 Dataset Used : Wizard of Wikipedia Dataset Used : Blended Skill Talk 참고 문헌 Roller, S., Dinan, E., Goyal, N., Ju, D., WIlliamson, M., Liu, Y., …, Weston, J. (2020). Recipes for building an open-domain chatbot. arXiv preprint arXiv:2004.13637v2. Zhang, S., Dinan, E., Urbanek, J., Szlam, A., Kiela, D., &amp; Weston, J. (2018). Personalizing Dialogue Agents: I have a dog, do you have pets too? arXiv preprint arXiv:1811.00207. Dinan, E., Roller, S., Shuster, K., Fan, A., Auli, M., &amp; Weston, J. (2018). Wizard of Wikipedia: Knowledge-Powered Conversational agents. arXiv preprint arXiv:1811.01241v2. Rashkin, H., Smith, E. M., Li, M., &amp; Boureau, Y. (2019). Towards Empathetic Open-domain Conversation Models: a New Benchmark and Dataset. arXiv preprint arXiv:1811.00207v5. Smith, E. M., Williamson, M., Shuster, K., Weston, J., &amp; Boureau, Y. (2020). Can You Put it All Together: Evaluating Conversational Agents’ Ability to Blend Skills. arXiv preprint arXiv:2004.08449v1. Facebook AI Blog : A state-of-the-art open source chatbot","headline":"Aug 12th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021-08-12/study"},"url":"http://localhost:4000/blog/2021-08-12/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Jae Eun Park (dawn2089@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2021-08-12 00:00:00 +0900">August 12, 2021</time>
+    
+  </div>
+
+  <h1 class="post-title">Aug 12th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Affective Computing (Ch1, Ch2), Contradictions in Dialogue Modeling, Blender Bot 1.0, Open-Domain Chatbot
+</code></pre></div></div>
+
+<p>Presenters: YJ (Yoonwon Jung), SB (Seoyeon Bae), JSP (Jisang Park)</p>
+
+<hr />
+
+<h1 id="topic-1-affective-computing-ch1-ch2-yj">Topic 1: Affective Computing (Ch1, Ch2) [YJ]</h1>
+
+<h3 id="선정-이유"><strong>선정 이유</strong></h3>
+<p>정서 컴퓨팅<strong>(</strong>Affective Computing)을 공부해 보고자 Oxford Handbook of Affective Computing을 정기적으로 발제하려 한다.</p>
+
+<h3 id="내용-요약"><strong>내용 요약</strong></h3>
+<p>정서 컴퓨팅은 1995년 Picard에 의해 처음 명명되었으며, “computing that relates to, arises from, and deliberately influences emotion”라고 정의되었다. 정서 컴퓨팅은 새롭게 떠오르는 젊은 분야이지만 활발한 학술 연구를 촉발하고 비즈니스 기회 제공하는 분야로 계속 급성장하고 있다. 정서 컴퓨팅의 주요 두 주제는 정서 탐지(Affect Detection)와 정서 생성(Affect Generation)이다. 정서 탐지는 얼굴 특징, 언어, 생리학, 자세, 상황적 특징 및 이들의 멀티모달 조합(multimodal combination)를 다루며, 정서 생성은 표정, 말, 자세, 몸짓을 통한 감정의 합성과 표현을 다룬다. 정서 컴퓨팅을 위한 방법론으로는 데이터 수집 기술, 멀티모달 데이터베이스, 감정 표현 형식, 크라우드소싱 기술, 기계 학습, 정서 유발 기술 등이 있다. 이러한 방법론을 통해 구현된 정서 컴퓨팅 결과물들은 인간을 1) 새로운 자기이해를 이끌 수 있고, 2) 다른 사람들과 정서 데이터를 공유함으로서 사람들 사이의 의사 소통을 개선하고 더 나은 이해로 이끌 수 있으며 행동에도 유익한 변화를 줄 수 있다. 또한 측정 및 수치화된 정서 데이터는 인간을 위한 기술이 개발될 때 사람들에게 명확한 목표 설정을 가능하게 하여 더 발전된 정서적 경험을 제공할 수 있는 기술의 가능성을 확장시키며, 정서뿐만 아니라 다른 다양한 인간의 인지활동 및 행동을 보조하고 증강시키는 것을 목표로 하는 기술들의 정확도를 향상시키는 데에 기여할 수 있다.</p>
+
+<h3 id="의의"><strong>의의</strong></h3>
+<p>Affective Computing의 배경 및 개요를 알 수 있었다.</p>
+
+<h3 id="참고-문헌"><strong>참고 문헌</strong></h3>
+<p>Calvo, R. A., D’Mello, S., Gratch, J. M., &amp; Kappas, A. (2015). The Oxford Handbook of Affective Computing. Oxford University Press.</p>
+
+<h1 id="topic-2-i-like-fish-especially-dolphins-addressing-contradictions-in-dialogue-modeling-sb">Topic 2: I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling [SB]</h1>
+
+<h3 id="선정-이유-1"><strong>선정 이유</strong></h3>
+
+<p>오픈 도메인 챗봇을 위한 대화 데이터 구축 프로젝트 시작 전 관련 분야를 공부하기 위해 논문을 리뷰하게 되었다.</p>
+
+<h3 id="내용-요약-1"><strong>내용 요약</strong></h3>
+
+<p>기존에 존재하는 대화 데이터 코퍼스에서 일부를 발췌하여 작업자들에게 배부한 후 1-2개의 발화를 덧붙이되 앞선 내용과 모순되도록 생성하게 하였다. 그리고 작업자들에게 해당 모순과 연관 있는 부분을 모두 체크하도록 하여 Human-Human 데이터셋을 준비하였다. Human-Bot 데이터셋의 경우 오픈 도메인 챗봇과 인간 참여자가 대화를 나누었는데 챗봇이 모순되는 말을 하게끔 참여자가 유도하였다. 이외에도, 대화를 다양하게 변형한 데이터셋이 함께 준비되었다.
+모델은 기존의 NLI sequence-to-label 모델 형식을 차용하였으나, 선행 연구와 달리 “모순”과 “모순 되지 않음” 두 가지의 레이블만 출력하는 방식으로 모델을 수정하였다. 또한, 대화 내에서 모순을 탐지하는 방법으로 기존 NLU 분야에서 주류 패러다임으로 여겨졌던 unstructured approach와 본 연구에서 새롭게 제시한 utterance-based approach를 모두 사용하여 비교해 보았다.
+테스트 결과, 본 연구에서 새롭게 구축한 데이터셋이 기존의 데이터셋보다 모순 탐지 과제를 수행하는 모델에 더 나은 수퍼비전을 제공해준다는 사실을 발견하였으며, utterance-based approach가 unstructured approach에 비해 훨씬 더 견고하고 transferable하였다. 또한, 이들의 모델이 인간 작업자의 모순 탐지 판단에 대체로 상응하는 모습을 보였으며, 추후 대화 생성 모델의 모순되는 발화를 줄이는 데에도 기여할 수 있을 것으로 예상된다.</p>
+
+<h3 id="장단점"><strong>장단점</strong></h3>
+
+<p>기존 NLU 분야에서 사용되었던 다양한 모델 및 대화 데이터와의 비교를 통해 본 연구에서 제시한 DECODE가 왜 더 우수한지를 잘 보여주었고, 연구를 위해 정제된 데이터셋 뿐만 아니라 현실과 유사한 정제되지 않은 데이터셋으로도 모델 성능을 평가함으로써 일반화 가능성을 높였다는 것이 큰 장점이다.</p>
+
+<h3 id="의의-1"><strong>의의</strong></h3>
+
+<p>대화의 흐름이 끊기거나 자신이 말했던 것과 모순되는 발화를 하는 챗봇이 다수 존재하는 가운데, 이러한 모순되는 대화를 탐지하고 줄여 더 똑똑하고 인간다운 오픈 도메인 챗봇을 개발하는 데 본 연구가 시작점이 되었다고 할 수 있다.</p>
+
+<h3 id="참고-문헌-1"><strong>참고 문헌</strong></h3>
+
+<p>Nie, Y., Williamson, M., Bansal, M., Kiela, D., &amp; Weston, J. (2020). I like fish, especially dolphins: Addressing Contradictions in Dialogue Modeling. arXiv preprint arXiv:2012.13391.</p>
+
+<h1 id="topic-3-blender-bot-10---the-largest-ever-open-domain-chatbot-jsp">Topic 3: Blender Bot 1.0 - The largest-ever open-domain chatbot [JSP]</h1>
+
+<h3 id="선정-이유-2"><strong>선정 이유</strong></h3>
+
+<p>2021년 7월 16일 오픈소스로 공개된 Facebook의 Blender Bot 2.0을 이해하기 위해서 Blender Bot 1.0의 특징, 개발 방법론과 학습 데이터를 살펴보면서 이해를 심화시키고자함.</p>
+
+<h3 id="내용-요약-2"><strong>내용 요약</strong></h3>
+
+<p>Facebook AI에서 대화형 AI와 관련한 다년간의 연구를 바탕으로 개발하고 오픈소스로 공개한 Blender Bot은 역대 공개된 가장 큰 규모의 open-domain 챗봇인데, 인간 평가자들에게 여타 챗봇과 비교하여 더 매력적이면서 인간적이라는 평가를 받았다.</p>
+
+<p>챗봇의 개발은 다음과 같은 요소들로 가능하게 되었다. <br />
+1) 대규모의 인공신경망과 학습 데이터, 그리고 이를 효율화하는 딥러닝 모델 병렬 처리 <br />
+2) 각기 다른 데이터셋으로 학습한 성격, 지식, 공감의 능력을 융합하는 Blended Skill Task (BST) <br />
+3) 효과적인 자연어 생성을 위한 beam search 기법에서의 beam length 최소화 <br /></p>
+
+<p>챗봇의 각 기능별 학습에는 각기 다른 데이터셋이 활용되었는데, 각 데이터셋의 특징은 다음과 같다.<br />
+A) 페르소나의 사용 - PersonaChat : 하나의 페르소나를 5개의 문장으로 표현하고, 동어반복을 피하기 위해서 각 문장을 다시 재작성함. 이후 둘씩 짝지어진 크라우드소싱 작업자가 주어진 페르소나를 연기하면서 대화하며 데이터를 생성했다.<br />
+B) 지식의 사용 - Wizard of Wikipedia : 전문가-학습자 역할로 짝지어진 작업자들이 여러 주제로 대화를 나누면서 데이터를 생성한 뒤, 각 문장을 위키피디아의 문장과 연결하도록 했다.<br /> 
+C) 공감의 사용 - Empathetic Dialogues : 주어진 감정 단어에 대해서 화자가 해당 감정에 어울리는 상황을 가정하고 대화를 시작하면, 청자가 이를 듣고 공감적으로 반응하는 방식으로 대화 데이터를 생성했다.<br />
+D) A/B/C의 조화 - Blended Skill Talk<br /></p>
+
+<p>챗봇의 평가는 다음과 같은 두 가지 방식으로 진행되었다.<br />
+1) 구글의 최신 챗봇 Meena와 비교하는 방식으로 진행된 정량적인 평가.</p>
+<ul>
+  <li>Engagingness (매력적인) : “Who would you prefer to talk to for a long conversation?”</li>
+  <li>Humanness (인간적인) : “Which speaker sounds more human?”<br />
+2) 인간-인간, 인간-챗봇 대화의 A/B 대조를 통해 매력도를 평가.<br /></li>
+  <li>Blender Bot과의 대화는 인간-인간 대화와 비교하여 49% 비율로 선호되었다.</li>
+</ul>
+
+<h3 id="장단점-1"><strong>장단점</strong></h3>
+
+<p>기존에는 하나의 데이터셋으로 한가지 기능만을 잘 수행하는 챗봇을 개발할 수 있었다면,
+Blended Skill Task를 통해 여러개의 데이터셋으로 상황에 맞는 기능을 수행할 수 있게 되었다.</p>
+
+<p>대화 속 모순 및 반복, 짧은 기억과 지식 왜곡이 지속적으로 관찰되며, 대화가 길어질수록 문제가 더 심화됨.</p>
+
+<h3 id="의의-2"><strong>의의</strong></h3>
+
+<p>페이스북이 ParlAI라는 라이브러리를 공개함으로써 많은 연구자들과 개발자들이 양질의 데이터로 학습된 우수한 인공신경망을 기반으로
+연구 또는 상업화를 위해 개별적으로 커스터마이징을 할 수 있는 토양을 마련했다는 점에서 큰 의의가 있음.</p>
+
+<p>Blended Skill Task를 바탕으로 3가지 기능을 융합시킴으로써 다재자능한 챗봇 구현의 가능성을 보여줌.
+향후 Blended Skill Task를 핵심적으로 수행하는 챗봇 운영체제가 나오고, 
+개별 기능에 특화된 챗봇 운영 프로그램(앱)이 운영체제 위에서 돌아가는 방식으로 기술/산업 구조가 개편될 가능성이 있음.</p>
+
+<p>A/B 대조 평가 결과 인간-인간 대화와 비교하여 49%의 비율로 선호되었다는 점에서 챗봇의 대화 수준이
+인간과의 대화 수준을 넘보고 있음을 알 수 있다.</p>
+
+<h3 id="비고"><strong>비고</strong></h3>
+<ul>
+  <li><a href="https://github.com/facebookresearch/ParlAI">Official Code : ParlAI</a></li>
+  <li><a href="https://paperswithcode.com/dataset/persona-chat-1">Dataset Used : PERSONA-CHAT</a></li>
+  <li><a href="https://paperswithcode.com/dataset/convai2">Dataset Used : ConvAI2</a></li>
+  <li><a href="https://paperswithcode.com/dataset/wizard-of-wikipedia">Dataset Used : Wizard of Wikipedia</a></li>
+  <li><a href="https://paperswithcode.com/dataset/blended-skill-talk">Dataset Used : Blended Skill Talk</a></li>
+</ul>
+
+<h3 id="참고-문헌-2"><strong>참고 문헌</strong></h3>
+<ul>
+  <li>Roller, S., Dinan, E., Goyal, N., Ju, D., WIlliamson, M., Liu, Y., …, Weston, J. (2020). Recipes for building an open-domain chatbot. <em>arXiv preprint arXiv:2004.13637v2.</em></li>
+  <li>Zhang, S., Dinan, E., Urbanek, J., Szlam, A., Kiela, D., &amp; Weston, J. (2018). Personalizing Dialogue Agents: I have a dog, do you have pets too? <em>arXiv preprint arXiv:1811.00207.</em></li>
+  <li>Dinan, E., Roller, S., Shuster, K., Fan, A., Auli, M., &amp; Weston, J. (2018). Wizard of Wikipedia: Knowledge-Powered Conversational agents. <em>arXiv preprint arXiv:1811.01241v2.</em></li>
+  <li>Rashkin, H., Smith, E. M., Li, M., &amp; Boureau, Y. (2019). Towards Empathetic Open-domain Conversation Models: a New Benchmark and Dataset. <em>arXiv preprint arXiv:1811.00207v5.</em></li>
+  <li>Smith, E. M., Williamson, M., Shuster, K., Weston, J., &amp; Boureau, Y. (2020). Can You Put it All Together: Evaluating Conversational Agents’ Ability to Blend Skills. <em>arXiv preprint arXiv:2004.08449v1.</em></li>
+  <li><a href="https://ai.facebook.com/blog/state-of-the-art-open-source-chatbot/">Facebook AI Blog : A state-of-the-art open source chatbot</a></li>
+</ul>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2021-08-19/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2021-08-05/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

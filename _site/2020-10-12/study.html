@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Oct 12th Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Oct 12th Journal Club" />
+<meta name="author" content="Soomin Cho (soominc3@illinois.edu)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Question Answering, Psychology of Human-AI Interaction(HAII)" />
+<meta property="og:description" content="Themes: Question Answering, Psychology of Human-AI Interaction(HAII)" />
+<link rel="canonical" href="http://localhost:4000/blog/2020-10-12/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2020-10-12/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-12T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Oct 12th Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Soomin Cho (soominc3@illinois.edu)"},"dateModified":"2020-10-12T00:00:00+09:00","datePublished":"2020-10-12T00:00:00+09:00","description":"Themes: Question Answering, Psychology of Human-AI Interaction(HAII)","headline":"Oct 12th Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2020-10-12/study"},"url":"http://localhost:4000/blog/2020-10-12/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Soomin Cho (soominc3@illinois.edu)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2020-10-12 00:00:00 +0900">October 12, 2020</time>
+    
+  </div>
+
+  <h1 class="post-title">Oct 12th Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Question Answering, Psychology of Human-AI Interaction(HAII)  
+</code></pre></div></div>
+
+<p>Presenters: JP (Jaeun Park), YJ (Yoonwon Jung) <br /></p>
+
+<hr />
+
+<h2 id="topic-1-question-answering-squad-attention-jp">Topic 1: Question Answering, SQuAD, Attention [JP]</h2>
+
+<p>선정 이유: 최근 NLP 과제 중 매우 발전한 Question Answering 분야에 대해 공부하기 위해 선정하였다.<br /></p>
+
+<p>내용 요약: 질의응답(Question answering)은 인간이 기계에게 바라는 것을 가장 직접적으로 하는 과제 중 하나이다. 따라서 예전부터 질의응답이나 기계독해(reading comprehension)에 대한 시도가 계속 이루어졌다. 이전에는 하드디스크의 용량의 한계로 문서 전체를 검색하는 것이 어려웠지만, 이제 가능하게 되었다. 질의응답은 주로 정답이 있을 만한 문서를 찾는 information retrieval 단계와 정답을 찾는 단계로 나뉘는데, information retrieval 단계에서는 보통 전통적인 방법이 사용된다. Question Answering task를 위한 데이터셋 중 하나인 SQuAD는 question, answer, 답을 찾을 passage로 구성되며 SQuAD에서는 정답이 패시지 안에 span의 형태로 있는 extractive question answering 과제이다. 이 데이터셋으로 QA system을 평가할 때는 보통 F1 score가 선호된다. Question Answering system을 인공신경망을 사용해서 구축하면, question과 정답을 찾을 passage에 있는 단어를 word vector의 형태로 입력값을 받는다. question의 경우 이를 bi-directional LSTM에 넣어 end state를 question의 representation으로 사용, 이 representation과 passage의 각 word에 대한 attention score를 계산하여 정답을 찾는 방식이다. 현재는 이보다 더 복잡한 구조의, 다양한 형태의 attention을 사용하여 human performance를 선회하는 시스템이 많이 나와있다.</p>
+
+<p>장단점: SQuAD의 경우 QA task를 위한 시스템을 구축하는데 테스트하기 매우 적합한, 탄탄한 데이터셋이었고 각 industry에서 QA 시스템을 구축할 경우 in-domain data를 사용하기 전 시작점으로 사용하기 좋은 데이터셋이었다. 하지만 주어진 passage에 이미 있는 span-based 정답만 사용하고 yes/no 질문이나 counting 질문, 혹은 이유를 묻는 질문은 포함되지 않았다. 또한 passage를 보고 MTurk 작업자들이 질문을 만드는 형태였기 때문에, passage에 나온 문장과 어휘적/통사적으로 질문이 비슷해지게 되어 실사용자들이 검색창에서 정말 궁금해서 물을 질문과는 차이가 있을 수밖에 없었다.</p>
+
+<p><br /></p>
+
+<h2 id="topic-2-psychology-of-human-ai-interactionhaii-jp">Topic 2: Psychology of Human-AI Interaction(HAII) [JP]</h2>
+
+<p>선정이유: Human-AI interaction의 전반적인 동향과 해당 분야에서 심리학을 접목한 연구의 방향성을 알고자 선정하였다. <br /></p>
+
+<p>내용요약 <br /> 
+미디어의 발전으로 인해 커뮤니케이션 연구는 인간 대 인간 상호작용의 기술적 매개에 대한 Computer-Mediated-Communication(CMC)에서 인간이 기술적 매체와 직접 상호작용하는 Human-Computer-Interaction(HCI)으로 그 중심이 변화하였다. 그러나 최근 CMC와 HCI의 경계 자체가 흐려지면서 학자들은 CMC와 HCI의 차이를 만드는 locus of communication보다 기술의 affordances에 더 연구적 관심을 보이기 시작했다. 인간-기술 상호작용의 맥락에서 affordance는 사용자에게 작동 방식을 제시하는 시스템의 특징을 의미하며, 매개 기술의 물리적 특징과 그것으로 인해 가능해지는 사용자의 행위 간의 관계에 의해 정의된다. 최근 커뮤니케이션 기술들의 Source interactivity는 기술 사용에 있어 사용자의 agency를 높이는 한편, AI의 발전으로 인해 그러한 기술들 자체가 agency를 행사할 수 있게 되면서 기계 agency와 인간 agency간의 긴장이 유발되고 있다. 사용자는 소통을 편리하게 해주는 기술을 기꺼이 사용하지만 의사결정의 권한을 양도하고 싶어하지는 않기 때문이다. 그러나 기계 agency를 제한해 주는 새로운 형태의 기술들이 사용되는 현상에서 인간과 기계의 agency 협상에 있어서의 협업 가능성을 엿볼 수 있다. 저자는 기술에 의해 인간의 agency가 어떻게 줄어들고 있는지에 집중하기보다는, 기술이 proactive하게 결정을 내리기 전 사용자의 동의를 구하고 기술의 투명성(transparency)을 높이는 등 그러한 협업을 이끌어낼 수 있는 전략들을 연구할 필요성이 있다고 제안한다. 
+Agency를 행사하는 커뮤니케이션 기술과 인간의 상호작용을 TIME모델을 통해 분석한 HAII-TIME model은 그러한 디지털 미디어의 기술적 affordance를 크게 cue루트와 action루트로 나누어 분석한다. 각 루트를 통해 발생하는 affordance는 각각 지각적 효과와 경험적 효과를 통해 사용자의 trust와 UX에 영향을 미치게 된다. cue루트를 통한 affordance는 AI의 시각적 특징에 대한 지각과 AI와의 상호작용에 대한 기존 경험 그리고 AI를 구현하는 구체적인 알고리즘에 대한 지각이 인지적 휴리스틱을 촉발하여 해당 기술에 대한 기대, 지각, 경험 등의 심리적 반응을 구성하는 과정으로, 주로 AI시스템의 시각적인 특징과 투명성(transparency)과 관련되어 있다. action루트를 통한 affordance는 AI와 상호작용하는 과정에서 AI인터페이스에 의해 발생하는 인간의 행동이 engagement에 영향을 미쳐 유저의 사용자 경험을 구성하는 과정으로, 기계에 의해 인간의 지능이 확장되는 intelligence augmentation뿐만 아니라 인간에 의해 AI시스템이 증강되는 인간-기계 시너지(human-machine synergy)의 맥락에서 발생하는 협업의 본질과 깊게 관련되어 있다. action루트를 통한 affordance는 cue루트를 통한 affordance보다 더 많은 이해와 노력이 동반되는데, 사회심리학의 이중과정이론(dual-process models)에 따르면 action루트를 통해 쌓인 trust가 cue루트를 통해 쌓인 것보다 더 강할 것이라고 예측할 수 있다. <br /></p>
+
+<p>의의: 최근 인간-AI상호작용(HAI)의 특징과 양상을 정리하고, HAII-TIME 모델을 통해 AI와 인간의 상호작용 과정에서 발생하는 agency 협상의 문제와 그것이 어떻게 유저의 UX와 AI에 대한 trust에 영향을 미치는지 이론화하였다.</p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Sundar, S. S. (2020). Rise of Machine Agency: A Framework for Studying the Psychology of Human–AI Interaction (HAII). Journal of Computer-Mediated Communication, 25(1), 74-88.
+</code></pre></div></div>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2020-10-19/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2020-10-05/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>

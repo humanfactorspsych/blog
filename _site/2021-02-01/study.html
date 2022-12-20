@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Feb 1st Journal Club | Research Blog</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Feb 1st Journal Club" />
+<meta name="author" content="Jae Eun Park (dawn2089@snu.ac.kr)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Themes: Human-Machine Interaction, Social Robot,Voice Analysis &amp; Emotion Classification Presenters: JP (Jae Eun Park), HM (Hoyoung Maeng) Topic 1: Human-Machine Interaction, Social Robot[JP] 선정 이유 Human-AI interaction에서 도구이면서 사회적 존재처럼 받아들여지기도 하는 인공지능의 위치에 대해서 더 알아보고자 함. 내용 요약 본 논문에서는 인간-기계 상호작용을 인지신경과학적 관점에서 연구할 수 있는 전반적인 프레임워크를 제시한다. 저자에 따르면 현재 소셜 로봇 등 artificially intelligent social machine들과의 상호작용은 인간-인간 상호작용과 어떤 점에서 비슷한지, 사회인지의 관점에서 연구가 활발히 진행되고 있으나 이러한 연구들은 소셜 로봇이 어떤 점에서 다른 물체나 도구, 혹은 기계와 비슷한지 살피는 것을 간과한다고 주장한다. 지능화된 기계는 굉장히 그 형태가 다양하기 때문에 단 한 가지 형태의 기계와의 상호작용이 다른 형태의 기계에도 적용된다고 하기 어렵다. 따라서 저자들은 인간과 기계 사이에 위치한 사회적 인공지능을 범주적으로 구분하는 것이 아니라 차원적으로 혹은 feature-mapping을 통해 표상하는 것을 제안한다. 또한, 저자들은 인간-기계 상호작용을 연구할 때 신경과학 분야에서 보통 사회인지에 사용되는 뇌 부위인 ventral premotor cortex, inferior parietal lobule, temporoparietal junction이 활성화되는지 등에 초점을 맞췄는데, 이와 같은 접근법에 제한점이 있으며, 이러한 연구결과에 영향을 미쳤을 수 있는 다른 변인이 있는지 고려해봐야한다고 주장한다. 장단점 소셜로봇과의 상호작용을 바라볼 수 있는 또 다른 관점이나, 구체적으로 프레임워크가 어떤 점에서 연구에 도움이 될지 예시가 있었으면 더 좋았을 듯함. Cross, E. S., &amp; Ramsey, R. (2020). Mind Meets Machine: Towards a Cognitive Science of Human–Machine Interactions. Trends in Cognitive Sciences. Topic 2: Voice Analysis &amp; Emotion Classification [HM] 선정이유 Praat 소프트웨어를 사용하여 음성을 분석하는 연구를 학습하고 싶었다. 동시에 목소리로부터 사용자의 감정을 분류하는 시도가 흥미롭게 다가와 선정하게 되었다. 내용요약 음성 트랙 분석을 기반으로 사용자의 감정 상태 분류를 다루며, ANOVA 분석을 사용하여 적절한 음성 특성의 측정 및 감정 분류를 진행한다. 음성 분석 및 구현을 위해 PRAAT 소프트웨어를 사용하였으며, K-NN 알고리즘과 신경망을 통해 감정 분류를 실시하였다. 사용한 Database는 “RAVDESS”, “SAVEE”, “EmoDB” 3가지를 사용하였으며, 이 중 RAVDESS에서 가장 높은 정확도의 감정 분류 결과를 확인하였다. 사용된 감정 분류는 Neutral, Happiness, Sadness, Anger, Fear, Disgust, Surprise 가 사용되었다. 모든 테스트에서 Neutral 감정을 가장 분류를 못하였으며, RAVDESS, SAVEE 데이터베이서에서는 Sadness, EmoDB에서는 Disgust로 분류되는 경우가 많았다. K-NN 알고리즘을 사용한 경우, 전체적으로 감정 상태 인식의 성공률이 낮았으며, 평균 인식률이 80% 이상이면 성공한 것으로 간주하였다. 반면 신경망을 사용한 알고리즘에서는 90% 이상이였다(약 94%). 한편, 원칙적으로 더 많은 감정을 인식하려고 할수록 더 높은 성공률은 얻기는 어려워진다. 이렇듯 본 연구는 감정을 분류하는 최선의 방법을 구현하려고 시도하였다. 장단점 3가지의 데이터베이스를 사용하여 데이터에 따른 차이도 확인 할 수 있어서 신뢰도가 상승하였다. 감정을 분류하는 알고리즘(K-NN)을 사용하여 분류하였으며 이후 정확도를 높이기 위해 신경망 기법을 적용하여 한번 더 분류하여 정확도를 높혔다. 실제 사용한 praat와 anova 분석에 대한 설명이 충분하여 이해에 도움이 되었다. 의의 감정 분류에 대하여 다양한 조건에서 녹음을 분석하고 동시에 감정 분류를 했던 측면에서 의의가 있으며, 향후 실제 상황이나 실시간으로 감정 분류를 해야되는 경우에 참고할만하다고 생각한다. 비고 RAVDESS Database : https://github.com/anita-hu/MSAF/blob/master/ravdess/README.md SAVEE Database : http://kahlan.eps.surrey.ac.uk/savee/Database.html EmoDB Database : http://emodb.bilderbar.info/docu/#download ANN Demo code : http://www.advancedsourcecode.com/neuralspeech.asp Magdin, M., Sulka, T., Tomanová, J., &amp; Vozár, M. (2019). Voice Analysis Using PRAAT Software and Classification of User Emotional State. International Journal of Interactive Multimedia and Artificial Intelligence, 5(6), 33." />
+<meta property="og:description" content="Themes: Human-Machine Interaction, Social Robot,Voice Analysis &amp; Emotion Classification Presenters: JP (Jae Eun Park), HM (Hoyoung Maeng) Topic 1: Human-Machine Interaction, Social Robot[JP] 선정 이유 Human-AI interaction에서 도구이면서 사회적 존재처럼 받아들여지기도 하는 인공지능의 위치에 대해서 더 알아보고자 함. 내용 요약 본 논문에서는 인간-기계 상호작용을 인지신경과학적 관점에서 연구할 수 있는 전반적인 프레임워크를 제시한다. 저자에 따르면 현재 소셜 로봇 등 artificially intelligent social machine들과의 상호작용은 인간-인간 상호작용과 어떤 점에서 비슷한지, 사회인지의 관점에서 연구가 활발히 진행되고 있으나 이러한 연구들은 소셜 로봇이 어떤 점에서 다른 물체나 도구, 혹은 기계와 비슷한지 살피는 것을 간과한다고 주장한다. 지능화된 기계는 굉장히 그 형태가 다양하기 때문에 단 한 가지 형태의 기계와의 상호작용이 다른 형태의 기계에도 적용된다고 하기 어렵다. 따라서 저자들은 인간과 기계 사이에 위치한 사회적 인공지능을 범주적으로 구분하는 것이 아니라 차원적으로 혹은 feature-mapping을 통해 표상하는 것을 제안한다. 또한, 저자들은 인간-기계 상호작용을 연구할 때 신경과학 분야에서 보통 사회인지에 사용되는 뇌 부위인 ventral premotor cortex, inferior parietal lobule, temporoparietal junction이 활성화되는지 등에 초점을 맞췄는데, 이와 같은 접근법에 제한점이 있으며, 이러한 연구결과에 영향을 미쳤을 수 있는 다른 변인이 있는지 고려해봐야한다고 주장한다. 장단점 소셜로봇과의 상호작용을 바라볼 수 있는 또 다른 관점이나, 구체적으로 프레임워크가 어떤 점에서 연구에 도움이 될지 예시가 있었으면 더 좋았을 듯함. Cross, E. S., &amp; Ramsey, R. (2020). Mind Meets Machine: Towards a Cognitive Science of Human–Machine Interactions. Trends in Cognitive Sciences. Topic 2: Voice Analysis &amp; Emotion Classification [HM] 선정이유 Praat 소프트웨어를 사용하여 음성을 분석하는 연구를 학습하고 싶었다. 동시에 목소리로부터 사용자의 감정을 분류하는 시도가 흥미롭게 다가와 선정하게 되었다. 내용요약 음성 트랙 분석을 기반으로 사용자의 감정 상태 분류를 다루며, ANOVA 분석을 사용하여 적절한 음성 특성의 측정 및 감정 분류를 진행한다. 음성 분석 및 구현을 위해 PRAAT 소프트웨어를 사용하였으며, K-NN 알고리즘과 신경망을 통해 감정 분류를 실시하였다. 사용한 Database는 “RAVDESS”, “SAVEE”, “EmoDB” 3가지를 사용하였으며, 이 중 RAVDESS에서 가장 높은 정확도의 감정 분류 결과를 확인하였다. 사용된 감정 분류는 Neutral, Happiness, Sadness, Anger, Fear, Disgust, Surprise 가 사용되었다. 모든 테스트에서 Neutral 감정을 가장 분류를 못하였으며, RAVDESS, SAVEE 데이터베이서에서는 Sadness, EmoDB에서는 Disgust로 분류되는 경우가 많았다. K-NN 알고리즘을 사용한 경우, 전체적으로 감정 상태 인식의 성공률이 낮았으며, 평균 인식률이 80% 이상이면 성공한 것으로 간주하였다. 반면 신경망을 사용한 알고리즘에서는 90% 이상이였다(약 94%). 한편, 원칙적으로 더 많은 감정을 인식하려고 할수록 더 높은 성공률은 얻기는 어려워진다. 이렇듯 본 연구는 감정을 분류하는 최선의 방법을 구현하려고 시도하였다. 장단점 3가지의 데이터베이스를 사용하여 데이터에 따른 차이도 확인 할 수 있어서 신뢰도가 상승하였다. 감정을 분류하는 알고리즘(K-NN)을 사용하여 분류하였으며 이후 정확도를 높이기 위해 신경망 기법을 적용하여 한번 더 분류하여 정확도를 높혔다. 실제 사용한 praat와 anova 분석에 대한 설명이 충분하여 이해에 도움이 되었다. 의의 감정 분류에 대하여 다양한 조건에서 녹음을 분석하고 동시에 감정 분류를 했던 측면에서 의의가 있으며, 향후 실제 상황이나 실시간으로 감정 분류를 해야되는 경우에 참고할만하다고 생각한다. 비고 RAVDESS Database : https://github.com/anita-hu/MSAF/blob/master/ravdess/README.md SAVEE Database : http://kahlan.eps.surrey.ac.uk/savee/Database.html EmoDB Database : http://emodb.bilderbar.info/docu/#download ANN Demo code : http://www.advancedsourcecode.com/neuralspeech.asp Magdin, M., Sulka, T., Tomanová, J., &amp; Vozár, M. (2019). Voice Analysis Using PRAAT Software and Classification of User Emotional State. International Journal of Interactive Multimedia and Artificial Intelligence, 5(6), 33." />
+<link rel="canonical" href="http://localhost:4000/blog/2021-02-01/study" />
+<meta property="og:url" content="http://localhost:4000/blog/2021-02-01/study" />
+<meta property="og:site_name" content="Research Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-01T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Feb 1st Journal Club" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jae Eun Park (dawn2089@snu.ac.kr)"},"dateModified":"2021-02-01T00:00:00+09:00","datePublished":"2021-02-01T00:00:00+09:00","description":"Themes: Human-Machine Interaction, Social Robot,Voice Analysis &amp; Emotion Classification Presenters: JP (Jae Eun Park), HM (Hoyoung Maeng) Topic 1: Human-Machine Interaction, Social Robot[JP] 선정 이유 Human-AI interaction에서 도구이면서 사회적 존재처럼 받아들여지기도 하는 인공지능의 위치에 대해서 더 알아보고자 함. 내용 요약 본 논문에서는 인간-기계 상호작용을 인지신경과학적 관점에서 연구할 수 있는 전반적인 프레임워크를 제시한다. 저자에 따르면 현재 소셜 로봇 등 artificially intelligent social machine들과의 상호작용은 인간-인간 상호작용과 어떤 점에서 비슷한지, 사회인지의 관점에서 연구가 활발히 진행되고 있으나 이러한 연구들은 소셜 로봇이 어떤 점에서 다른 물체나 도구, 혹은 기계와 비슷한지 살피는 것을 간과한다고 주장한다. 지능화된 기계는 굉장히 그 형태가 다양하기 때문에 단 한 가지 형태의 기계와의 상호작용이 다른 형태의 기계에도 적용된다고 하기 어렵다. 따라서 저자들은 인간과 기계 사이에 위치한 사회적 인공지능을 범주적으로 구분하는 것이 아니라 차원적으로 혹은 feature-mapping을 통해 표상하는 것을 제안한다. 또한, 저자들은 인간-기계 상호작용을 연구할 때 신경과학 분야에서 보통 사회인지에 사용되는 뇌 부위인 ventral premotor cortex, inferior parietal lobule, temporoparietal junction이 활성화되는지 등에 초점을 맞췄는데, 이와 같은 접근법에 제한점이 있으며, 이러한 연구결과에 영향을 미쳤을 수 있는 다른 변인이 있는지 고려해봐야한다고 주장한다. 장단점 소셜로봇과의 상호작용을 바라볼 수 있는 또 다른 관점이나, 구체적으로 프레임워크가 어떤 점에서 연구에 도움이 될지 예시가 있었으면 더 좋았을 듯함. Cross, E. S., &amp; Ramsey, R. (2020). Mind Meets Machine: Towards a Cognitive Science of Human–Machine Interactions. Trends in Cognitive Sciences. Topic 2: Voice Analysis &amp; Emotion Classification [HM] 선정이유 Praat 소프트웨어를 사용하여 음성을 분석하는 연구를 학습하고 싶었다. 동시에 목소리로부터 사용자의 감정을 분류하는 시도가 흥미롭게 다가와 선정하게 되었다. 내용요약 음성 트랙 분석을 기반으로 사용자의 감정 상태 분류를 다루며, ANOVA 분석을 사용하여 적절한 음성 특성의 측정 및 감정 분류를 진행한다. 음성 분석 및 구현을 위해 PRAAT 소프트웨어를 사용하였으며, K-NN 알고리즘과 신경망을 통해 감정 분류를 실시하였다. 사용한 Database는 “RAVDESS”, “SAVEE”, “EmoDB” 3가지를 사용하였으며, 이 중 RAVDESS에서 가장 높은 정확도의 감정 분류 결과를 확인하였다. 사용된 감정 분류는 Neutral, Happiness, Sadness, Anger, Fear, Disgust, Surprise 가 사용되었다. 모든 테스트에서 Neutral 감정을 가장 분류를 못하였으며, RAVDESS, SAVEE 데이터베이서에서는 Sadness, EmoDB에서는 Disgust로 분류되는 경우가 많았다. K-NN 알고리즘을 사용한 경우, 전체적으로 감정 상태 인식의 성공률이 낮았으며, 평균 인식률이 80% 이상이면 성공한 것으로 간주하였다. 반면 신경망을 사용한 알고리즘에서는 90% 이상이였다(약 94%). 한편, 원칙적으로 더 많은 감정을 인식하려고 할수록 더 높은 성공률은 얻기는 어려워진다. 이렇듯 본 연구는 감정을 분류하는 최선의 방법을 구현하려고 시도하였다. 장단점 3가지의 데이터베이스를 사용하여 데이터에 따른 차이도 확인 할 수 있어서 신뢰도가 상승하였다. 감정을 분류하는 알고리즘(K-NN)을 사용하여 분류하였으며 이후 정확도를 높이기 위해 신경망 기법을 적용하여 한번 더 분류하여 정확도를 높혔다. 실제 사용한 praat와 anova 분석에 대한 설명이 충분하여 이해에 도움이 되었다. 의의 감정 분류에 대하여 다양한 조건에서 녹음을 분석하고 동시에 감정 분류를 했던 측면에서 의의가 있으며, 향후 실제 상황이나 실시간으로 감정 분류를 해야되는 경우에 참고할만하다고 생각한다. 비고 RAVDESS Database : https://github.com/anita-hu/MSAF/blob/master/ravdess/README.md SAVEE Database : http://kahlan.eps.surrey.ac.uk/savee/Database.html EmoDB Database : http://emodb.bilderbar.info/docu/#download ANN Demo code : http://www.advancedsourcecode.com/neuralspeech.asp Magdin, M., Sulka, T., Tomanová, J., &amp; Vozár, M. (2019). Voice Analysis Using PRAAT Software and Classification of User Emotional State. International Journal of Interactive Multimedia and Artificial Intelligence, 5(6), 33.","headline":"Feb 1st Journal Club","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2021-02-01/study"},"url":"http://localhost:4000/blog/2021-02-01/study"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/blog/feed.xml" title="Research Blog" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/blog/">
+      <h2 class="nav-title">Research Blog</h2>
+    </a>
+    <ul>
+      <li><a href="/blog/about">About</a></li>
+      <li><a href="/blog/">Posts</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    
+        Jae Eun Park (dawn2089@snu.ac.kr)
+    
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2021-02-01 00:00:00 +0900">February 01, 2021</time>
+    
+  </div>
+
+  <h1 class="post-title">Feb 1st Journal Club</h1>
+  <div class="post-line"></div>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Themes: Human-Machine Interaction, Social Robot,Voice Analysis &amp; Emotion Classification
+</code></pre></div></div>
+
+<p>Presenters: JP (Jae Eun Park), HM (Hoyoung Maeng)<br /></p>
+
+<hr />
+
+<h2 id="topic-1-human-machine-interaction-social-robotjp">Topic 1: Human-Machine Interaction, Social Robot[JP]</h2>
+
+<p><strong>선정 이유</strong><br />
+Human-AI interaction에서 도구이면서 사회적 존재처럼 받아들여지기도 하는 인공지능의 위치에 대해서 더 알아보고자 함.<br /></p>
+
+<p><strong>내용 요약</strong><br />
+본 논문에서는 인간-기계 상호작용을 인지신경과학적 관점에서 연구할 수 있는 전반적인 프레임워크를 제시한다. 저자에 따르면 현재 소셜 로봇 등 artificially intelligent social machine들과의 상호작용은 인간-인간 상호작용과 어떤 점에서 비슷한지, 사회인지의 관점에서 연구가 활발히 진행되고 있으나 이러한 연구들은 소셜 로봇이 어떤 점에서 다른 물체나 도구, 혹은 기계와 비슷한지 살피는 것을 간과한다고 주장한다. 지능화된 기계는 굉장히 그 형태가 다양하기 때문에 단 한 가지 형태의 기계와의 상호작용이 다른 형태의 기계에도 적용된다고 하기 어렵다. 따라서 저자들은 인간과 기계 사이에 위치한 사회적 인공지능을 범주적으로 구분하는 것이 아니라 차원적으로 혹은 feature-mapping을 통해 표상하는 것을 제안한다. 또한, 저자들은 인간-기계 상호작용을 연구할 때 신경과학 분야에서 보통 사회인지에 사용되는 뇌 부위인 ventral premotor cortex, inferior parietal lobule, temporoparietal junction이 활성화되는지 등에 초점을 맞췄는데, 이와 같은 접근법에 제한점이 있으며, 이러한 연구결과에 영향을 미쳤을 수 있는 다른 변인이 있는지 고려해봐야한다고 주장한다.<br /></p>
+
+<p><strong>장단점</strong><br />
+소셜로봇과의 상호작용을 바라볼 수 있는 또 다른 관점이나, 구체적으로 프레임워크가 어떤 점에서 연구에 도움이 될지 예시가 있었으면 더 좋았을 듯함.<br /></p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Cross, E. S., &amp; Ramsey, R. (2020). Mind Meets Machine: Towards a Cognitive Science of Human–Machine Interactions. Trends in Cognitive Sciences.
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="topic-2-voice-analysis--emotion-classification-hm">Topic 2: Voice Analysis &amp; Emotion Classification [HM]</h2>
+
+<p><strong>선정이유</strong><br />
+Praat 소프트웨어를 사용하여 음성을 분석하는 연구를 학습하고 싶었다. 동시에 목소리로부터 사용자의 감정을 분류하는 시도가 흥미롭게 다가와 선정하게 되었다.<br /></p>
+
+<p><strong>내용요약</strong> <br /> 
+음성 트랙 분석을 기반으로 사용자의 감정 상태 분류를 다루며, ANOVA 분석을 사용하여 적절한 음성 특성의 측정 및 감정 분류를 진행한다. 음성 분석 및 구현을 위해 PRAAT 소프트웨어를 사용하였으며, K-NN 알고리즘과 신경망을 통해 감정 분류를 실시하였다. 사용한 Database는 “RAVDESS”, “SAVEE”, “EmoDB” 3가지를 사용하였으며, 이 중 RAVDESS에서 가장 높은 정확도의 감정 분류 결과를 확인하였다. 사용된 감정 분류는 Neutral, Happiness, Sadness, Anger, Fear, Disgust, Surprise 가 사용되었다. 모든 테스트에서 Neutral 감정을 가장 분류를 못하였으며, RAVDESS, SAVEE 데이터베이서에서는 Sadness, EmoDB에서는 Disgust로 분류되는 경우가 많았다. K-NN 알고리즘을 사용한 경우, 전체적으로 감정 상태 인식의 성공률이 낮았으며, 평균 인식률이 80% 이상이면 성공한 것으로 간주하였다. 반면 신경망을 사용한 알고리즘에서는 90% 이상이였다(약 94%). 한편, 원칙적으로 더 많은 감정을 인식하려고 할수록 더 높은 성공률은 얻기는 어려워진다. 이렇듯 본 연구는 감정을 분류하는 최선의 방법을 구현하려고 시도하였다.<br /></p>
+
+<p><strong>장단점</strong><br />
+3가지의 데이터베이스를 사용하여 데이터에 따른 차이도 확인 할 수 있어서 신뢰도가 상승하였다. 감정을 분류하는 알고리즘(K-NN)을 사용하여 분류하였으며 이후 정확도를 높이기 위해 신경망 기법을 적용하여 한번 더 분류하여 정확도를 높혔다. 실제 사용한 praat와 anova 분석에 대한 설명이 충분하여 이해에 도움이 되었다. <br /></p>
+
+<p><strong>의의</strong><br />
+감정 분류에 대하여 다양한 조건에서 녹음을 분석하고 동시에 감정 분류를 했던 측면에서 의의가 있으며, 향후 실제 상황이나 실시간으로 감정 분류를 해야되는 경우에 참고할만하다고 생각한다.<br /></p>
+
+<p><strong>비고</strong><br />
+RAVDESS Database : https://github.com/anita-hu/MSAF/blob/master/ravdess/README.md <br />
+SAVEE Database : http://kahlan.eps.surrey.ac.uk/savee/Database.html <br />
+EmoDB Database : http://emodb.bilderbar.info/docu/#download <br />
+ANN Demo code : http://www.advancedsourcecode.com/neuralspeech.asp <br /></p>
+
+<p><br /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Magdin, M., Sulka, T., Tomanová, J., &amp; Vozár, M. (2019). Voice Analysis Using PRAAT Software and Classification of User Emotional State. International Journal of Interactive Multimedia and Artificial Intelligence, 5(6), 33.
+</code></pre></div></div>
+
+<p><br /></p>
+
+
+
+</div>
+
+<div class="pagination">
+  
+    <a href="/blog/2021-02-08/study" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/blog/2021-01-25/study" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+  <span>
+    &copy; <time datetime="2022-12-20 15:33:14 +0900">2022</time> Yoon Kyung Lee. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+  </span>
+</footer>
+
+  </body>
+</html>
